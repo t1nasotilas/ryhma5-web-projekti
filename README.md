@@ -1,4 +1,5 @@
 # ryhma5-web-projekti
-# t1nasotilas = Tommi Reunanen
-# Wilma Alaluusua - wilma-alaluusua
+#### Tommi Reunanen = t1nasotilas
+#### Wilma Alaluusua = wilma-alaluusua
 #### Vertti Winter = verttiwinter
+#### Patrik Mikkonen = cryzmal
