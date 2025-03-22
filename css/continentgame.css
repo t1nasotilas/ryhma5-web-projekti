@@ -1,14 +1,30 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* prevents scroll */
+  }
+  
+
 body {
     text-align: center;
     
 }
+
+.gamename {
+    position: absolute;
+    text-align: center;
+    font-size: 5vh;
+}
+
 .container {
-    
+    top: 8%;
     position: relative;
     width: 80%;
     margin: auto;
 }
 .map {
+    border-radius: 50%;
     margin-top: 7vh;
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -29,64 +45,91 @@ body {
         rgba(0, 0, 0, 0.09) 0px 8px 4px,
         rgba(0, 0, 0, 0.09) 0px 16px 8px,
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    width: 10vh;
-    height: 5vh;
+    width: 15vh;
+    height: 6vh;
     cursor: grab;
 }
 
 
 
 .dropzone {
+    position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    position:absolute;
-    width: 10vh;
-    height: 5vh;
+    justify-content: center;
+    width: 15vh;
+    height: 6vh;
     background: rgba(255, 255, 255, 0.5);
     border: 2px dashed black;
     border-radius: 10px;
+    transform: translate(-50%, -50%);
 }
 
 #africa {
     top: 45%;
-    left: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
 #asia {
     top: 25%;
-    left: 68%;
+    left: 72%;
+    transform: translate(-50%, -50%);
 }
 
 #europe {
-    top: 15%;
-    left: 50%;
+    top: 20%;
+    left: 55%;
+    transform: translate(-50%, -50%);
 }
 
 #north-america {
-    top: 20%;
-    left: 20%;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
 }
 
 #south-america {
     top: 55%;
-    left: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
 }
 
 #australia {
-    top: 60%;
+    top: 66%;
     left: 85%;
+    transform: translate(-50%, -50%);
 }
 
 #antarctica {
-    top: 80%;
+    top: 93%;
     left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .draggable-container {
+    position: absolute;
+    top: 25%;
+    left: 5%;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+#fullscreen-btn {
+    top: 0;
+    left: 0;
+    background-color:gray;
+    height: 100%;
+    width: 100%;
+    padding: 10vh;
+    position: fixed;
+    z-index: 9999;
+  }
+
+.continent.dragging {
+    z-index: 1000;
+    pointer-events: none;
 }
