@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/continentgame.css">
     <script src="../js/index.js" defer></script>
@@ -28,6 +30,7 @@
 
   </nav>  
     <div class="container">
+      <h3 class="gamename">MaanosaMestari</h3>
       <img src="../images/worldmap.png" class="map" alt="World Map">
       
       <div class="dropzone" id="africa"></div>
@@ -47,6 +50,9 @@
           <p id="drag-australia" class="continent" draggable="true">Australia ja Oseania</p>
           <p id="drag-antarctica" class="continent" draggable="true">Antarktis</p>
         </div>
+        <button id="fullscreen-btn" style="display:none;">Tap anywhere to start</button>
+        
+
     </div>
 
   </body>
