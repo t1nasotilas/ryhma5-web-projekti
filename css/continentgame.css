@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+   
     overflow: hidden; /* prevents scroll */
   }
   
@@ -11,22 +11,38 @@ body {
     
 }
 
-.gamename {
+.game-launcher {
     position: absolute;
-    text-align: center;
-    font-size: 5vh;
-}
-
-.container {
-    top: 8%;
-    position: relative;
+    top: 10%;
+    left: 10%;
     width: 80%;
-    margin: auto;
+    height: 80%;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgb(180, 174, 174);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 999;
 }
+#fullscreen-btn {
+    bottom: 5%;
+    background-color:gray;
+    height: 7vh;
+    width: 15vh;
+    padding: 2vh;
+    justify-self: center;
+    z-index: 999;
+  }
+
+
+
 .map {
     border-radius: 50%;
     margin-top: 7vh;
-    width: 100%;
+    width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
@@ -60,7 +76,7 @@ body {
     width: 15vh;
     height: 6vh;
     background: rgba(255, 255, 255, 0.5);
-    border: 2px dashed black;
+    border: 1px dashed black;
     border-radius: 10px;
     transform: translate(-50%, -50%);
 }
@@ -114,22 +130,53 @@ body {
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    z-index: 1000;
+    z-index: 998;
 }
 
 
-#fullscreen-btn {
-    top: 0;
-    left: 0;
-    background-color:gray;
-    height: 100%;
-    width: 100%;
-    padding: 10vh;
-    position: fixed;
-    z-index: 9999;
-  }
+
 
 .continent.dragging {
-    z-index: 1000;
+    z-index: 999;
     pointer-events: none;
+}
+
+.wrapper {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  
+  
+body.mobile .dropzone {
+    width: 25vh;
+    height: 10vh;
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+body.mobile .map {
+    width: 85%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+body.mobile .continent {
+    
+    border-radius: 10px;
+    width: 25vh;
+    height: 10vh;
+    cursor: grab;
+}
+
+body.mobile .draggable-container {
+    top: 10%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 2.5vh;
+    
 }
