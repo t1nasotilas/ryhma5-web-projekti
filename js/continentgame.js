@@ -3,32 +3,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const continents = document.querySelectorAll(".continent");
     const dropzones = document.querySelectorAll(".dropzone");
     const btn = document.getElementById("fullscreen-btn");
+    const wrapper = document.querySelector(".wrapper");
 
-    if (isMobile && btn) {
+    if (wrapper) wrapper.style.display = "none";
+
+    if (btn) {
         btn.style.display = "block";
 
-        const enterFullscreen = () => {
-            const elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
+        btn.addEventListener("click", () => {
+            // Only attempt fullscreen + orientation lock on mobile
+            if (isMobile) {
+                const elem = document.documentElement;
+
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                } else if (elem.webkitRequestFullscreen) {
+                    elem.webkitRequestFullscreen();
+                } else if (elem.msRequestFullscreen) {
+                    elem.msRequestFullscreen();
+                }
+
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock("landscape").catch(err => {
+                        console.warn("Orientation lock failed:", err);
+                    });
+                }
             }
 
-            // Try to lock orientation
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock("landscape").catch(err => {
-                    console.warn("Orientation lock failed:", err);
-                });
-            }
+    const launcher = document.querySelector(".game-launcher");
 
-            btn.style.display = "none";
-        };
-
-        document.body.addEventListener("click", enterFullscreen, { once: true });
-        document.body.addEventListener("touchstart", enterFullscreen, { once: true });
+    if (launcher) launcher.style.display = "none";
+    if (wrapper) wrapper.style.display = "block";
+    btn.style.display = "none";
+        });
     }
 
     // Desktop: Drag and Drop
@@ -50,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 zone.innerText = draggedElement.innerText;
                 draggedElement.style.display = "none";
             } else {
-                alert("Wrong placement! Try again.");
+               // alert("Wrong placement! Try again.");
             }
         });
     });
@@ -91,13 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         dropTarget.innerText = dragging.innerText;
                         dragging.style.display = "none";
                     } else {
-                        alert("Wrong placement! Try again.");
+                     //   alert("Wrong placement! Try again.");
                     }
                 }
             });
         });
 
-        document.body.classList.add("mobile");
+       document.body.classList.add("mobile");
 
 
     }
