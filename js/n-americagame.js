@@ -29,7 +29,22 @@ document.addEventListener("DOMContentLoaded", () => {
           offScreenMenu.classList.toggle("active");
       });
     }
-    
-    
     });
+
+    window.addEventListener("scroll", function() {
+        const footer = document.querySelector(".info-footer");
+        const scrollPosition = window.scrollY + window.innerHeight;
+        const pageHeight = document.documentElement.scrollHeight;
+    
+        const triggerPoint = pageHeight - 60;
+    
+        if (scrollPosition > triggerPoint) { 
+            footer.classList.add("visible");
+        } else {
+            footer.classList.remove("visible");
+        }
+    });
+    
+    
+    
     
