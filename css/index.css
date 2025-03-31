@@ -11,14 +11,26 @@
 
 .article{
     display: flex;
-    margin-top: 1%;
+    position: absolute;
+    top: 25%;
     max-width: 95%;
-    margin-left: 2%;
-    gap:5%
+    max-height: 50%;
+    margin-left: 2.5%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    gap:5%;
+    padding: 5%;
+    background-color:#3f3c3c
 }
+
+
 
 .article img{
     width: 50%;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -91,7 +103,7 @@ nav {
 .ham-menu span {
     height: 10%;
     width: 100%;
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 25px;
     position: absolute;
     left: 50%;
