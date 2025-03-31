@@ -1,32 +1,123 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+   
     overflow: hidden; /* prevents scroll */
   }
   
 
 body {
     text-align: center;
-    
+    background-color: #444;
 }
 
-.gamename {
+
+.game-launcher {
     position: absolute;
-    text-align: center;
-    font-size: 5vh;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgb(206, 206, 206);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 999;
+}
+.result-overlay {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgb(206, 206, 206);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
 
-.container {
-    top: 8%;
-    position: relative;
-    width: 80%;
-    margin: auto;
+
+
+#save-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
+#retry-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#fullscreen-btn {
+    bottom: 5%;
+    background-color:rgb(112, 105, 105);
+    border-radius: 3px;
+    height: 5vh;
+    width: 18vh;
+    padding: 2vh;
+    opacity: 0.6;
+    transition: 0.2s;
+    justify-self: center;
+    z-index: 999;
+  }
+#fullscreen-btn:hover {
+    opacity: 1;
+    bottom: 5%;
+    background-color:rgb(112, 105, 105);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+  }
+
+  #scoreboard {
+    position: absolute;
+    top: 7%;
+    left: 80%;
+    background-color: #f0f0f0;
+    padding: 2vh 10vh;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+  #score {
+    font-size: 5vh;
+  }
+
+
+  #submit-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+
 .map {
     border-radius: 50%;
     margin-top: 7vh;
-    width: 100%;
+    width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
@@ -60,7 +151,7 @@ body {
     width: 15vh;
     height: 6vh;
     background: rgba(255, 255, 255, 0.5);
-    border: 2px dashed black;
+    border: 1px dashed black;
     border-radius: 10px;
     transform: translate(-50%, -50%);
 }
@@ -109,27 +200,78 @@ body {
 .draggable-container {
     position: absolute;
     top: 25%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    z-index: 998;
+}
+
+
+
+
+.continent .dragging {
+    z-index: 999;
+    pointer-events: none;
+}
+
+.wrapper {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  
+  
+body.mobile .dropzone {
+    width: 25vh;
+    height: 10vh;
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+body.mobile .map {
+    width: 85%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+body.mobile .continent {
+    
+    border-radius: 10px;
+    width: 25vh;
+    height: 10vh;
+    cursor: grab;
+}
+
+body.mobile .draggable-container {
+    top: 10%;
     left: 5%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
-    z-index: 1000;
+    font-size: 2.5vh;
+    
 }
 
-
-#fullscreen-btn {
-    top: 0;
-    left: 0;
-    background-color:gray;
-    height: 100%;
-    width: 100%;
-    padding: 10vh;
-    position: fixed;
-    z-index: 9999;
+body.mobile #scoreboard {
+    position: absolute;
+    top: 7%;
+    left: 80%;
+    background-color: #f0f0f0;
+    padding: 2vh 2vh;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
   }
-
-.continent.dragging {
-    z-index: 1000;
-    pointer-events: none;
-}
+body.mobile #submit-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
