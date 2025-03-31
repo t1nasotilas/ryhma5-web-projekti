@@ -7,6 +7,9 @@
     list-style: none;
     text-decoration: none;
 }
+body {
+    margin-top: 6vh; /* to avoid nav overlap */
+}
 
 a {
     color: white;
