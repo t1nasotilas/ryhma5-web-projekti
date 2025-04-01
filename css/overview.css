@@ -1,0 +1,40 @@
+/* Ettei jää navin alle */
+body{
+    padding-top: 6vh;
+}
+
+/* Yhteenveto-box */
+.summary-box {
+    width: 100%;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 5px;
+    height: 100%;
+}
+
+/* Pienet laatikot */
+.box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    .summary-box {
+        height: 300px;  /* 🔹 Yhteenveto-laatikko on korkeampi mobiilissa */
+    }
+
+    .box {
+        aspect-ratio: 2/1; /* 🔹 Pienet laatikot ovat matalampia mobiilissa */
+    }
+}

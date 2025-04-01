@@ -1,0 +1,277 @@
+html, body {
+    margin: 0;
+    padding: 0;
+   
+    overflow: hidden; /* prevents scroll */
+  }
+  
+
+body {
+    text-align: center;
+    background-color: #444;
+}
+
+
+.game-launcher {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgb(206, 206, 206);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 999;
+}
+.result-overlay {
+    display: none;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgb(206, 206, 206);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+
+
+#save-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#retry-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#fullscreen-btn {
+    bottom: 5%;
+    background-color:rgb(112, 105, 105);
+    border-radius: 3px;
+    height: 5vh;
+    width: 18vh;
+    padding: 2vh;
+    opacity: 0.6;
+    transition: 0.2s;
+    justify-self: center;
+    z-index: 999;
+  }
+#fullscreen-btn:hover {
+    opacity: 1;
+    bottom: 5%;
+    background-color:rgb(112, 105, 105);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+  }
+
+  #scoreboard {
+    position: absolute;
+    top: 7%;
+    left: 80%;
+    background-color: #f0f0f0;
+    padding: 2vh 10vh;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+  #score {
+    font-size: 5vh;
+  }
+
+
+  #submit-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+
+.map {
+    border-radius: 50%;
+    margin-top: 7vh;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.continent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgb(24, 131, 42);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+        rgba(0, 0, 0, 0.06) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 15vh;
+    height: 6vh;
+    cursor: grab;
+}
+
+
+
+.dropzone {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vh;
+    height: 6vh;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px dashed black;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+}
+
+#africa {
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+#asia {
+    top: 25%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+}
+
+#europe {
+    top: 20%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+#north-america {
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+#south-america {
+    top: 55%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+#australia {
+    top: 66%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+#antarctica {
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.draggable-container {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    z-index: 998;
+}
+
+
+
+
+.continent .dragging {
+    z-index: 999;
+    pointer-events: none;
+}
+
+.wrapper {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  
+  
+body.mobile .dropzone {
+    width: 25vh;
+    height: 10vh;
+    border: 1px dashed black;
+    border-radius: 10px;
+}
+
+body.mobile .map {
+    width: 85%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+body.mobile .continent {
+    
+    border-radius: 10px;
+    width: 25vh;
+    height: 10vh;
+    cursor: grab;
+}
+
+body.mobile .draggable-container {
+    top: 10%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 2.5vh;
+    
+}
+
+body.mobile #scoreboard {
+    position: absolute;
+    top: 7%;
+    left: 80%;
+    background-color: #f0f0f0;
+    padding: 2vh 2vh;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+body.mobile #submit-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
