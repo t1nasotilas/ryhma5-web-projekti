@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etela-Amerikka</title>
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/ea.css">
-    <script src="../js/index.js" defer></script>
+    <link rel="stylesheet" href="../etela-amerikka/ea.css">
+    <script src="../js/index.js" defer ></script>
 </head>
 <body>
     <!--HAMPURILAIS MENY-->
@@ -26,12 +26,20 @@
     <span></span>
 </div>
 </nav>
-
 <!--TÄSTÄ ALKAA PELI-->
-<h1>TIETOVISA</h1>
-<div id="quiz"></div>
-<button id="submit">Submit Quiz</button>
-<div id="results"></div>
-
+<div class="app">
+  <h1>Tietovisa</h1>
+  <div class="quiz">
+    <h2 id="question">Kysymys tulee tähän</h2>
+    <div id="answer-buttons">
+      <button class="btn">Vastaus 1</button>
+      <button class="btn">Vastaus 2</button>
+      <button class="btn">Vastaus 3</button>
+      <button class="btn">Vastaus 4</button>
+    </div>
+    <button id="next-btn">Seuraava</button>
+  </div>
+</div>
+<script src="../etela-amerikka/ea.js"></script>
 </body>
 </html>
