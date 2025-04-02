@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(236, 70, 70);
+    background-color: lightblue;
 }
 .app{
     background: white;
@@ -15,11 +15,13 @@ body{
     padding: 30px;
 }
 .app h1{
-    font-size: 1.5em;
-    color: #001e4d;
+    font-size: 2em;
+    color: #004d0a;
     font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-bottom: 1px solid #333;
-    padding-bottom: 30px
+    padding-bottom: 30px;
+    text-align: center;
 }
 .quiz{
     padding: 20px 0; /* padding top and sideways */
@@ -36,7 +38,7 @@ body{
     width: 100%;
     border: 1px solid #222;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px 0;
     text-align: left;
     border-radius: 4px;
     cursor: pointer;
@@ -67,4 +69,27 @@ body{
 }
 .incorrect{
     background: #ffb3b3;
+}
+.question-image{
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    max-height: auto;
+    margin: 15px auto;
+    border-radius: 4px;
+}
+#start-screen{
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+.answer-message{
+    font-size: 1.2em;
+    color: red;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0;
 }
