@@ -6,16 +6,18 @@ const questions = [
             {text: "Argentiina", correct: false},
             {text: "Chile", correct: false},
             {text: "Peru", correct: false}
-        ]
+        ],
+        fact: "Oikein! Brasilia on Etelä-Amerikan suurin maa pinta-alaltaan, ja se kattaa yli 8,5 miljoonaa neliökilometriä.",
     },
     {
         question: "Mikä on Etelä-Amerikan pisin joki?",
         answers: [
             {text: "Amazonjoki", correct: true},
             {text: "Orinoco", correct: false},
-            {text: "Paraná", correct: false},
+            {text: "Niili", correct: false},
             {text: "Tocantins", correct: false}
-        ]
+        ],
+        fact: "Oikein! Amazonjoki on maailman pisin joki, ja se virtaa läpi useiden Etelä-Amerikan maiden, mukaan lukien Brasilian ja Perun.",
     },
     {
         question: "Missä kaupungissa kuvan nähtävyys sijaitsee?",
@@ -25,7 +27,8 @@ const questions = [
             {text: "Santiago", correct: false},
             {text: "Rio de Janeiro", correct: true},
             {text: "Lima", correct: false}
-        ]
+        ],
+        fact: "Oikein!Kuvan nähtävyys on Kristus Vapahtaja, joka sijaitsee Rio de Janeirossa, Brasiliassa. Se on yksi maailman tunnetuimmista maamerkeistä.",
     },
     {
         question: "Mikä on Etelä-Amerikan korkein vuori?",
@@ -34,7 +37,8 @@ const questions = [
             {text: "Ojos del Salado", correct: false},
             {text: "Cotopaxi", correct: false},
             {text: "Chimborazo", correct: false}
-        ]
+        ],
+        fact: "Oikein! Aconcagua on Etelä-Amerikan korkein vuori, ja se sijaitsee Argentiinassa. Sen korkeus on 6 961 metriä merenpinnasta.",
     },
     {
         question: "Mikä on puhutuin äidinkieli Etelä-Amerikassa?",
@@ -43,7 +47,8 @@ const questions = [
             {text: "Portugali", correct: true},
             {text: "Ranska", correct: false},
             {text: "Englanti", correct: false}
-        ]
+        ],
+        fact: "Oikein! Portugali on Etelä-Amerikan puhutuin äidinkieli, ja se on virallinen kieli Brasiliassa. Espanja on myös laajasti puhuttu useissa muissa maissa.",
     },
     {
         question: "Mitkä kaksi maata Patagonia yhdistää?",
@@ -53,7 +58,8 @@ const questions = [
             {text: "Brasilia ja Peru", correct: false},
             {text: "Kolumbia ja Venezuela", correct: false},
             {text: "Ecuador ja Bolivia", correct: false}
-        ]
+        ],
+        fact: "Oikein! Patagonia on alue, joka kattaa osia Chilestä ja Argentiinasta. Se tunnetaan upeista maisemistaan, vuoristaan ja jäätiköistään.",
     },
 ];
 
@@ -129,6 +135,8 @@ function showQuestion(){
     });
 };
 
+/* Luodaan funktio, joka tyhjentää edelliset kysymykset ja vastaukset
+ja piilottaa "Seuraava" -painikkeen.*/
 function resetState(){
     nextButton.style.display = 'none';
     while(answerButtons.firstChild){
@@ -140,13 +148,16 @@ function selectAnswer(e){
     const selectButton = e.target;
     const correct = selectButton.dataset.correct;
     const messageElement = document.createElement('p'); // Luo elementti viestin näyttämistä varten
+    messageElement.classList.add('answer-message'); // CSS-muotoilu
+    let currentQuestion = questions[currentQuestionIndex]; // Haetaan nykyinen kysymys
     if(correct){
         selectButton.classList.add('correct');
-        score++;
-        // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
+        score++; // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
+        messageElement.innerHTML = currentQuestion.fact; // Näytetään oikean vastauksen fakta
     }else{
+        // Näytetään viesti punaisella kun vastaus on väärin.
         selectButton.classList.add('incorrect');
-        messageElement.innerHTML = "Väärin!"; // Näytetään viesti kun vastaus on väärin
+        messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>'; 
     };
 
     answerButtons.appendChild(messageElement);
@@ -162,9 +173,15 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
-    questionElement.innerHTML = `Pisteesi ${score} / ${questions.length}`;
+    questionElement.innerHTML = `Sinun pisteesi ${score} / ${questions.length}`;
+    if (score <= 2){
+        questionElement.innerHTML += '<br><span style=" color: red;"> Nyt on aika harjoitella lisää!</span>';
+    }else(score <= 4)
+        questionElement.innerHTML += '<br><span style=" color: yellow;"> Hienoa työtä! Voit silti olla vielä HoMoMpI niiKU Santeri!</span>';
+    
     nextButton.innerHTML = 'Pelaa uudelleen';
     nextButton.style.display = 'block'; // Näytetään "Pelaa uudelleen" -painike
+    
 };
 // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
 function handleNextButton(){
