@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
 
     // displaytext for nav-bar
     const placeholder_p = document.querySelector("nav p");
@@ -28,23 +28,27 @@ document.addEventListener("DOMContentLoaded", () => {
           hamMenu.classList.toggle("active");
           offScreenMenu.classList.toggle("active");
       });
-    }
+    };
+});
+    //hidden containers
+    const containers = document.querySelectorAll('.container');
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: "-72px 0px -25px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+            else entry.target.classList.remove('visible');
+        });
+    }, observerOptions);
+
+    containers.forEach(container => {
+        observer.observe(container);
     });
 
-    window.addEventListener("scroll", function() {
-        const footer = document.querySelector(".info-footer");
-        const scrollPosition = window.scrollY + window.innerHeight;
-        const pageHeight = document.documentElement.scrollHeight;
-    
-        const triggerPoint = pageHeight - 60;
-    
-        if (scrollPosition > triggerPoint) { 
-            footer.classList.add("visible");
-        } else {
-            footer.classList.remove("visible");
-        }
-    });
-    
-    
-    
-    
+
+
