@@ -1,18 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const games = [
-        { key: "europeGameCompleted", element: "Game 1", name: "Eurooppavisa" }
+        { key: "europeGameScore", name: "Eurooppavisa", max: 6 },
+        { key: "continentGameScore", name: "Maanosapeli", max: 7 }
         // add other games here
     ];
 
-    games.forEach((game, index) => {
-        const isCompleted = localStorage.getItem(game.key) === "true";
-        const boxElement = document.querySelectorAll(".box")[index];
+    const boxElements = document.querySelectorAll(".box");
 
-        if (isCompleted) {
-            boxElement.classList.add("completed");
-            boxElement.innerHTML = `<h3>${game.name}</h3><p> &#10003; Suoritettu</p>`;
-        } else {
-            boxElement.innerHTML = `<h3>${game.name}</h3><p> &#10007; Ei suoritettu</p>`;
+    games.forEach((game, index) => {
+        const score = localStorage.getItem(game.key);
+        const displayScore = score !== null ? score : 0;
+
+        const box = boxElements[index];
+        if (box) {
+            box.innerHTML = `
+                <h3>${game.name}</h3>
+                <p>Pisteet: ${displayScore} / ${game.max}</p>
+            `;
         }
     });
 });
