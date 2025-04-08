@@ -106,9 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const placed = placements[zone.id];
                 if (placed === zone.id) {
                     correct++;
-                    zone.style.backgroundColor = "lightgreen";
+                    zone.style.backgroundColor = "#1eb00b";
                 } else {
-                    zone.style.backgroundColor = "lightcoral";
+                    zone.style.backgroundColor = "#ad371a";
                 }
             }
         
@@ -131,57 +131,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mobile: Touch support
     if (isMobile) {
-        continents.forEach(continent => {
-            continent.addEventListener("touchstart", (event) => {
-                event.target.classList.add("dragging");
-                event.preventDefault();
-            }, { passive: false });
+    continents.forEach(continent => {
+        continent.addEventListener("touchstart", (event) => {
+            event.preventDefault();
 
-            continent.addEventListener("touchmove", (event) => {
-                const touch = event.touches[0];
-                const dragging = document.querySelector(".dragging");
+            const touch = event.touches[0];
+            const clone = continent.cloneNode(true);
+            clone.id = "clone-" + continent.id;
+            clone.classList.add("mobile-drag");
+            clone.style.position = "absolute";
+            clone.style.left = `${touch.pageX - clone.offsetWidth / 2}px`;
+            clone.style.top = `${touch.pageY - clone.offsetHeight / 2}px`;
+            clone.style.zIndex = "1000";
+            document.body.appendChild(clone);
 
-                if (dragging) {
-                    dragging.style.position = "absolute";
-                    dragging.style.left = `${touch.pageX - dragging.offsetWidth / 2}px`;
-                    dragging.style.top = `${touch.pageY - dragging.offsetHeight / 2}px`;
+            continent.classList.add("dragging");
+        }, { passive: false });
+
+        continent.addEventListener("touchmove", (event) => {
+            const touch = event.touches[0];
+            const clone = document.getElementById("clone-" + continent.id);
+
+            if (clone) {
+                clone.style.left = `${touch.pageX - clone.offsetWidth / 2}px`;
+                clone.style.top = `${touch.pageY - clone.offsetHeight / 2}px`;
+            }
+        }, { passive: false });
+
+        continent.addEventListener("touchend", (event) => {
+            const clone = document.getElementById("clone-" + continent.id);
+            const touch = event.changedTouches[0];
+            const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+
+            if (clone) clone.remove();
+
+            if (dropTarget && dropTarget.classList.contains("dropzone")) {
+                const dropId = dropTarget.id;
+                const dragId = continent.id.replace("drag-", "");
+
+                // Return previous item if needed
+                const previousId = dropTarget.dataset.continent;
+                if (previousId) {
+                    const prevElem = document.getElementById("drag-" + previousId);
+                    if (prevElem) prevElem.style.display = "block";
                 }
-            }, { passive: false });
 
-            continent.addEventListener("touchend", (event) => {
-                const dragging = document.querySelector(".dragging");
-                if (!dragging) return;
-            
-                dragging.classList.remove("dragging");
-            
-                const touch = event.changedTouches[0];
-                const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-            
-                if (dropTarget && dropTarget.classList.contains("dropzone")) {
-                    const dropId = dropTarget.id;
-                    const dragId = dragging.id.replace("drag-", "");
-                
-                    // ✅ Return previously placed item
-                    const previousId = dropTarget.dataset.continent;
-                    if (previousId) {
-                        const previousElement = document.getElementById(`drag-${previousId}`);
-                        if (previousElement) previousElement.style.display = "block";
-                    }
-                
-                    // ✅ Place new item
-                    dropTarget.innerText = dragging.innerText;
-                    dragging.style.display = "none";
-                
-                    // ✅ Track placement
-                    dropTarget.dataset.continent = dragId;
-                    placements[dropId] = dragId;
-                }
+                dropTarget.innerText = continent.innerText;
+                continent.style.display = "none";
 
-            });
+                dropTarget.dataset.continent = dragId;
+                placements[dropId] = dragId;
+            }
+
+            continent.classList.remove("dragging");
         });
+    });
 
-       document.body.classList.add("mobile");
-
-
-    }
+    document.body.classList.add("mobile");
+}
 });

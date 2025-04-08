@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="../css/index.css">
@@ -11,6 +11,7 @@
     <script src="../js/continentgame.js" defer></script>
 </head>
 <body>
+  
   <div class="off-screen-menu">
     <ul>
       <li><a href="../index.html">Koti</a></li>
@@ -41,7 +42,7 @@
         <img src="../images/worldmap.png" class="map" alt="World Map">
         
         <div id="scoreboard">
-          <p>Oikeat vastaukset: <span id="score">0/7</span></p>
+          <p>Pisteet: <span id="score"></span></p>
           <button id="submit-btn">Tarkista vastaukset</button>
         </div>
         
@@ -64,6 +65,8 @@
             <p id="drag-antarctica" class="continent" draggable="true">Antarktis</p>
           </div>
     </div>
+   
+      
 
     <div class="result-overlay" style="display: none;">
       <div class="result-content">
