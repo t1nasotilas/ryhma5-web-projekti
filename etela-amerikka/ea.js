@@ -28,7 +28,7 @@ const questions = [
             {text: "Rio de Janeiro", correct: true},
             {text: "Lima", correct: false}
         ],
-        fact: "Oikein!Kuvan nähtävyys on Kristus Vapahtaja, joka sijaitsee Rio de Janeirossa, Brasiliassa. Se on yksi maailman tunnetuimmista maamerkeistä.",
+        fact: "Oikein! Kuvan nähtävyys on Kristus Vapahtaja, joka sijaitsee Rio de Janeirossa, Brasiliassa. Se on yksi maailman tunnetuimmista maamerkeistä.",
     },
     {
         question: "Mikä on Etelä-Amerikan korkein vuori?",
@@ -74,15 +74,15 @@ const startScreen = document.getElementById('start-screen');
 const startButton = document.getElementById('start-btn');
 const quizScreen = document.getElementById('quiz-container');
 
-// Luodaan funktio, joka sekoittaa kysymykset satunnaisesti
+// Creating function, that randomly scrambles the questions
 function shuffleQuestions(){
     for(let i = questions.length - 1; i > 0; i--){
         let j = Math.floor(Math.random() * (i + 1));
-        [questions[i], questions[j]] = [questions[j], questions[i]]; // Vaihdetaan paikkoja
+        [questions[i], questions[j]] = [questions[j], questions[i]]; // Switches places
     }
 };
 
-// Luodaan funktio, joka sekoittaa vastaukset satunnaisesti
+// Creating function, that randomly scrambles answers
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -91,9 +91,9 @@ function shuffleArray(array) {
 };
 
 startButton.addEventListener('click', () => {
-    startScreen.style.display = 'none'; // Piilotetaan aloitusnäyttö
-    quizScreen.style.display = 'block'; // Näytetään peli
-    startQuiz(); // Aloitetaan peli
+    startScreen.style.display = 'none'; // Hides startscreen
+    quizScreen.style.display = 'block'; // Show game
+    startQuiz(); // Starts game
 });
 
 // Aloitetaan peli, sekoitetaan kysymykset ja vastaukset
@@ -176,8 +176,11 @@ function showScore(){
     questionElement.innerHTML = `Sinun pisteesi ${score} / ${questions.length}`;
     if (score <= 2){
         questionElement.innerHTML += '<br><span style=" color: red;"> Nyt on aika harjoitella lisää!</span>';
-    }else(score <= 4)
-        questionElement.innerHTML += '<br><span style=" color: yellow;"> Hienoa työtä! Voit silti olla vielä HoMoMpI niiKU Santeri!</span>';
+    }if(score <= 4){
+        questionElement.innerHTML += '<br><span style=" color: light yellow;"> Hienoa työtä! Pystyt varmasti vielä parempaan!</span>';
+    }if(score == 6){
+        questionElement.innerHTML += '<br><span style=" color: green;"> Wau! Olet selkeästi Maanosamestari!';
+    }
     
     nextButton.innerHTML = 'Pelaa uudelleen';
     nextButton.style.display = 'block'; // Näytetään "Pelaa uudelleen" -painike

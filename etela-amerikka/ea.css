@@ -4,7 +4,20 @@
     box-sizing: border-box;
 }
 body{
-    background-color: lightblue;
+    background-color: grey;
+}
+#start-screen{
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+#start-screen h1{
+    font-size: 2.5em;
+    text-align: center;
+    padding-bottom: 10px;
 }
 .app{
     background: white;
@@ -14,8 +27,25 @@ body{
     border-radius: 10px;
     padding: 30px;
 }
+#start-btn{
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 20%;
+    border: 1px solid #222;
+    padding: 10px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s;
+}
+#start-btn:hover:not([disabled]){
+    background: #222;
+    color: #fff;
+}
 .app h1{
-    font-size: 2em;
+    font-size: 2.5em;
     color: #004d0a;
     font-weight: 600;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -77,14 +107,6 @@ body{
     max-height: auto;
     margin: 15px auto;
     border-radius: 4px;
-}
-#start-screen{
-    background: white;
-    width: 90%;
-    max-width: 600px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 30px;
 }
 .answer-message{
 /* viesti oikeasta tai väärästä vastauksesta, mutta ottaa vain sinisen värin oikeaan vastaukseen*/
