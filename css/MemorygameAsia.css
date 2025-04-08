@@ -13,7 +13,7 @@ body {
   /* font-family:;*/
   background-color:white; 
 
-  background-image: url('../images/Asia memorygame.png'); /* Vaihda tiedostonimi jos eri */
+  background-image: url('../images/Asiamemorygame.png'); /* Vaihda tiedostonimi jos eri */
   background-size: cover; /* Skaalaa kuva peittämään koko sivu */
   background-position: center; /* Keskittää kuvan */
   background-repeat: no-repeat; /* Estää kuvan toiston */
@@ -43,8 +43,8 @@ body {
   margin-top: 125px;
 
   background-color: #69baf7; /* vaaleansininen tausta */
-  border-radius: 20px;       /* pyöristetyt reunat */
-  padding: 30px 40px;        /* tyhjää reunoille */
+  border-radius: 25px;       /* pyöristetyt reunat */
+  padding: 30px 50px;        /* tyhjää reunoille */
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* varjo */
 }
 
@@ -96,7 +96,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-image: url('../images/Asia memorygame.png'); /* Vaihda tiedostonimi jos eri */
+  background-image: url('../images/Asiamemorygame.png'); /* Vaihda tiedostonimi jos eri */
   background-size: cover; /* Skaalaa kuva peittämään koko sivu */
   background-position: center; /* Keskittää kuvan */
   background-repeat: no-repeat; /* Estää kuvan toiston */
