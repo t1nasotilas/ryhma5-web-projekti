@@ -176,16 +176,26 @@ function showScore(){
     questionElement.innerHTML = `Sinun pisteesi ${score} / ${questions.length}`;
     if (score <= 2){
         questionElement.innerHTML += '<br><span style=" color: red;"> Nyt on aika harjoitella lisää!</span>';
-    }if(score <= 4){
+    }else if(score <= 4){
         questionElement.innerHTML += '<br><span style=" color: light yellow;"> Hienoa työtä! Pystyt varmasti vielä parempaan!</span>';
-    }if(score == 6){
-        questionElement.innerHTML += '<br><span style=" color: green;"> Wau! Olet selkeästi Maanosamestari!';
+    }else if(score == 6){
+        questionElement.innerHTML += '<br><span style=" color: green;"> Wau! Olet selkeästi Maanosamestari!</span>';
     }
     
     nextButton.innerHTML = 'Pelaa uudelleen';
-    nextButton.style.display = 'block'; // Näytetään "Pelaa uudelleen" -painike
-    
+    nextButton.style.display = 'block'; // Shows "Pelaa uudelleen" button
+
+const homeButton = document.createElement('button');
+homeButton.innerHTML = 'Palaa etusivulle';
+homeButton.style.display = 'block';
+homeButton.id = 'home-btn'; // CSS-muotoilu
+homeButton.style.marginTop = '10px'; 
+homeButton.addEventListener('click', () => {
+    window.location.href = '../index.html';
+});
+answerButtons.appendChild(homeButton); // Lisää painike vastausnappeihin
 };
+
 // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
 function handleNextButton(){
     currentQuestionIndex++;
