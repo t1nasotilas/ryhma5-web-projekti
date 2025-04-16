@@ -1,16 +1,18 @@
 const questions = [
     {
-        question: "Mikä on Etelä-Amerikan suurin maa pinta-alaltaan?",
+        question: "Montako eri valtiota Etelä-Amerikassa on?",
+        image: "../etela-amerikka/images/map.jpg",
         answers: [
-            {text: "Brasilia", correct: true},
-            {text: "Argentiina", correct: false},
-            {text: "Chile", correct: false},
-            {text: "Peru", correct: false}
+            {text: "10", correct: false},
+            {text: "12", correct: true},
+            {text: "15", correct: false},
+            {text: "13", correct: false}
         ],
-        fact: "Oikein! Brasilia on Etelä-Amerikan suurin maa pinta-alaltaan, ja se kattaa yli 8,5 miljoonaa neliökilometriä.",
+        fact: "Oikein! Etelä-Amerikassa on yhteensä 12 itsenäistä maata, mukaan lukien Brasilia, Argentiina ja Chile.",
     },
-    {
+    /*{
         question: "Mikä on Etelä-Amerikan pisin joki?",
+        image: "../etela-amerikka/images/amazonia.jpg",
         answers: [
             {text: "Amazonjoki", correct: true},
             {text: "Orinoco", correct: false},
@@ -32,6 +34,7 @@ const questions = [
     },
     {
         question: "Mikä on Etelä-Amerikan korkein vuori?",
+        image: "../etela-amerikka/images/aconcagua.jpg",
         answers: [
             {text: "Aconcagua", correct: true},
             {text: "Ojos del Salado", correct: false},
@@ -60,7 +63,7 @@ const questions = [
             {text: "Ecuador ja Bolivia", correct: false}
         ],
         fact: "Oikein! Patagonia on alue, joka kattaa osia Chilestä ja Argentiinasta. Se tunnetaan upeista maisemistaan, vuoristaan ja jäätiköistään.",
-    },
+    },*/
 ];
 
 const questionElement = document.getElementById('question');
@@ -182,18 +185,25 @@ function showScore(){
         questionElement.innerHTML += '<br><span style=" color: green;"> Wau! Olet selkeästi Maanosamestari!</span>';
     }
     
-    nextButton.innerHTML = 'Pelaa uudelleen';
-    nextButton.style.display = 'block'; // Shows "Pelaa uudelleen" button
+questionElement.id = 'score-text';
 
 const homeButton = document.createElement('button');
 homeButton.innerHTML = 'Palaa etusivulle';
 homeButton.style.display = 'block';
 homeButton.id = 'home-btn'; // CSS-muotoilu
-homeButton.style.marginTop = '10px'; 
 homeButton.addEventListener('click', () => {
     window.location.href = '../index.html';
 });
-answerButtons.appendChild(homeButton); // Lisää painike vastausnappeihin
+answerButtons.appendChild(homeButton); // Lisää "Palaa etusivulle" -painike vastausnappeihin
+
+const restartButton = document.createElement('button');
+restartButton.innerHTML = 'Pelaa uudelleen';
+restartButton.style.display = 'block';
+restartButton.id = 'home-btn'; // Sama CSS-muotoilu kuin edellisessä painikkeessa
+restartButton.addEventListener('click',() => {
+    window.location.href = '../etela-amerikka/ea.html';
+});
+answerButtons.appendChild(restartButton); 
 };
 
 // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä

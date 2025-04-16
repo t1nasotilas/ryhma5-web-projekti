@@ -9,23 +9,38 @@ body{
 #start-screen{
     background: white;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 100px auto 0;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
 }
 #start-screen h1{
     font-size: 2.5em;
     text-align: center;
     padding-bottom: 10px;
 }
+#start-screen p{
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10px 0;
+}
+p:nth-child(4){
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+#start-screen h3{
+    font-size: 1.5em;
+    text-align: center;
+    color: red;
+}
 .app{
     background: white;
     width: 90%;
-    max-width: 600px;
-    margin: 100px auto 0;
+    max-width: 800px;
+    min-height: 70vh;
+    margin: 100px auto 50px;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
 }
 #start-btn{
     background: #fff;
@@ -103,6 +118,14 @@ body{
     margin: 20px auto 0; /* top, left/right, bottom */
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 10px;
+}
+
+#score-text{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
 }
 
 .correct{
@@ -111,75 +134,19 @@ body{
 .incorrect{
     background: #ffb3b3;
 }
-.question-image{
+.image, .question-image{
     display: block;
     width: 100%;
-    max-width: 600px;
-    max-height: auto;
+    max-width: 500px;
+    max-height: 350px;
     margin: 15px auto;
     border-radius: 4px;
 }
 .answer-message{
-/* viesti oikeasta tai väärästä vastauksesta, mutta ottaa vain sinisen värin oikeaan vastaukseen*/
+/* Text for correct/incorrect answer, but color blue when answer is correct */
     font-size: 1.2em;
     color: blue;
     font-weight: 600;
     text-align: center;
     margin: 20px 0;
-}
-
-/*footer---------------------------------------------------------------------------------------------------------*/
-
-.info-footer {
-    font-size: 1.5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    background-color: #3f3c3c;
-    color: white;
-    padding: 2% 5%;
-    margin-bottom: 1.2%;
-    position:fixed;
-    bottom: 2%;
-    width: 100%;
-   
-}
-
-.developers {
-    flex: 1;
-}
-
-.developer-list {
-    display: flex;
-    gap: 2vh;
-    margin-top: 5px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.project {
-    font-weight: bold;
-    flex: 1;
-}
-
-.logo img {
-    max-height: 7vh;
-    flex: 1;
-}
-
-/* copyright footer*/
-.cr-footer {
-    background-color: #000000;
-    color: white;
-    padding: 0.9% 0;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    
 }
