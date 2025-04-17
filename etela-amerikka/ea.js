@@ -10,7 +10,7 @@ const questions = [
         ],
         fact: "Oikein! Etelä-Amerikassa on yhteensä 12 itsenäistä maata, mukaan lukien Brasilia, Argentiina ja Chile.",
     },
-    /*{
+    {
         question: "Mikä on Etelä-Amerikan pisin joki?",
         image: "../etela-amerikka/images/amazonia.jpg",
         answers: [
@@ -44,14 +44,15 @@ const questions = [
         fact: "Oikein! Aconcagua on Etelä-Amerikan korkein vuori, ja se sijaitsee Argentiinassa. Sen korkeus on 6 961 metriä merenpinnasta.",
     },
     {
-        question: "Mikä on puhutuin äidinkieli Etelä-Amerikassa?",
+        question: "Missä kyseiset patsaat sijaitsevat?",
+        image: "../etela-amerikka/images/moaipatsaat.jpg",
         answers: [
-            {text: "Espanja", correct: false},
-            {text: "Portugali", correct: true},
-            {text: "Ranska", correct: false},
-            {text: "Englanti", correct: false}
+            {text: "Pääsiäis-saarella", correct: true},
+            {text: "Galápagos-saarella", correct: false},
+            {text: "Falklandin-saarella", correct: false},
+            {text: "Tierra del Fuegossa", correct: false}
         ],
-        fact: "Oikein! Portugali on Etelä-Amerikan puhutuin äidinkieli, ja se on virallinen kieli Brasiliassa. Espanja on myös laajasti puhuttu useissa muissa maissa.",
+        fact: "Oikein! Moai-patsaat sijaitsevat Easter Islandilla (Rapa Nui), joka on kuuluisa suurista kivipatsaistaan. Ne ovat osa Rapa Nuin kulttuuriperintöä.",
     },
     {
         question: "Mitkä kaksi maata Patagonia yhdistää?",
@@ -63,7 +64,7 @@ const questions = [
             {text: "Ecuador ja Bolivia", correct: false}
         ],
         fact: "Oikein! Patagonia on alue, joka kattaa osia Chilestä ja Argentiinasta. Se tunnetaan upeista maisemistaan, vuoristaan ja jäätiköistään.",
-    },*/
+    },
 ];
 
 const questionElement = document.getElementById('question');
@@ -180,10 +181,10 @@ function showScore(){
     if (score <= 2){
         questionElement.innerHTML += '<br><span style=" color: red;"> Nyt on aika harjoitella lisää!</span>';
     }else if(score <= 4){
-        questionElement.innerHTML += '<br><span style=" color: light yellow;"> Hienoa työtä! Pystyt varmasti vielä parempaan!</span>';
-    }else if(score == 6){
+        questionElement.innerHTML += '<br><span style=" color: blue;"> Pystyt varmasti vielä parempaan!</span>';
+    }else if(score <= 6){
         questionElement.innerHTML += '<br><span style=" color: green;"> Wau! Olet selkeästi Maanosamestari!</span>';
-    }
+    };
     
 questionElement.id = 'score-text';
 
@@ -194,7 +195,7 @@ homeButton.id = 'home-btn'; // CSS-muotoilu
 homeButton.addEventListener('click', () => {
     window.location.href = '../index.html';
 });
-answerButtons.appendChild(homeButton); // Lisää "Palaa etusivulle" -painike vastausnappeihin
+answerButtons.appendChild(homeButton); // Lisää "Palaa etusivulle" -painike
 
 const restartButton = document.createElement('button');
 restartButton.innerHTML = 'Pelaa uudelleen';
@@ -203,7 +204,13 @@ restartButton.id = 'home-btn'; // Sama CSS-muotoilu kuin edellisessä painikkees
 restartButton.addEventListener('click',() => {
     window.location.href = '../etela-amerikka/ea.html';
 });
-answerButtons.appendChild(restartButton); 
+answerButtons.appendChild(restartButton);
+
+const scorePageImage = document.createElement('img');
+scorePageImage.src = "../etela-amerikka/images/worldmap.avif";
+
+questionElement.appendChild(scorePageImage); // Lisää kuva kysymykseen
+
 };
 
 // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
