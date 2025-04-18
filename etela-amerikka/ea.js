@@ -96,12 +96,11 @@ function shuffleArray(array) {
 
 startButton.addEventListener('click', () => {
     startScreen.style.display = 'none'; // Hides startscreen
-    quizScreen.style.display = 'block'; // Show game
+    quizScreen.style.display = 'block'; // Shows game
     startQuiz(); // Starts game
 });
 
-// Aloitetaan peli, sekoitetaan kysymykset ja vastaukset
-// ja asetetaan nykyinen kysymysindeksi ja pisteet nollaksi
+// Game starts, questions are shuffled and score is set to 0
 function startQuiz() {
     shuffleQuestions();
     currentQuestionIndex = 0;
@@ -110,22 +109,22 @@ function startQuiz() {
     showQuestion();
 };
 
-// Näyttää kysymyksen numeron ja kysymyksen tekstin
+// Shows question number and current question
 function showQuestion(){
-    resetState(); // Tyhjentää edelliset kysymykset ja vastaukset
+    resetState(); 
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + '. ' + currentQuestion.question;
 
     if(currentQuestion.image){
         const imgElement = document.createElement('img');
-        imgElement.src = currentQuestion.image; // Lisää kuva kysymykseen
+        imgElement.src = currentQuestion.image; // Adds image to the question
         imgElement.alt = "Kysymykseen liittyvä kuva";
-        imgElement.classList.add('question-image'); // CSS-muotoilu
+        imgElement.classList.add('question-image'); 
         questionElement.appendChild(imgElement);
     };
 
-    shuffleArray(currentQuestion.answers); // Sekoitamme vastaukset satunnaisesti
+    shuffleArray(currentQuestion.answers); // Shuffle answers
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
@@ -139,8 +138,7 @@ function showQuestion(){
     });
 };
 
-/* Luodaan funktio, joka tyhjentää edelliset kysymykset ja vastaukset
-ja piilottaa "Seuraava" -painikkeen.*/
+// Clears last question and answer
 function resetState(){
     nextButton.style.display = 'none';
     while(answerButtons.firstChild){
@@ -151,15 +149,15 @@ function resetState(){
 function selectAnswer(e){
     const selectButton = e.target;
     const correct = selectButton.dataset.correct;
-    const messageElement = document.createElement('p'); // Luo elementti viestin näyttämistä varten
-    messageElement.classList.add('answer-message'); // CSS-muotoilu
-    let currentQuestion = questions[currentQuestionIndex]; // Haetaan nykyinen kysymys
+    const messageElement = document.createElement('p'); // Element for the message
+    messageElement.classList.add('answer-message'); // CSS-styling
+    let currentQuestion = questions[currentQuestionIndex];
     if(correct){
         selectButton.classList.add('correct');
-        score++; // Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
-        messageElement.innerHTML = currentQuestion.fact; // Näytetään oikean vastauksen fakta
+        score++; // Shows correct answer and adds points
+        messageElement.innerHTML = currentQuestion.fact; // Shows the fact about the question
     }else{
-        // Näytetään viesti punaisella kun vastaus on väärin.
+        // Shows wrong answer with red text
         selectButton.classList.add('incorrect');
         messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>'; 
     };
@@ -170,11 +168,12 @@ function selectAnswer(e){
         if(button.dataset.correct === 'true'){
             button.classList.add('correct');
         }
-        button.disabled = true; // Estetään muiden vastausten valinta
+        button.disabled = true; // Prevents clicking other buttons
     });
-    nextButton.style.display = 'block'; // Näytetään "Seuraava" -painike
+    nextButton.style.display = 'block';
 };
 
+// Shows the score and a message based on the score
 function showScore(){
     resetState();
     questionElement.innerHTML = `Sinun pisteesi ${score} / ${questions.length}`;
@@ -186,21 +185,23 @@ function showScore(){
         questionElement.innerHTML += '<br><span style=" color: green;"> Wau! Olet selkeästi Maanosamestari!</span>';
     };
     
-questionElement.id = 'score-text';
+questionElement.id = 'score-text'; // CSS-styling for the score text
 
+// Create a button to go back to the home page
 const homeButton = document.createElement('button');
 homeButton.innerHTML = 'Palaa etusivulle';
 homeButton.style.display = 'block';
-homeButton.id = 'home-btn'; // CSS-muotoilu
+homeButton.id = 'home-btn';
 homeButton.addEventListener('click', () => {
     window.location.href = '../index.html';
 });
-answerButtons.appendChild(homeButton); // Lisää "Palaa etusivulle" -painike
+answerButtons.appendChild(homeButton);
 
+// Create a button to restart the quiz
 const restartButton = document.createElement('button');
 restartButton.innerHTML = 'Pelaa uudelleen';
 restartButton.style.display = 'block';
-restartButton.id = 'home-btn'; // Sama CSS-muotoilu kuin edellisessä painikkeessa
+restartButton.id = 'home-btn'; // Same CSS ID as home button for styling
 restartButton.addEventListener('click',() => {
     window.location.href = '../etela-amerikka/ea.html';
 });
@@ -209,17 +210,21 @@ answerButtons.appendChild(restartButton);
 const scorePageImage = document.createElement('img');
 scorePageImage.src = "../etela-amerikka/images/worldmap.avif";
 
-questionElement.appendChild(scorePageImage); // Lisää kuva kysymykseen
+questionElement.appendChild(scorePageImage); // Adds the image to the score page
 
 };
 
-// Näytetään käyttäjälle oikea vastaus ja lisätään pisteitä
+// Shows the next question or the score page
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
-        showQuestion();
+        setTimeout(() => {
+            showQuestion();
+        }, 500);
     }else{
-        showScore();
+        setTimeout(() => {
+            showScore();
+        }, 500);
     }
 };
 
