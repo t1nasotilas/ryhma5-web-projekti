@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
           offScreenMenu.classList.toggle("active");
       });
     };
-});
     //hidden containers
     const containers = document.querySelectorAll('.container');
     const observerOptions = {
@@ -49,6 +48,4 @@ document.addEventListener("DOMContentLoaded", () => {
     containers.forEach(container => {
         observer.observe(container);
     });
-
-
-
+});

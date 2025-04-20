@@ -16,7 +16,6 @@ body {
     text-decoration: none;
     overflow-y: auto;
 }
-
 a {
     color: white;
 }
@@ -72,82 +71,99 @@ nav {
 /* main/timeline -------------------------------------------------------------------------------*/
 .timeline {
     display: grid;
+    justify-items: end;
     position: relative;
-    margin: auto 5rem auto auto;
-    width: 80%;
-    gap: 10rem;
+    width: 85%;
+    gap: 7rem;
     overflow-wrap: break-word;
 }
 .vertical-line {
     position: absolute;
-    left: 50%;
-    transform: translateX(-60%);
+    left: 40%;
+    transform: translateX(-40%);
     width: 2px;
     height: 100%;
     background: #ddd;
 }
 .timeline-dot {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: black;
+    width: 35px;
+    height: 35px;
+    background-color: #16151A;
     border-radius: 100%;
-    cursor: pointer;
-    z-index: 1;
-    left: 50%;
+    left: 40%;
+    pointer-events: none;
+
     transform: translate(-50%, 50px) scale(0.1);
-    opacity: 0;
-    visibility: hidden;
     transition: 
-        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-        visibility 0.7s linear,
-        background-color 0.3s ease;
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        visibility 0.3s linear;
     will-change: transform, opacity;
 }
-
 .container.visible .timeline-dot {
     transform: translate(-50%, 0) scale(1);
     opacity: 1;
     visibility: visible;
     transition: 
-        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s,
+        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s,
         opacity 0.5s ease-out 0.1s,
         visibility 0.3s linear 0.1s;
 }
-
-.container.visible .timeline-dot:hover {
-    transform: translate(-50%, -2px) scale(1.1);
-    background-color: #6F86FF;
-}
 .container {
-    justify-self: end;
-    width: 40%;
-    padding: 1.5rem;
-    margin: 5rem 0;
-
+    width: clamp(40%, 45%, 60%);
+    padding: 1rem;
+    margin: 6rem 0;
     visibility: hidden;
     opacity: 0;
-    overflow-x: hidden;
+    overflow: hidden;
+
     transition: 
-    transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-    opacity 0.6s ease-in,
-    visibility 0.8s ease-in;
+        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s,
+        opacity 0.5s ease-out 0.1s,
+        visibility 0.3s linear 0.1s;
 }
 .container.visible  {
     visibility: visible;
     opacity: 1;
 }
-.container .content {
-    transform: translateX(40%);
+.content {
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 
+    transform: translateY(10%);
     transition: 
-    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), 
-    opacity 0.7s ease-out,
-    visibility 0.8s ease-out;
+        transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s,
+        opacity 0.5s ease-out 0.1s,
+        visibility 0.3s linear 0.1s;
 }
 .container.visible .content {
-    transform: translateX(0);
+    transform: translateY(-5%) scale(1);
+}
+.hidden-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-top: 1rem;
+
+    transition:
+        max-height 1s cubic-bezier(0, 0.55, 0.45, 1),
+        opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.content:hover {
+    border: 0.1px solid #16151A;
+}
+.content:hover .hidden-content {
+    max-height: 150px;
+    opacity: 1;
+    transition:
+        max-height 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.30s;
 }
 
 /* ham menu parent-------------------------------------------------------------------------------------------------*/
