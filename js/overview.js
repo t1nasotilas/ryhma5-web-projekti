@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     const games = [
+        { key: "asiaGameScore", name: "Aasia", max: 6 },
+        { key: "africaGameScore", name: "Afrikkavisa", max: 6 },
         { key: "europeGameScore", name: "Eurooppavisa", max: 6 },
         { key: "continentGameScore", name: "Maanosapeli", max: 7 },
-        { key: "southAmericaGameScore", name: "Etelä-Amerikka", max: 6 }
+        { key: "southAmericaGameScore", name: "Etelä-Amerikka", max: 6 },
+        { key: "northAmericaGameScore", name: "Pohjois-Amerikka", max: 6 }
         // add other games here
     ];
 
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         totalScore += score;
         totalMax += game.max;
 
-        const box = boxElements[index + 1]; // index +1 koska 0 on yhteenvetolaatikko
+        const box = boxElements[index]; // index +1 koska 0 on yhteenvetolaatikko
         if (box) {
             box.innerHTML = `
                 <h3>${game.name}</h3>
@@ -28,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const summaryBox = document.querySelector(".summary-box");
     summaryBox.innerHTML = `
         <h1>Yhteenveto</h1>
-        <p class="summary-description"> Kaikki suorittamasi pelit: </p>
+        <p class="summary-description"> Kaikkien suorittamisien pelien pisteet </p>
         <p class="total-score">Yhteispisteet: ${totalScore} / ${totalMax}</p>
     `;
 });

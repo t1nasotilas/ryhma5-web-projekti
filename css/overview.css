@@ -25,6 +25,7 @@ body {
     flex-direction: column;
     gap: 10px;
     justify-content: center;
+    align-items: center;
   }
   
   /* pienet laatikot ruudukossa */
@@ -59,6 +60,62 @@ body {
     margin-top: 5px;
     color: #222;
   }
+
+  /*footer---------------------------------------------------------------------------------------------------------*/
+
+.info-footer {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #3f3c3c;
+  color: white;
+  padding: 2% 5%;
+  margin-bottom: 1.2%;
+  position:fixed;
+  bottom: 2%;
+  width: 100%;
+ 
+}
+
+.developers {
+  flex: 1;
+}
+
+.developer-list {
+  display: flex;
+  gap: 2vh;
+  margin-top: 5px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  font-weight: bold;
+  flex: 1;
+}
+
+.logo img {
+  max-height: 7vh;
+  flex: 1;
+}
+
+/* copyright footer*/
+.cr-footer {
+  background-color: #000000;
+  color: white;
+  padding: 0.9% 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+}
   
   /* mobiili */
   @media (max-width: 768px) {
