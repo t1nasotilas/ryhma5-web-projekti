@@ -177,6 +177,10 @@ function selectAnswer(e){
 function showScore(){
     resetState();
     questionElement.innerHTML = `Sinun pisteesi ${score} / ${questions.length}`;
+
+    // Saves score on localStorage
+    localStorage.setItem("southAmericaGameScore", score);
+
     if (score <= 2){
         questionElement.innerHTML += '<br><span style=" color: red;"> Nyt on aika harjoitella lisää!</span>';
     }else if(score <= 4){
