@@ -11,7 +11,6 @@ body {
     text-decoration: none;
 }
 
-
 /* Linked Hero- and Parallax-effect */
 .hero {
     position: relative;
@@ -23,7 +22,7 @@ body {
 }
 
 .hero.parallax {
-    background: url('images/map.jpg') center/cover no-repeat fixed;
+    background: url('../images/map.jpg') center/cover no-repeat fixed;
 }
 
 .hero::before {
@@ -284,12 +283,7 @@ main {
         align-items: center;
         text-align: center;
     }
-    .dude-img {
-        left: 6%;
-    }
-    .globe-img {
-        left: 140px;
-    }
+
 }
 /* Footer */
 .info-footer {
