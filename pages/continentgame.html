@@ -12,6 +12,7 @@
 </head>
 <body>
   
+
   <div class="off-screen-menu">
     <ul>
       <li><a href="../index.html">Koti</a></li>
@@ -31,8 +32,8 @@
   </nav>
 
     <div class="game-launcher">
-      <h3>Maanosat -peli</h3>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente porro, minima officia provident beatae necessitatibus praesentium incidunt? Ipsa natus quibusdam consectetur minima illum sed dolorum fugiat expedita iste, sint modi.</p>
+      <h3>Maanosapeli</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente porro, minima officia provident beatae necessitatibus praesentium incidunt? Ipsa natus quibusdam consectetur minima illum sed dolorum fugiat expedita iste, sint modi.</p>
       <button id="fullscreen-btn">Aloita peli</button>
     </div>
 
@@ -41,31 +42,30 @@
         <p>Pisteet: <span id="score"></span></p>
         <button id="submit-btn">Tarkista vastaukset</button>
       </div>
-        
-      <div class="map-container">
-        <img src="../images/worldmap.png" class="map" alt="World Map" />
-        
-        <div class="dropzone" id="africa"></div>
-        <div class="dropzone" id="asia"></div>
-        <div class="dropzone" id="europe"></div>
-        <div class="dropzone" id="north-america"></div>
-        <div class="dropzone" id="south-america"></div>
-        <div class="dropzone" id="australia"></div>
-        <div class="dropzone" id="antarctica"></div>
-      </div>
 
-          <div class="draggable-container">
-            <p id="drag-africa" class="continent" draggable="true">Afrikka</p>
-            <p id="drag-asia" class="continent" draggable="true">Aasia</p>
-            <p id="drag-europe" class="continent" draggable="true">Eurooppa</p>
-            <p id="drag-north-america" class="continent" draggable="true">Pohjois-Amerikka</p>
-            <p id="drag-south-america" class="continent" draggable="true">Etelä-Amerikka</p>
-            <p id="drag-australia" class="continent" draggable="true">Australia ja Oseania</p>
-            <p id="drag-antarctica" class="continent" draggable="true">Antarktis</p>
-          </div>
+      <div class="map-container">
+          <img src="../images/worldmap.png" class="map" alt="World Map" />
+
+          <div class="dropzone" id="africa"></div>
+          <div class="dropzone" id="asia"></div>
+          <div class="dropzone" id="europe"></div>
+          <div class="dropzone" id="north-america"></div>
+          <div class="dropzone" id="south-america"></div>
+          <div class="dropzone" id="australia"></div>
+          <div class="dropzone" id="antarctica"></div>
+        
+
+        <div class="draggable-container">
+          <p id="drag-africa" class="continent" draggable="true">Afrikka</p>
+          <p id="drag-asia" class="continent" draggable="true">Aasia</p>
+          <p id="drag-europe" class="continent" draggable="true">Eurooppa</p>
+          <p id="drag-north-america" class="continent" draggable="true">Pohjois-Amerikka</p>
+          <p id="drag-south-america" class="continent" draggable="true">Etelä-Amerikka</p>
+          <p id="drag-australia" class="continent" draggable="true">Australia ja Oseania</p>
+          <p id="drag-antarctica" class="continent" draggable="true">Antarktis</p>
+        </div>
+      </div>
     </div>
-   
-      
 
     <div class="result-overlay" style="display: none;">
       <div class="result-content">
@@ -75,6 +75,6 @@
         <button id="retry-btn">Yritä uudelleen</button>
       </div>
     </div>
-    
+
   </body>
 </html>

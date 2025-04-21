@@ -121,7 +121,7 @@ body.mobile #fullscreen-btn {
     top: 7%;
     left: 80%;
     background-color: #f0f0f0;
-    padding: 2vh 10vh;
+    padding: 1vh 6vh;
     border-radius: 10px;
     display: inline-block;
     font-size: 1.2rem;
@@ -153,6 +153,7 @@ body.mobile #fullscreen-btn {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 1.2vw;
     background: rgb(24, 131, 42);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
@@ -163,8 +164,8 @@ body.mobile #fullscreen-btn {
         rgba(0, 0, 0, 0.09) 0px 8px 4px,
         rgba(0, 0, 0, 0.09) 0px 16px 8px,
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    width: 15vh;
-    height: 6vh;
+    width: 10vw;
+    height: 4vw;
     cursor: grab;
 }
 
@@ -185,10 +186,26 @@ body.mobile #fullscreen-btn {
   
   /* Dropzones use % instead of px or vh for positioning */
   .dropzone {
+
+.map-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+  }
+  
+  .map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+  }
+  
+  /* Dropzones use % instead of px or vh for positioning */
+  .dropzone {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
     position: absolute;
     width: 10%;
     height: 7%;
@@ -199,21 +216,21 @@ body.mobile #fullscreen-btn {
   }
   
   /* Position dropzones using % relative to map image */
-  #africa         { top: 50%; left: 55%; }
-  #asia           { top: 30%; left: 72%; }
-  #europe         { top: 18%; left: 55%; }
+  #africa         { top: 50%; left: 50%; }
+  #asia           { top: 30%; left: 67%; }
+  #europe         { top: 18%; left: 50%; }
   #north-america  { top: 30%; left: 25%; }
   #south-america  { top: 60%; left: 35%; }
   #australia      { top: 70%; left: 80%; }
-  #antarctica     { top: 92%; left: 50%; }
-  
+  #antarctica     { top: 95%; left: 50%; }
+
 
 .draggable-container {
     position: absolute;
     top: 25%;
-    left: 10%;
-    display: grid;
-    grid-template-columns: 1fr;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     align-items: center;
     z-index: 998;

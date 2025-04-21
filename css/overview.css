@@ -1,40 +1,139 @@
-/* Ettei jää navin alle */
-body{
-    padding-top: 6vh;
-}
-
-/* Yhteenveto-box */
-.summary-box {
-    width: 100%;
+body {
+    padding-top: 8vh;
+  }
+  
+  .summary-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    min-height: 50vh;
+    align-items: stretch;
+  }
+  
+  /* yhteenvetolaatikko */
+  .summary-box {
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: 500px;
     background-color: lightgray;
     border: 2px solid black;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
     font-weight: bold;
-    margin: 5px;
-    height: 100%;
-}
-
-/* Pienet laatikot */
-.box {
-    width: 100%;
-    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* pienet laatikot ruudukossa */
+  .games-grid {
+    flex: 2 1 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .box {
     background-color: lightgray;
     border: 2px solid black;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
     font-weight: bold;
-    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* lisätyylit yhteenvetotekstille */
+  .summary-description {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .total-score {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #222;
+  }
+
+  /*footer---------------------------------------------------------------------------------------------------------*/
+
+.info-footer {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #3f3c3c;
+  color: white;
+  padding: 2% 5%;
+  margin-bottom: 1.2%;
+  position:fixed;
+  bottom: 2%;
+  width: 100%;
+ 
 }
 
-@media (max-width: 768px) {
+.developers {
+  flex: 1;
+}
+
+.developer-list {
+  display: flex;
+  gap: 2vh;
+  margin-top: 5px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  font-weight: bold;
+  flex: 1;
+}
+
+.logo img {
+  max-height: 7vh;
+  flex: 1;
+}
+
+/* copyright footer*/
+.cr-footer {
+  background-color: #000000;
+  color: white;
+  padding: 0.9% 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  
+}
+  
+  /* mobiili */
+  @media (max-width: 768px) {
+    .summary-layout {
+      flex-direction: column;
+    }
+    .games-grid {
+      grid-template-columns: 1fr 1fr;
+    }
     .summary-box {
-        height: 300px;  /* 🔹 Yhteenveto-laatikko on korkeampi mobiilissa */
+      flex: 1 1 100%;
+      max-width: 100%;
+      align-items: center;
+      justify-content: center;
     }
-
     .box {
-        aspect-ratio: 2/1; /* 🔹 Pienet laatikot ovat matalampia mobiilissa */
+      flex: 1 1 100%;
+      max-width: 100%;
     }
-}
+  }
+  
