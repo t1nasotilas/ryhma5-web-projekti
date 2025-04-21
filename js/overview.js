@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const games = [
         { key: "europeGameScore", name: "Eurooppavisa", max: 6 },
-        { key: "continentGameScore", name: "Maanosapeli", max: 7 }
+        { key: "continentGameScore", name: "Maanosapeli", max: 7 },
+        { key: "southAmericaGameScore", name: "Etelä-Amerikka", max: 6}
         // add other games here
     ];
 
