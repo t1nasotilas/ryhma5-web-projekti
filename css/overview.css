@@ -1,44 +1,72 @@
-/* Ettei jää navin alle */
-body{
-    padding-top: 6vh;
-}
-
-/* Yhteenveto-box */
-.summary-box {
-    width: 100%;
+body {
+    padding-top: 8vh;
+  }
+  
+  .summary-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    min-height: 50vh;
+    align-items: stretch;
+  }
+  
+  /* yhteenvetolaatikko */
+  .summary-box {
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: 500px;
     background-color: lightgray;
     border: 2px solid black;
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
     font-weight: bold;
-    margin: 5px;
-    height: 100%;
-}
-
-/* Pienet laatikot */
-.box {
-    width: 100%;
-    aspect-ratio: 1/1;
-    background-color: lightgray;
-    border: 2px solid black;
-    border-radius: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: bold;
-    margin: 5px;
-    padding: 10px;
     flex-direction: column;
-}
-
-@media (max-width: 768px) {
-    .summary-box {
-        height: 300px;  /* 🔹 Yhteenveto-laatikko on korkeampi mobiilissa */
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  /* pienet laatikot ruudukossa */
+  .games-grid {
+    flex: 2 1 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .box {
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* lisätyylit yhteenvetotekstille */
+  .summary-description {
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .total-score {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #222;
+  }
+  
+  /* mobiili */
+  @media (max-width: 768px) {
+    .summary-layout {
+      flex-direction: column;
     }
-
-    .box {
-        aspect-ratio: 2/1; /* 🔹 Pienet laatikot ovat matalampia mobiilissa */
+    .games-grid {
+      grid-template-columns: 1fr 1fr;
     }
-}
+  }
+  

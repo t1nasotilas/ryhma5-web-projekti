@@ -1,18 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
     const games = [
-        { key: "europeGameCompleted", element: "Game 1", name: "Eurooppavisa" }
+        { key: "europeGameScore", name: "Eurooppavisa", max: 6 },
+        { key: "continentGameScore", name: "Maanosapeli", max: 7 }
         // add other games here
     ];
 
-    games.forEach((game, index) => {
-        const isCompleted = localStorage.getItem(game.key) === "true";
-        const boxElement = document.querySelectorAll(".box")[index];
+    const boxElements = document.querySelectorAll(".box");
+    let totalScore = 0;
+    let totalMax = 0;
 
-        if (isCompleted) {
-            boxElement.classList.add("completed");
-            boxElement.innerHTML = `<h3>${game.name}</h3><p> &#10003; Suoritettu</p>`;
-        } else {
-            boxElement.innerHTML = `<h3>${game.name}</h3><p> &#10007; Ei suoritettu</p>`;
+    games.forEach((game, index) => {
+        const score = parseInt(localStorage.getItem(game.key)) || 0;
+        totalScore += score;
+        totalMax += game.max;
+
+        const box = boxElements[index + 1]; // index +1 koska 0 on yhteenvetolaatikko
+        if (box) {
+            box.innerHTML = `
+                <h3>${game.name}</h3>
+                <p>Pisteet: ${score} / ${game.max}</p>
+            `;
         }
     });
+
+    // Yhteenvetolaatikkoon yhteispisteet
+    const summaryBox = document.querySelector(".summary-box");
+    summaryBox.innerHTML = `
+        <h1>Yhteenveto</h1>
+        <p class="summary-description"> Kaikki suorittamasi pelit: </p>
+        <p class="total-score">Yhteispisteet: ${totalScore} / ${totalMax}</p>
+    `;
 });
+
