@@ -9,6 +9,7 @@ body {
     padding: 20px;
     min-height: 50vh;
     align-items: stretch;
+    justify-content: center;
   }
   
   /* yhteenvetolaatikko */
@@ -53,6 +54,7 @@ body {
   .summary-description {
     font-size: 1rem;
     color: #444;
+    text-align: center;
   }
   
   .total-score {
@@ -71,7 +73,7 @@ body {
   
   background-color: #3f3c3c;
   color: white;
-  padding: 2% 5%;
+  padding: 1% 5%;
   margin-bottom: 1.2%;
   position:fixed;
   bottom: 2%;
@@ -92,6 +94,7 @@ body {
 .column {
   display: flex;
   flex-direction: column;
+  gap: -2vh;
 }
 
 .project {
@@ -118,6 +121,13 @@ body {
 }
   
   /* mobiili */
+  @media (max-width: 962px) {
+    .summary-box{
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+
   @media (max-width: 768px) {
     .summary-layout {
       flex-direction: column;
