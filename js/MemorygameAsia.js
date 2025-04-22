@@ -3,11 +3,22 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 let matchCounter = 0;
+let clickCounter = 0;
+let score = 5;
+
 const matchCounterElement = document.getElementById("match-counter");
+const clickCounterElement = document.getElementById("click-counter");
+const scoreElement = document.getElementById("final-score");
 
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
+
+  // Lasketaan klikkaus
+  clickCounter++;
+  if (clickCounterElement) {
+    clickCounterElement.textContent = clickCounter;
+  }
 
   this.classList.add('flip');
 
@@ -34,9 +45,13 @@ function disableCards() {
   matchCounterElement.textContent = matchCounter;
 
   if (matchCounter === 6) {
+    calculateScore();
     setTimeout(() => {
       document.querySelector(".memory-game").style.display = "none";
       document.getElementById("game-over").style.display = "flex";
+      if (scoreElement) {
+        scoreElement.textContent = score + " / 5 pistettä";
+      }
     }, 500);
   }
 
@@ -65,6 +80,20 @@ function goToHomePage() {
   window.location.href = "index.html";
 }
 
+function calculateScore() {
+  if (clickCounter <= 24) {
+    score = 5;
+  } else if (clickCounter <= 26) {
+    score = 4;
+  } else if (clickCounter <= 28) {
+    score = 3;
+  } else if (clickCounter <= 32) {
+    score = 2;
+  } else {
+    score = 1;
+  }
+}
+
 (function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
@@ -73,3 +102,8 @@ function goToHomePage() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+function startGame() {
+  document.getElementById("welcome-screen").style.display = "none";
+  document.querySelector(".game-container").style.display = "flex";
+}

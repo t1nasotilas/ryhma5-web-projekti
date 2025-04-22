@@ -9,6 +9,19 @@
 
 
 <body>
+  <div id="welcome-screen">
+    <div class="welcome-box">
+      <h1>Tervetuloa Aasian nähtävyys muistipeliin!</h1>
+      <p>
+        Tarkoituksena on löytää kaikki nähtävyydet eri aasian maista mahdollisimman vähillä klikkauksilla.<br>
+        Saat 5 pistettä, jos suoritat pelin 24 klikkauksella.<br>
+        Mitä enemmän klikkauksia, sitä vähemmän pisteitä.<br>
+        Klikkaa "Aloita peli" kun olet valmis!
+      </p>
+      <button onclick="startGame()">Aloita peli</button>
+    </div>
+  </div>
+
   <div class="game-container">
   <div class="memorygameheadline">
     <h1>Aasian nähtävyys muistipeli</h1>
@@ -38,7 +51,7 @@
       <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
     </div>
     <div class="memory-card" data-framework="Vietnam">
-      <img class="front-face" src="../images/HaLong Bay in Vietnam.png" alt="Vietnam">
+      <img class="front-face" src="../images/HaLongBayinVietnam.png" alt="Vietnam">
       <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
     </div>
 
@@ -72,10 +85,19 @@
 
   <div class="match-list">Löydetyt parit: <span id="match-counter">0</span> / 6</div>
 
+  <div class="match-list">
+    Klikkaukset: <span id="click-counter">0</span>
+  </div>
+
   <div id="game-over">
-    <h2>Peli loppu!</h2>
-    <button onclick="restartGame()">Aloita alusta</button>
-    <button onclick="goToHomePage()">Palaa etusivulle</button>
+    <div class="end-box">
+      <h2>Peli loppui !</h2>
+      <p>Saamasi pisteet: <span id="score">1</span> / 5 pistettä</p>
+      <button onclick="restartGame()">Aloita alusta</button>
+      <a href="../pages/overview.html">
+      <button onclick="goToHomePage()">Palaa etusivulle</button>
+      </a>
+    </div>
   </div>
 </body>
 </html>
