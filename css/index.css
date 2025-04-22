@@ -119,8 +119,7 @@ nav {
     color: white;
     padding: 2% 5%;
     margin-bottom: 1.2%;
-    position:fixed;
-    bottom: 2%;
+    position:absolute;
     width: 100%;
    
 }
