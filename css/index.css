@@ -8,6 +8,9 @@
     list-style: none;
     text-decoration: none;
 }
+body {
+    margin-top: 6vh; /* to avoid nav overlap */
+}
 
 .article{
     display: flex;

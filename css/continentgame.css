@@ -1,15 +1,14 @@
 html, body {
     margin: 0;
     padding: 0;
-   
     overflow: hidden; /* prevents scroll */
   }
   
-
 body {
     text-align: center;
     background-color: #444;
 }
+
 
 
 .game-launcher {
@@ -28,6 +27,24 @@ body {
     align-items: center;
     z-index: 999;
 }
+
+body.mobile .game-launcher {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 2vh;
+    border-radius: 30px;
+    background-color: rgb(206, 206, 206);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 999;
+}
+
 .result-overlay {
     display: none;
     position: absolute;
@@ -45,8 +62,6 @@ body {
     align-items: center;
     z-index: 999;
 }
-
-
 
 #save-btn {
   padding: 10px 20px;
@@ -78,7 +93,21 @@ body {
     transition: 0.2s;
     justify-self: center;
     z-index: 999;
-  }
+}
+
+body.mobile #fullscreen-btn {
+    bottom: 6%;
+    background-color:rgb(112, 105, 105);
+    border-radius: 3px;
+    height: 9vh;
+    width: 25vh;
+    padding: 2vh;
+    opacity: 0.6;
+    transition: 0.2s;
+    justify-self: center;
+    z-index: 999;
+}
+
 #fullscreen-btn:hover {
     opacity: 1;
     bottom: 5%;
@@ -92,15 +121,15 @@ body {
     top: 7%;
     left: 80%;
     background-color: #f0f0f0;
-    padding: 2vh 10vh;
+    padding: 1vh 6vh;
     border-radius: 10px;
     display: inline-block;
     font-size: 1.2rem;
+    z-index: 999;
   }
   #score {
     font-size: 5vh;
   }
-
 
   #submit-btn {
     padding: 10px 20px;
@@ -112,11 +141,19 @@ body {
     cursor: pointer;
   }
 
-  .continent {
+.map {
+    border-radius: 50%;
+    margin-top: 7vh;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.continent {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 1.2vw;
     background: rgb(24, 131, 42);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
@@ -127,20 +164,11 @@ body {
         rgba(0, 0, 0, 0.09) 0px 8px 4px,
         rgba(0, 0, 0, 0.09) 0px 16px 8px,
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    width: 15vh;
-    height: 6vh;
+    width: 10vw;
+    height: 4vw;
     cursor: grab;
 }
 
-
-
-.map {
-    border-radius: 50%;
-    margin-top: 7vh;
-    width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
 
 .map-container {
     position: relative;
@@ -156,10 +184,28 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
   }
   
+.map-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+  }
+  
+  .map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+  }
+  
+  /* Dropzones use % instead of px or vh for positioning */
   .dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     width: 10%;
-    height: 5%;
+    height: 7%;
     background: rgba(255, 255, 255, 0.5);
     border: 1px dashed black;
     border-radius: 10px;
@@ -167,28 +213,25 @@ body {
   }
   
   /* Position dropzones using % relative to map image */
-  #africa         { top: 50%; left: 55%; }
-  #asia           { top: 30%; left: 72%; }
-  #europe         { top: 25%; left: 55%; }
+  #africa         { top: 50%; left: 50%; }
+  #asia           { top: 30%; left: 67%; }
+  #europe         { top: 18%; left: 50%; }
   #north-america  { top: 30%; left: 25%; }
   #south-america  { top: 60%; left: 35%; }
-  #australia      { top: 70%; left: 85%; }
+  #australia      { top: 70%; left: 80%; }
   #antarctica     { top: 95%; left: 50%; }
-  
+
 
 .draggable-container {
     position: absolute;
     top: 25%;
-    left: 10%;
+    left: 0%;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
     align-items: center;
     z-index: 998;
 }
-
-
-
 
 .continent .dragging {
     z-index: 999;
@@ -202,8 +245,6 @@ body {
     overflow: hidden;
   }
   
-  
-  
 body.mobile .dropzone {
     width: 25vh;
     height: 10vh;
@@ -213,26 +254,31 @@ body.mobile .dropzone {
 
 body.mobile .map {
     width: 85%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
 }
 
-body.mobile .continent {
-    
+body.mobile .continent {  
     border-radius: 10px;
     width: 25vh;
     height: 10vh;
     cursor: grab;
 }
 
+.mobile-drag {
+    pointer-events: none;
+    opacity: 0.9;
+    border: 2px dashed #444;
+  }
+  
 body.mobile .draggable-container {
-    top: 10%;
+    position: absolute;
+    display: grid;
+    top: 18%;
     left: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+    align-items: center;
+    z-index: 998;
     font-size: 2.5vh;
-    
 }
 
 body.mobile #scoreboard {
@@ -254,3 +300,4 @@ body.mobile #submit-btn {
     border-radius: 5px;
     cursor: pointer;
   }
+
