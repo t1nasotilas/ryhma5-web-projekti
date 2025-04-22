@@ -1,149 +1,40 @@
-body {
-  padding-top: 8vh;
-  background: linear-gradient(145deg, #e1e1ff 0%, #6169ff 100%);
-  background: url('../images/map.jpg') center/cover no-repeat fixed;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
+/* Ettei jää navin alle */
+body{
+    padding-top: 6vh;
 }
 
-.summary-layout {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  min-height: 50vh;
-  align-items: stretch;
-  justify-content: center;
-}
-
-/* Overview box */
+/* Yhteenveto-box */
 .summary-box {
-  flex: 1 1 300px;
-  min-width: 300px;
-  max-width: 500px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 30px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Small boxes */
-.games-grid {
-  flex: 2 1 500px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.box {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 15px;
-  padding: 20px;
-  font-weight: bold;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-}
-
-/* Text styles */
-.summary-box h1 {
-  font-size: 2rem;
-  color: #ffffff;
-  border-bottom: 3px solid #695dc5;
-  padding-bottom: 10px;
-}
-.summary-description {
-  font-size: 1rem;
-  color: #dcdcdc;
-}
-.total-score {
-  font-size: 1.3rem;
-  color: #ffffff;
-}
-
-/* Footer */
-.info-footer {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  color: white;
-  padding: 0.7% 2%;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.developers {
-  flex: 1;
-}
-
-.developer-list {
-  display: flex;
-  gap: 2vh;
-  margin-top: 5px;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.project {
-  font-weight: bold;
-  flex: 1;
-}
-.project p {
-  margin-top: 2vh;
-}
-.logo img {
-  max-height: 8vh;
-  flex: 1;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .summary-layout {
-    flex-direction: column;
-  }
-
-  .games-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .summary-box {
-    flex: 1 1 100%;
-    max-width: 100%;
-    align-items: center;
+    width: 100%;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
     justify-content: center;
-  }
+    font-weight: bold;
+    margin: 5px;
+    height: 100%;
+}
 
-  .box {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+/* Pienet laatikot */
+.box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 5px;
+}
+
+@media (max-width: 768px) {
+    .summary-box {
+        height: 300px;  /* 🔹 Yhteenveto-laatikko on korkeampi mobiilissa */
+    }
+
+    .box {
+        aspect-ratio: 2/1; /* 🔹 Pienet laatikot ovat matalampia mobiilissa */
+    }
 }

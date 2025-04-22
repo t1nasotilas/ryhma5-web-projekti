@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+   
     overflow: hidden; /* prevents scroll */
   }
   
@@ -91,11 +92,10 @@ body {
     top: 7%;
     left: 80%;
     background-color: #f0f0f0;
-    padding: 1vh 6vh;
+    padding: 2vh 10vh;
     border-radius: 10px;
     display: inline-block;
     font-size: 1.2rem;
-    z-index: 999;
   }
   #score {
     font-size: 5vh;
@@ -126,7 +126,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.2vw;
     background: rgb(24, 131, 42);
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
@@ -137,58 +136,74 @@ body {
         rgba(0, 0, 0, 0.09) 0px 8px 4px,
         rgba(0, 0, 0, 0.09) 0px 16px 8px,
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    width: 10vw;
-    height: 4vw;
+    width: 15vh;
+    height: 6vh;
     cursor: grab;
 }
 
 
 
-.map-container {
-    position: relative;
-    width: 90%;
-    margin: auto;
-  }
-  
-  .map {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
-  }
-  
-  /* Dropzones use % instead of px or vh for positioning */
-  .dropzone {
+.dropzone {
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    width: 10%;
-    height: 7%;
+    width: 15vh;
+    height: 6vh;
     background: rgba(255, 255, 255, 0.5);
     border: 1px dashed black;
     border-radius: 10px;
     transform: translate(-50%, -50%);
-  }
-  
-  /* Position dropzones using % relative to map image */
-  #africa         { top: 50%; left: 50%; }
-  #asia           { top: 30%; left: 67%; }
-  #europe         { top: 18%; left: 50%; }
-  #north-america  { top: 30%; left: 25%; }
-  #south-america  { top: 60%; left: 35%; }
-  #australia      { top: 70%; left: 80%; }
-  #antarctica     { top: 95%; left: 50%; }
+}
 
+#africa {
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+#asia {
+    top: 25%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+}
+
+#europe {
+    top: 20%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+#north-america {
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+#south-america {
+    top: 55%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+}
+
+#australia {
+    top: 66%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+
+#antarctica {
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .draggable-container {
     position: absolute;
     top: 25%;
-    left: 0%;
+    left: 10%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
     align-items: center;
     z-index: 998;
 }
