@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/map.jpg') center/cover no-repeat fixed;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  .glass-textbox {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+  
+  .developer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
+  /* Footer */
+  .info-footer {
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    color: white;
+    padding: 0.7% 2%;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .developers {
+    flex: 1;
+  }
+  
+  .developer-list {
+    display: flex;
+    gap: 2vh;
+    margin-top: 5px;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .project {
+    font-weight: bold;
+    flex: 1;
+  }
+  .project p {
+    margin-top: 2vh;
+  }
+  .logo img {
+    max-height: 8vh;
+    flex: 1;
+  }
+  
+  /* Link colors */
+  a {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+  a:hover {
+    color: #6F86FF;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .developer-list {
+        font-size: 1rem;
+    }
+  }
