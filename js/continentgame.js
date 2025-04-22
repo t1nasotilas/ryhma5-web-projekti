@@ -53,18 +53,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const draggedElement = document.getElementById(draggedId);
         
             if (draggedElement) {
-                // ✅ Return previously placed item, if any
+                //  Return previously placed item, if any
                 const previousId = zone.dataset.continent;
                 if (previousId) {
                     const previousElement = document.getElementById(`drag-${previousId}`);
                     if (previousElement) previousElement.style.display = "block";
                 }
         
-                // ✅ Place new one
+                //  Place new one
                 zone.textContent = draggedElement.textContent;
                 draggedElement.style.display = "none";
         
-                // ✅ Update dataset + placements
+                //  Update dataset + placements
                 zone.dataset.continent = draggedId.replace("drag-", "");
                 placements[zone.id] = draggedId.replace("drag-", "");
             }
@@ -161,18 +161,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     const dropId = dropTarget.id;
                     const dragId = dragging.id.replace("drag-", "");
                 
-                    // ✅ Return previously placed item
+                    //  Return previously placed item
                     const previousId = dropTarget.dataset.continent;
                     if (previousId) {
                         const previousElement = document.getElementById(`drag-${previousId}`);
                         if (previousElement) previousElement.style.display = "block";
                     }
                 
-                    // ✅ Place new item
+                    //  Place new item
                     dropTarget.innerText = dragging.innerText;
                     dragging.style.display = "none";
                 
-                    // ✅ Track placement
+                    //  Track placement
                     dropTarget.dataset.continent = dragId;
                     placements[dropId] = dragId;
                 }
