@@ -1,7 +1,7 @@
 const questions = [
     {
         question: "Montako eri valtiota Etelä-Amerikassa on?",
-        image: "../etela-amerikka/images/map.jpg",
+        image: "../images/map.jpg",
         answers: [
             {text: "10", correct: false},
             {text: "12", correct: true},
@@ -12,7 +12,7 @@ const questions = [
     },
     {
         question: "Mikä on Etelä-Amerikan pisin joki?",
-        image: "../etela-amerikka/images/amazonia.jpg",
+        image: "../images/amazonia.jpg",
         answers: [
             {text: "Amazonjoki", correct: true},
             {text: "Orinoco", correct: false},
@@ -23,7 +23,7 @@ const questions = [
     },
     {
         question: "Missä kaupungissa kuvan nähtävyys sijaitsee?",
-        image: "../etela-amerikka/images/kristus.jpg",
+        image: "../images/kristus.jpg",
         answers: [
             {text: "Buenos Aires", correct: false},
             {text: "Santiago", correct: false},
@@ -34,7 +34,7 @@ const questions = [
     },
     {
         question: "Mikä on Etelä-Amerikan korkein vuori?",
-        image: "../etela-amerikka/images/aconcagua.jpg",
+        image: "../images/aconcagua.jpg",
         answers: [
             {text: "Aconcagua", correct: true},
             {text: "Ojos del Salado", correct: false},
@@ -45,7 +45,7 @@ const questions = [
     },
     {
         question: "Missä kyseiset patsaat sijaitsevat?",
-        image: "../etela-amerikka/images/moaipatsaat.jpg",
+        image: "../images/moaipatsaat.jpg",
         answers: [
             {text: "Pääsiäis-saarella", correct: true},
             {text: "Galápagos-saarella", correct: false},
@@ -56,7 +56,7 @@ const questions = [
     },
     {
         question: "Mitkä kaksi maata Patagonia yhdistää?",
-        image: "../etela-amerikka/images/patagonia1.jpg",
+        image: "../images/patagonia1.jpg",
         answers: [
             {text: "Chile ja Argentiina", correct: true},
             {text: "Brasilia ja Peru", correct: false},
@@ -207,12 +207,12 @@ restartButton.innerHTML = 'Pelaa uudelleen';
 restartButton.style.display = 'block';
 restartButton.id = 'home-btn'; // Same CSS ID as home button for styling
 restartButton.addEventListener('click',() => {
-    window.location.href = '../etela-amerikka/ea.html';
+    window.location.href = '../pages/ea.html';
 });
 answerButtons.appendChild(restartButton);
 
 const scorePageImage = document.createElement('img');
-scorePageImage.src = "../etela-amerikka/images/worldmap.avif";
+scorePageImage.src = "../images/worldmap.avif";
 
 questionElement.appendChild(scorePageImage); // Adds the image to the score page
 
