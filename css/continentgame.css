@@ -112,16 +112,7 @@ body {
     cursor: pointer;
   }
 
-
-
-.map {
-    border-radius: 50%;
-    margin-top: 7vh;
-    width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-}
-.continent {
+  .continent {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,59 +134,47 @@ body {
 
 
 
-.dropzone {
+.map {
+    border-radius: 50%;
+    margin-top: 7vh;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.map-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+  }
+  
+  .map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
+  }
+  
+  .dropzone {
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 15vh;
-    height: 6vh;
+    width: 10%;
+    height: 5%;
     background: rgba(255, 255, 255, 0.5);
     border: 1px dashed black;
     border-radius: 10px;
     transform: translate(-50%, -50%);
-}
-
-#africa {
-    top: 45%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-}
-#asia {
-    top: 25%;
-    left: 72%;
-    transform: translate(-50%, -50%);
-}
-
-#europe {
-    top: 20%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-}
-
-#north-america {
-    top: 25%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-}
-
-#south-america {
-    top: 55%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-}
-
-#australia {
-    top: 66%;
-    left: 85%;
-    transform: translate(-50%, -50%);
-}
-
-#antarctica {
-    top: 93%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+  }
+  
+  /* Position dropzones using % relative to map image */
+  #africa         { top: 50%; left: 55%; }
+  #asia           { top: 30%; left: 72%; }
+  #europe         { top: 25%; left: 55%; }
+  #north-america  { top: 30%; left: 25%; }
+  #south-america  { top: 60%; left: 35%; }
+  #australia      { top: 70%; left: 85%; }
+  #antarctica     { top: 95%; left: 50%; }
+  
 
 .draggable-container {
     position: absolute;
