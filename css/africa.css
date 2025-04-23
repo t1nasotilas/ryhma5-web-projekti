@@ -1,39 +1,53 @@
-body {
+/* === Base Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 60px;
     background-color: #f4f4f4;
-}
-.game-container {
+  }
+  
+  /* === Game Board === */
+  .game-container {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
-}
-
-/*Card styles*/
-.card {
-    width: 100px;
-    height: 100px;
+    width: 90vw;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* === Card Styles === */
+  .card {
+    aspect-ratio: 1 / 1;
+    width: 100%;
     perspective: 1000px;
     cursor: pointer;
     position: relative;
-}
-
-.card-inner {
+  }
+  
+  .card-inner {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
-}
-
-.card.flipped .card-inner {
+  }
+  
+  .card.flipped .card-inner {
     transform: rotateY(180deg);
-}
-
-.card .front, .card .back {
+  }
+  
+  .card .front, .card .back {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -43,44 +57,110 @@ body {
     justify-content: center;
     border: 2px solid black;
     background-color: white;
-}
-
-.card .front {
-    transform: rotateY(180deg);
-    background-color: white;
-    font-weight: bold;
     padding: 5px;
     text-align: center;
-}
-
-.card .back {
-    background-image: url('card-back.png');
+    font-weight: bold;
+  }
+  
+  .card .front {
+    transform: rotateY(180deg);
+  }
+  
+  .card .back {
+    background-image: url('card-back.png'); /* or use a better quality one */
     background-size: cover;
-}
-
-.match .back {
+    background-position: center;
+  }
+  
+  /* Match styles */
+  .match .back {
     display: flex;
-}
-.match .front {
+  }
+  .match .front {
     display: none;
-}
-.wrong {
-    background-color: lightcoral;
-}
-
-/* Link colors */
-a {
-    color: white;
-}
-a:visited {
-    color: white;
-}
-a:hover {
-    color: #6F86FF;
-}
-
-/* Off-screen-menu */
-.off-screen-menu {
+  }
+  
+  .wrong {
+    background-color: lightcoral !important;
+    transition: background-color 0.3s;
+  }
+  
+  /* === Responsive Text & Images === */
+  .card img {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  @media (max-width: 600px) {
+    .card .front, .card .back {
+      font-size: 4vw;
+    }
+  
+    .card img {
+      width: 60%;
+    }
+  }
+  
+  /* === Navigation === */
+  nav {
+    padding: 1rem;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6vh;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000; 
+  }
+  
+  /* === Hamburger Menu === */
+  .ham-menu {
+    height: 50px;
+    width: 40px;
+    position: fixed;
+    left: 1%;
+    top: 1%;
+    z-index: 1001;
+  }
+  .ham-menu span {
+    height: 10%;
+    width: 100%;
+    background-color: #070707;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+  }
+  .ham-menu span:nth-child(1) {
+    top: 25%;
+  }
+  .ham-menu span:nth-child(3) {
+    top: 75%;
+  }
+  .ham-menu.active span {
+    background-color: black;
+  }
+  .ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .ham-menu.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  
+  /* === Off-Screen Menu === */
+  .off-screen-menu {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -98,64 +178,30 @@ a:hover {
     font-size: 4vh;
     transition: .3s ease;
     z-index: 1000;
-}
-.off-screen-menu.active {
+  }
+  .off-screen-menu.active {
     left: 0;
-}
-
-/* Navigation */
-nav {
-    padding: 1rem;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6vh;
-    color: #333;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    z-index: 1000; 
-}
-
-/* Ham-menu*/
-.ham-menu {
-    height: 60px;
-    width: 50px;
-    position: fixed;
-    left: 1%;
-    top: 0.5%;
-    z-index: 1000;
-}
-.ham-menu span {
-    height: 10%;
-    width: 100%;
-    background-color: #070707;
-    border-radius: 25px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s ease;
-}
-.ham-menu span:nth-child(1) {
-    top: 25%;
-}
-.ham-menu span:nth-child(3) {
-    top: 75%;
-}
-.ham-menu.active span {
-    background-color: black;
-}
-.ham-menu.active span:nth-child(1) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-.ham-menu.active span:nth-child(2) {
-    opacity: 0;
-}
-.ham-menu.active span:nth-child(3) {
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-}
+  }
+  
+  .off-screen-menu ul {
+    list-style: none;
+  }
+  
+  .off-screen-menu a {
+    color: white;
+    text-decoration: none;
+  }
+  .off-screen-menu a:hover {
+    color: #6F86FF;
+  }
+  
+  /* === Links === */
+  a {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+  a:hover {
+    color: #6F86FF;
+  }  

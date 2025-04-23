@@ -58,60 +58,120 @@ const countries = [
 
 ];
 
-//gameData holds all the information about the cards in the game//
-//flippedCards keeps track of the cards the player has played during the game//
-//score keeps a track of the score during the game, which starts from 0//
+// Game variables
 let gameData = [];
 let flippedCards = [];
-let score = 0;
+let lockBoard = false;
 
-//The shuffle function performs a randomized suffle on the elements of the array//
-//Let's use Fisher-Yates shuffle for the most randomized results//
+// Fisher-Yates shuffle
 function shuffle(array) {
-for (let i = array.length - 1; i > 0; i--) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
-}
-return array;
+  }
+  return array;
 }
 
-//Picks 12 countries from shuffled the array//
-//Makes sure that each country appears twice for matching//
+// Initialize game
 function initializeGame() {
-const selectedCountries = shuffle(countries).slice(0, 6); // Changed from 20 to 6
-gameData = shuffle([...selectedCountries, ...selectedCountries].map((item, index) => ({
-    id: index,
-    value: index % 2 === 0 ? item.name : item.flag,
-    matched: false
-})));
+  const selectedCountries = shuffle([...countries]).slice(0, 6);
+  const cards = [];
 
-// Get the game board container
-const gameBoard = document.getElementById("gameBoard");
-gameBoard.innerHTML = "";
+  selectedCountries.forEach((country, index) => {
+    cards.push({
+      id: `${index}-name`,
+      type: "name",
+      value: country.name,
+      matchId: index,
+      matched: false
+    });
+    cards.push({
+      id: `${index}-flag`,
+      type: "flag",
+      value: country.flag,
+      matchId: index,
+      matched: false
+    });
+  });
 
-// Create and append cards to the game board
-gameData.forEach(item => {
+  gameData = shuffle(cards);
+  renderGameBoard();
+}
+
+// Render the board
+function renderGameBoard() {
+  const gameBoard = document.getElementById("gameBoard");
+  gameBoard.innerHTML = "";
+
+  gameData.forEach((cardData) => {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.dataset.id = item.id;
+    card.dataset.id = cardData.id;
+
+    const inner = document.createElement("div");
+    inner.classList.add("card-inner");
 
     const front = document.createElement("div");
     front.classList.add("front");
-    front.innerHTML = "?";
 
-// Show image if value is a flag, else show country name
     const back = document.createElement("div");
     back.classList.add("back");
-    back.innerHTML = item.value.includes(".png") ? `<img src="${item.value}" width="80">` : item.value;
 
-// Assemble the card and attach flip handler
-    card.appendChild(front);
-    card.appendChild(back);
-    card.addEventListener("click", () => flipCard(card, item));
+    if (cardData.type === "flag") {
+      back.innerHTML = `<img src="${cardData.value}" width="80" />`;
+    } else {
+      back.textContent = cardData.value;
+    }
 
-// Add card to the game board
+    inner.appendChild(front);
+    inner.appendChild(back);
+    card.appendChild(inner);
+
+    card.addEventListener("click", () => flipCard(card, cardData));
+
     gameBoard.appendChild(card);
-});
+  });
 }
 
+// Flip logic
+function flipCard(card, data) {
+  if (lockBoard || data.matched || flippedCards.includes(card)) return;
+
+  card.classList.add("flipped");
+  flippedCards.push({ card, data });
+
+  if (flippedCards.length === 2) {
+    lockBoard = true;
+    const [first, second] = flippedCards;
+
+    if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
+      first.data.matched = true;
+      second.data.matched = true;
+
+      // Keep cards flipped (showing back view)
+      first.card.classList.add("match");
+      second.card.classList.add("match");
+
+      resetFlippedCards();
+    } else {
+      // Wrong guess, flash red and flip back
+      first.card.classList.add("wrong");
+      second.card.classList.add("wrong");
+
+      setTimeout(() => {
+        first.card.classList.remove("flipped", "wrong");
+        second.card.classList.remove("flipped", "wrong");
+        resetFlippedCards();
+      }, 1000);
+    }
+  }
+}
+
+// Reset flippedCards and unlock board
+function resetFlippedCards() {
+  flippedCards = [];
+  lockBoard = false;
+}
+
+// Start the game
 initializeGame();
