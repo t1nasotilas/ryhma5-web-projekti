@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const box = boxElements[index]; // index +1 koska 0 on yhteenvetolaatikko
         if (box) {
             box.innerHTML = `
-                <h3>${game.name}</h3>
+                <h2>${game.name}</h2>
                 <p>Pisteet: ${score} / ${game.max}</p>
             `;
         }
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Yhteenvetolaatikkoon yhteispisteet
     const summaryBox = document.querySelector(".summary-box");
     summaryBox.innerHTML = `
-        <h1>Yhteenveto</h1>
+        <h1>YHTEENVETO</h1>
         <p class="summary-description"> Kaikkien suorittamisien pelien pisteet </p>
         <p class="total-score">Yhteispisteet: ${totalScore} / ${totalMax}</p>
     `;
