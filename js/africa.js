@@ -54,8 +54,7 @@ const countries = [
     { name: "Tunisia", flag: "tunisia.png" },
     { name: "Uganda", flag: "uganda.png" },
     { name: "Zambia", flag: "zambia.png" },
-    { name: "Zimbabve", flag: "zimbabwe.png" }
-
+    { name: "Zimbabwe", flag: "zimbabwe.png" }
 ];
 
 // Game variables
@@ -74,7 +73,7 @@ function shuffle(array) {
 
 // Initialize game
 function initializeGame() {
-  const selectedCountries = shuffle([...countries]).slice(0, 6);
+  const selectedCountries = shuffle([...countries]).slice(0, 10); // Select 10 countries
   const cards = [];
 
   selectedCountries.forEach((country, index) => {
@@ -167,11 +166,9 @@ function flipCard(card, data) {
   }
 }
 
-// Reset flippedCards and unlock board
 function resetFlippedCards() {
   flippedCards = [];
   lockBoard = false;
 }
 
-// Start the game
 initializeGame();
