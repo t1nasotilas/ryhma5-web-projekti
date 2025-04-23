@@ -1,57 +1,153 @@
 body {
   padding-top: 8vh;
-  background: linear-gradient(145deg, #e1e1ff 0%, #6169ff 100%);
   background: url('../images/map.jpg') center/cover no-repeat fixed;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
   overflow-x: hidden;
+  position: relative;
+}
+body::before{
+  content: '';
+  position: fixed; /* Tai absolute, jos haluat skrollattavan */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(3, 12, 75, 0.3), rgba(8, 5, 56, 0.2)); 
+  z-index: 0;
+}
+* {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+/*ham-menu*/
+a {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: #6F86FF;
+}
+.off-screen-menu {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 100%;
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  left: -400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+  text-align: center;
+  font-size: 4vh;
+  transition: .3s ease;
+  z-index: 1000;
+}
+.off-screen-menu.active {
+  left: 0;
+}
+
+/* Navigation */
+nav {
+  padding: 1rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6vh;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  z-index: 1000; 
+}
+
+/* Ham-menu*/
+.ham-menu {
+  height: 60px;
+  width: 50px;
+  position: fixed;
+  left: 1%;
+  top: 0.5%;
+  z-index: 1000;
+}
+.ham-menu span {
+  height: 10%;
+  width: 100%;
+  background-color: #070707;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+.ham-menu.active span {
+  background-color: black;
+}
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .summary-layout {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 2rem;
   padding: 20px;
-  min-height: 50vh;
-  align-items: stretch;
+  margin-top: 3rem;
   justify-content: center;
 }
 
 /* Overview box */
 .summary-box {
-  flex: 1 1 300px;
-  min-width: 300px;
-  max-width: 500px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 30px;
   font-weight: bold;
   display: flex;
   flex-direction: column;
   gap: 15px;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  width: 100%;
 }
 
 /* Small boxes */
 .games-grid {
-  flex: 2 1 500px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 1.5rem;
+  margin: 0 auto;
 }
 
 .box {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #1a1a2e;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
-  padding: 20px;
+  padding: 25px;
   font-weight: bold;
   color: #fff;
   display: flex;
@@ -59,69 +155,88 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+  -8px -8px 16px rgba(255, 255, 255, 0.05),
+  8px 8px 16px rgba(0, 0, 0, 0.3),
+  inset 2px 2px 4px rgba(255, 255, 255, 0.05), 
+  inset -2px -2px 4px rgba(0, 0, 0, 0.3);
 }
 .box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  border: 2px solid white;
+  box-shadow:
+  -4px -4px 8px rgba(255, 255, 255, 0.1),
+  4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Text styles */
 .summary-box h1 {
-  font-size: 2rem;
+  font-weight:700;
+  font-size: 3rem;
   color: #ffffff;
+
   border-bottom: 3px solid #695dc5;
   padding-bottom: 10px;
-}
-.summary-description {
-  font-size: 1rem;
-  color: #dcdcdc;
-}
-.total-score {
-  font-size: 1.3rem;
-  color: #ffffff;
+  text-shadow: 
+    2px 4px 8px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.6);
+  padding: 0 15px 10px 15px;
 }
 
-/* Footer */
+.summary-description {
+  font-size: 1.2rem;
+  color: #ffffff;
+
+  text-shadow: 
+    2px 4px 8px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.6);
+}
+.total-score {
+  font-size: 1.2rem;
+  color: #ffffff;
+
+  text-shadow: 
+    2px 4px 8px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+  /*footer---------------------------------------------------------------------------------------------------------*/
+
 .info-footer {
   font-size: 1.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
   color: white;
   padding: 0.7% 2%;
-  position: sticky;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+ 
 }
-
 .developers {
   flex: 1;
 }
-
 .developer-list {
   display: flex;
   gap: 2vh;
   margin-top: 5px;
 }
-
 .column {
   display: flex;
   flex-direction: column;
 }
-
 .project {
   font-weight: bold;
   flex: 1;
 }
-.project p {
-  margin-top: 2vh;
-}
+
 .logo img {
-  max-height: 8vh;
+  max-height: 7vh;
   flex: 1;
 }
 
@@ -129,21 +244,24 @@ body {
 @media (max-width: 768px) {
   .summary-layout {
     flex-direction: column;
+    margin-bottom: 2rem;
   }
-
   .games-grid {
     grid-template-columns: 1fr 1fr;
   }
-
-  .summary-box {
-    flex: 1 1 100%;
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-
   .box {
-    flex: 1 1 100%;
     max-width: 100%;
+  }
+  .info-footer {
+    position: relative;
+  }
+}
+
+@media (max-width: 500px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+  .box {
+    padding: 20px;
   }
 }
