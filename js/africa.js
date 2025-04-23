@@ -47,7 +47,6 @@ const countries = [
     { name: "Sudan", flag: "../images/flags/sudan-flag-medium.png" },
     { name: "Etelä-Afrikka", flag: "../images/flags/south-africa-flag-medium.png" },
     { name: "Etelä-Sudan", flag: "../images/flags/south-sudan-flag-medium.png" },
-    { name: "Swazimaa", flag: "../images/flags/swaziland-flag-medium.png" },
     { name: "Tansania", flag: "../images/flags/tanzania-flag-medium.png" },
     { name: "Tšad", flag: "../images/flags/chad-flag-medium.png" },
     { name: "Togo", flag: "../images/flags/togo-flag-medium.png" },
@@ -73,7 +72,7 @@ function shuffle(array) {
 
 // Initialize game
 function initializeGame() {
-  const selectedCountries = shuffle([...countries]).slice(0, 10); // Select 10 countries
+  const selectedCountries = shuffle([...countries]).slice(0, 10);
   const cards = [];
 
   selectedCountries.forEach((country, index) => {
@@ -134,36 +133,33 @@ function renderGameBoard() {
 
 // Flip logic
 function flipCard(card, data) {
-  if (lockBoard || data.matched || flippedCards.includes(card)) return;
-
-  card.classList.add("flipped");
-  flippedCards.push({ card, data });
-
-  if (flippedCards.length === 2) {
-    lockBoard = true;
-    const [first, second] = flippedCards;
-
-    if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
-      first.data.matched = true;
-      second.data.matched = true;
-
-      // Keep cards flipped (showing back view)
-      first.card.classList.add("match");
-      second.card.classList.add("match");
-
-      resetFlippedCards();
-    } else {
-      // Wrong guess, flash red and flip back
-      first.card.classList.add("wrong");
-      second.card.classList.add("wrong");
-
-      setTimeout(() => {
-        first.card.classList.remove("flipped", "wrong");
-        second.card.classList.remove("flipped", "wrong");
+    if (lockBoard || data.matched || flippedCards.includes(card)) return;
+  
+    card.classList.add("flipped");
+    flippedCards.push({ card, data });
+  
+    if (flippedCards.length === 2) {
+      lockBoard = true;
+      const [first, second] = flippedCards;
+  
+      if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
+        first.data.matched = true;
+        second.data.matched = true;
+  
+        // Keep cards flipped (showing back view)
+        first.card.classList.add("match");
+        second.card.classList.add("match");
+  
         resetFlippedCards();
-      }, 1000);
+      } else {
+        // Wrong guess, flip back without flashing red
+        setTimeout(() => {
+          first.card.classList.remove("flipped");
+          second.card.classList.remove("flipped");
+          resetFlippedCards();
+        }, 1000);
+      }
     }
-  }
 }
 
 function resetFlippedCards() {
