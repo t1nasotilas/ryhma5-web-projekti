@@ -1,4 +1,4 @@
-/* === Base Reset === */
+/*Base Reset*/
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Sansation", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,26 +15,28 @@ body {
     background-image: url('../images/paper.jpg');
 }
 
-/* === Game Board === */
+/*Game Board*/
 .game-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adapts to card size */
-    gap: 25px; /* Set consistent spacing between cards */
+    gap: 25px;
     width: 90vw;
     max-width: 600px;
     margin: auto;
     padding: 5px;
 }
 
-/* === Card Styles === */
+/*Card Styles*/
 .card {
     aspect-ratio: 15 / 10;
-    width: 150px;
+    width: clamp(90px, 20vw, 150px);
     margin: 0;
     perspective: 1000px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .card-inner {
@@ -79,6 +81,19 @@ body {
     background-position: center;
 }
 
+.card .back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/paper2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1; /* Adjust transparency here */
+    z-index: 1;
+    pointer-events: none;
+}
+
 .card.flipped .front {
     display: flex; /* Show the front side only when flipped */
 }
@@ -95,7 +110,7 @@ body {
     display: none;
 }
 
-/* === Responsive Text & Images === */
+/*Responsive Text & Images*/
 .card img {
     width: 70%;
     height: auto;
@@ -104,8 +119,23 @@ body {
 }
 
 @media (max-width: 600px) {
+    .game-container {
+        gap: 12px;
+        padding: 0;
+        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        flex: 0 0 calc(33.33% - 12px); /* 3 per row with gaps */
+        max-width: 90px;
+    }
+
     .card .front, .card .back {
-        font-size: 4vw;
+        font-size: clamp(12px, 2.5vw, 20px);
     }
 
     .card img {
@@ -113,7 +143,7 @@ body {
     }
 }
 
-/* === Navigation === */
+/*Navigation*/
 nav {
     padding: 1rem;
     display: flex;
@@ -129,7 +159,7 @@ nav {
     z-index: 1000;
 }
 
-/* === Hamburger Menu === */
+/*Hamburger Menu*/
 .ham-menu {
     height: 50px;
     width: 40px;
@@ -170,7 +200,7 @@ nav {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* === Off-Screen Menu === */
+/*Off-Screen Menu*/
 .off-screen-menu {
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
@@ -206,7 +236,7 @@ nav {
     color: #6F86FF;
 }
 
-/* === Links === */
+/*Links*/
 a {
     color: white;
 }
