@@ -18,19 +18,21 @@ body {
 /* === Game Board === */
 .game-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adapts to card size */
+    gap: 25px; /* Set consistent spacing between cards */
     width: 90vw;
     max-width: 600px;
     margin: auto;
-    padding: 10px;
+    padding: 5px;
 }
 
 /* === Card Styles === */
 .card {
-    aspect-ratio: 1 / 1;
-    width: 100%;
+    aspect-ratio: 15 / 10;
+    width: 150px;
+    margin: 0;
     perspective: 1000px;
+    overflow: hidden;
     cursor: pointer;
     position: relative;
 }
@@ -63,6 +65,7 @@ body {
 .card .front {
     display: none; /* Initially hide the front side */
     transform: rotateY(180deg);
+    border-radius: 10px;
     background-image: url('../images/playing-card.jpg');
     background-size: cover;
     background-position: center;
@@ -70,6 +73,7 @@ body {
 
 .card .back {
     display: flex; /* Ensure the back side is visible initially */
+    border-radius: 10px;
     background-color: #fffaeb;
     background-size: cover;
     background-position: center;
@@ -93,8 +97,10 @@ body {
 
 /* === Responsive Text & Images === */
 .card img {
-    max-width: 80%;
+    width: 70%;
     height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 600px) {
