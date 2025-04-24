@@ -1,7 +1,7 @@
 const questions = [
     {
         question: "Montako eri valtiota Etelä-Amerikassa on?",
-        image: "../images/map.jpg",
+        image: "../images/ea-map.jpg",
         answers: [
             {text: "10", correct: false},
             {text: "12", correct: true},
