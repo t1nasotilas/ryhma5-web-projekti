@@ -181,9 +181,16 @@ function selectAnswer(e){
 // Shows incorrect answer with red text
     }else{
         selectButton.classList.add('incorrect');
-        messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>'; 
+        messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>';
     };
     answerButtons.appendChild(messageElement);
+
+    Array.from(answerButtons.children).forEach(button => {
+        if(button.dataset.correct){
+            button.classList.add('correct');
+        }
+        button.disabled = true;
+    });
     nextButton.style.display = 'block';
 };
 
