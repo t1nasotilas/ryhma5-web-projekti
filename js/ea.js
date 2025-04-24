@@ -93,11 +93,11 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 };
-
+// Adding event listener to the start button, that starts the game and hides the start screen
 startButton.addEventListener('click', () => {
-    startScreen.style.display = 'none'; // Hides startscreen
-    quizScreen.style.display = 'block'; // Shows game
-    startQuiz(); // Starts game
+    startScreen.style.display = 'none'; 
+    quizScreen.style.display = 'block'; 
+    startQuiz();
 });
 
 // Game starts, questions are shuffled and score is set to 0
@@ -116,16 +116,18 @@ function showQuestion(){
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + '. ' + currentQuestion.question;
 
+// adds correct image to the question
     if(currentQuestion.image){
         const imgElement = document.createElement('img');
-        imgElement.src = currentQuestion.image; // Adds image to the question
+        imgElement.src = currentQuestion.image; 
         imgElement.alt = "Kysymykseen liittyvä kuva";
         imgElement.classList.add('question-image'); 
         questionElement.appendChild(imgElement);
     };
 
-    shuffleArray(currentQuestion.answers); // Shuffle answers
+    shuffleArray(currentQuestion.answers); 
 
+// Creates buttons for each answer
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
         button.innerHTML = answer.text;
@@ -146,30 +148,26 @@ function resetState(){
     }
 };
 
+// Shows the selected answer and gives feedback
 function selectAnswer(e){
     const selectButton = e.target;
     const correct = selectButton.dataset.correct;
     const messageElement = document.createElement('p'); // Element for the message
     messageElement.classList.add('answer-message'); // CSS-styling
     let currentQuestion = questions[currentQuestionIndex];
+
+// Shows correct answer
     if(correct){
         selectButton.classList.add('correct');
-        score++; // Shows correct answer and adds points
-        messageElement.innerHTML = currentQuestion.fact; // Shows the fact about the question
+        score++; 
+        messageElement.innerHTML = currentQuestion.fact;
+
+// Shows incorrect answer with red text
     }else{
-        // Shows wrong answer with red text
         selectButton.classList.add('incorrect');
         messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>'; 
     };
-
     answerButtons.appendChild(messageElement);
-
-    Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === 'true'){
-            button.classList.add('correct');
-        }
-        button.disabled = true; // Prevents clicking other buttons
-    });
     nextButton.style.display = 'block';
 };
 
@@ -205,7 +203,7 @@ answerButtons.appendChild(homeButton);
 const restartButton = document.createElement('button');
 restartButton.innerHTML = 'Pelaa uudelleen';
 restartButton.style.display = 'block';
-restartButton.id = 'home-btn'; // Same CSS ID as home button for styling
+restartButton.id = 'home-btn';
 restartButton.addEventListener('click',() => {
     window.location.href = '../pages/ea.html';
 });
@@ -214,11 +212,10 @@ answerButtons.appendChild(restartButton);
 const scorePageImage = document.createElement('img');
 scorePageImage.src = "../images/worldmap.avif";
 
-questionElement.appendChild(scorePageImage); // Adds the image to the score page
-
+questionElement.appendChild(scorePageImage);
 };
 
-// Shows the next question or the score page
+// Shows the next question or the score page with a delay
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -232,6 +229,7 @@ function handleNextButton(){
     }
 };
 
+// Adding listener that shows the next question or the score page
 nextButton.addEventListener('click', () => {
     if(currentQuestionIndex < questions.length){  
         handleNextButton();  
