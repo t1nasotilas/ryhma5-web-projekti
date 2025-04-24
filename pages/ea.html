@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etela-Amerikka</title>
+    <link rel="stylesheet" href="../css/ea.css">
+    <script src="../js/index.js" defer ></script>
+</head>
+<body>
+    <!--HAMBURGER MENU-->
+  <div class="off-screen-menu">
+    <ul>
+      <li><a href="../index.html">Koti</a></li>
+      <li><a href="../pages/info.html">Info</a></li>
+      <li><a href="../pages/overview.html">Yhteenveto</a></li>
+      <li><a href="../pages/ea.html">Etelä-Amerikka</a></li>
+    </ul>
+  </div>
+<nav>
+<p></p>
+<div class="ham-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</nav>
+<main>
+<!--GAME STRATS HERE-->
+<div id="start-screen">
+  <h1>Etelä-Amerikka Tietovisa</h1>
+  <p>Testaa tietosi Etelä-Amerikasta tässä  hassun hauskassa ja opettavaisessa tietovisassa! 
+  Kuinka hyvin tunnet tämän monimuotoisen mantereen maat, kulttuurit ja luonnonihmeet? Saat pisteitä oikeista 
+  vastauksista – tähtää täysiin pisteisiin ja haasta kaverisikin mukaan. Tietovisa sisältää 6 kysymystä. Onnea matkaan!</p>
+  <h3>HUOM!</h3>
+  <p> Kun olet painanut vastausvaihtoehtoa, et voi sen jälkeen vaihtaa vastaustasi!</p>
+  <img src="../images/LRG_GettyImages-91098132.avif" alt="Etelä-Amerikka" class="image">
+  <div style="text-align: center;">
+    <button id="start-btn">Aloita</button>
+  </div>
+</div>
+<div class="app" id="quiz-container" style="display: none;">
+  <h1>MAANOSAMASTER</h1>
+  <div class="quiz">
+    <h2 id="question"></h2> <!-- QUESTION WILL APPEAR HERE -->
+    <div id="answer-buttons">
+      <button class="btn"></button>
+      <button class="btn"></button>
+      <button class="btn"></button>
+      <button class="btn"></button>
+    </div>
+    <button id="next-btn">Seuraava</button>
+  </div>
+</div>
+<script src="../js/ea.js"></script>
+</main>
+<footer>
+  <div class="info-footer">
+    <div class="developers">
+      <strong>Kehittäjät</strong>
+      <div class="developer-list">
+        <div class="column">
+          <p>Santeri Korhonen</p>
+          <p>Vertti Winter</p>
+          <p>Viivi Dahlström</p>
+        </div>
+        <div class="column">
+          <p>Patrik Mikkonen</p>
+          <p>Wilma Alaluusua</p>
+          <p>Tommi Reunanen</p>
+        </div>
+      </div>
+    </div>
+    <div class="project">
+      <strong>Web-projekti kevät 2025</strong>
+    </div>
+    <div class="logo">
+      <img src="../images/oamk-logo.png" alt="OAMK Logo">
+    </div>
+  </div>
+  <div class="cr-footer">
+    <p>&copy; 2025 Ryhmä 5</p>
+  </div>
+</footer>
+</body>
+</html>
