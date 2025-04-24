@@ -214,21 +214,20 @@ nav {
 
   /*footer---------------------------------------------------------------------------------------------------------*/
 
-.info-footer {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  color: white;
-  padding: 2% 5%;
-  margin-bottom: 1.2%;
-  position:fixed;
-  bottom: 2%;
-  width: 100%;
- 
-}
+  .info-footer {
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    color: white;
+    padding: 0.7% 2%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+  }
 .developers {
   flex: 1;
 }
