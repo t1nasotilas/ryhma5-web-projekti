@@ -1,3 +1,19 @@
+/* For the South America quiz game, I used the following resources:
+
+Code and content development:
+1. "How To Make Quiz App Using JavaScript | Build Quiz App With HTML CSS & JavaScript", YouTube, https://www.youtube.com/watch?v=PBcqGxrr9g8 (accessed April 2, 2025)
+2. W3Schools, "JavaScript Tutorial", https://www.w3schools.com/js/default.asp (accessed April 2, 2025)
+3. ChatGPT (OpenAI), https://chat.openai.com/chat (accessed April 2, 2025)
+
+Images:
+1. GISGeography, "South America Blank Map and Country Outlines", https://gisgeography.com/south-america-blank-map-country-outlines/ (accessed April 16, 2025)
+2. Depositphotos, "Amazon river", https://depositphotos.com/fi/similar-images/573640086.html (accessed April 24, 2025)
+3. MTV Uutiset, "Brazil's Symbol Christ the Redeemer Turns 80", https://www.mtvuutiset.fi/artikkeli/brasilian-symboli-kristus-patsas-tayttaa-80-vuotta/2223866 (accessed April 2, 2025)
+4. Wikipedia, "Aconcagua", https://en.wikipedia.org/wiki/Aconcagua (accessed April 16, 2025)
+5. Wikipedia, "Moai", https://en.wikipedia.org/wiki/Moai (accessed April 16, 2025)
+6. Istock, "Pehoe Lake ja Cuernos Peaks in the Morning, Torres del Painen kansallispuisto, Chile", https://www.istockphoto.com/fi/valokuva/pehoe-lake-ja-cuernos-peaks-in-the-morning-torres-del-painen-kansallispuisto-chile-gm1882573770-553549092?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner_media&utm_term=patagonia (accessed April 24, 2025)
+7. Freepik, "South America countries or continent highlighted in red on the world map vector", https://www.freepik.com/premium-vector/south-america-countries-continent-highlighted-red-world-map-vector_33125774.htm (accessed April 17, 2025)
+*/
 const questions = [
     {
         question: "Montako eri valtiota Etelä-Amerikassa on?",
@@ -12,7 +28,7 @@ const questions = [
     },
     {
         question: "Mikä on Etelä-Amerikan pisin joki?",
-        image: "../images/amazonia.jpg",
+        image: "../images/amazonia-river.jpg",
         answers: [
             {text: "Amazonjoki", correct: true},
             {text: "Orinoco", correct: false},
@@ -56,7 +72,7 @@ const questions = [
     },
     {
         question: "Mitkä kaksi maata Patagonia yhdistää?",
-        image: "../images/patagonia1.jpg",
+        image: "../images/patagonia.jpg",
         answers: [
             {text: "Chile ja Argentiina", correct: true},
             {text: "Brasilia ja Peru", correct: false},
