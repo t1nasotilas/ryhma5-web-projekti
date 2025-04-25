@@ -1,102 +1,122 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+  <!-- Sivun merkistökoodaustavoite -->
   <meta charset="UTF-8">
+  <!-- Selaimen välilehden otsikko -->
   <title>Memory Game</title>
-  <link rel="stylesheet" href="../css/MemorygameAsia.css">
-  <script src="../js/MemorygameAsia.js" defer></script>
+  <!-- Liitetään ulkoinen CSS-tyylitiedosto -->
+  <link rel="stylesheet" href="MemorygameAsia.css">
+  <!-- Liitetään ulkoinen JavaScript-tiedosto ja defer-atribuutilla varmistetaan, että skripti ladataan vasta HTML:n jälkeen -->
+  <script src="MemorygameAsia.js" defer></script>
 </head>
 
-
 <body>
+  <!-- Aloitusnäyttö (overlay), joka peittää koko sivun ennen pelin aloitusta -->
   <div id="welcome-screen">
     <div class="welcome-box">
+      <!-- Pelin tervetuloviesti -->
       <h1>Tervetuloa Aasian nähtävyys muistipeliin!</h1>
+      <!-- Lyhyt ohjeistus pelin tavoitteesta ja pisteytyksestä -->
       <p>
-        Tarkoituksena on löytää kaikki nähtävyydet eri aasian maista mahdollisimman vähillä klikkauksilla.<br>
-        Saat 5 pistettä, jos suoritat pelin 24 klikkauksella.<br>
+        Tarkoituksena on löytää kaikki kuvasamat parit mahdollisimman vähillä klikkauksilla.<br>
+        Saat maksimissaan 5 pistettä, jos suoritat pelin 16 klikkauksella.<br>
         Mitä enemmän klikkauksia, sitä vähemmän pisteitä.<br>
         Klikkaa "Aloita peli" kun olet valmis!
       </p>
+      <!-- Aloitusnappi, joka kutsuu startGame()-funktiota JavaScriptissä -->
       <button onclick="startGame()">Aloita peli</button>
     </div>
   </div>
 
+  <!-- Pelialueen pääkontaineri -->
   <div class="game-container">
-  <div class="memorygameheadline">
-    <h1>Aasian nähtävyys muistipeli</h1>
+    <!-- Pelin otsikkorivi -->
+    <div class="memorygameheadline">
+      <h1>Aasian nähtävyys muistipeli</h1>
+    </div>
+
+    <!-- Muistipeliruudukko, jossa on kortteja -->
+    <section class="memory-game">
+      <!-- Yksi korttipari (toistuu kuudelle eri nähtävyydelle) -->
+      <div class="memory-card" data-framework="Angkor">
+        <!-- Kortin etupuoli (nähtävyyden kuva) -->
+        <img class="front-face" src="../img/Angkor wat.png" alt="Angkor">
+        <!-- Kortin takapuoli (sama kaikissa korteissa) -->
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+      <div class="memory-card" data-framework="Angkor">
+        <img class="front-face" src="../img/Angkor wat.png" alt="Angkor">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+
+      <div class="memory-card" data-framework="WallChina">
+        <img class="front-face" src="../img/Great Wall of China.png" alt="WallChina">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+      <div class="memory-card" data-framework="WallChina">
+        <img class="front-face" src="../img/Great Wall of China.png" alt="WallChina">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+
+      <div class="memory-card" data-framework="Vietnam">
+        <img class="front-face" src="../img/Ha Long Bay in Vietnam.png" alt="Vietnam">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+      <div class="memory-card" data-framework="Vietnam">
+        <img class="front-face" src="../img/Ha Long Bay in Vietnam.png" alt="Vietnam">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+
+      <div class="memory-card" data-framework="Fuji">
+        <img class="front-face" src="../img/Mount Fuji.png" alt="Fuji">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+      <div class="memory-card" data-framework="Fuji">
+        <img class="front-face" src="../img/Mount Fuji.png" alt="Fuji">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+
+      <div class="memory-card" data-framework="Petronas">
+        <img class="front-face" src="../img/Petronas Towers.png" alt="Petronas">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+      <div class="memory-card" data-framework="Petronas">
+        <img class="front-face" src="../img/Petronas Towers.png" alt="Petronas">
+        <img class="back-face" src="../img/Asia globe.png" alt="globe">
+      </div>
+
+      <div class="memory-card" data-framework="India">
+        <img class="front-face" src="../img/Taj Mahal.png" alt="India" />
+        <img class="back-face" src="../img/Asia globe.png" alt="globe" />
+      </div>
+      <div class="memory-card" data-framework="India">
+        <img class="front-face" src="../img/Taj Mahal.png" alt="India" />
+        <img class="back-face" src="../img/Asia globe.png" alt="globe" />
+      </div>
+    </section>
+
+    <!-- Näytetään löytyneiden parien määrä -->
+    <div class="match-list">
+      Löydetyt parit: <span id="match-counter">0</span> / 6
+    </div>
+
+    <!-- Näytetään käytettyjen klikkausten määrä -->
+    <div class="match-list">
+      Klikkaukset: <span id="click-counter">0</span>
+    </div>
   </div>
 
-  <section class="memory-game">
-    <div class="memory-card" data-framework="Angkor">
-      <img class="front-face" src="../images/Angkorwat.png" alt="Angkor">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-    <div class="memory-card" data-framework="Angkor">
-      <img class="front-face" src="../images/Angkorwat.png" alt="Angkor">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-
-    <div class="memory-card" data-framework="WallChina">
-      <img class="front-face" src="../images/GreatWallofChina.png" alt="WallChina">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-    <div class="memory-card" data-framework="WallChina">
-      <img class="front-face" src="../images/GreatWallofChina.png" alt="WallChina">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-
-    <div class="memory-card" data-framework="Vietnam">
-      <img class="front-face" src="../images/HaLongBayinVietnam.png" alt="Vietnam">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-    <div class="memory-card" data-framework="Vietnam">
-      <img class="front-face" src="../images/HaLongBayinVietnam.png" alt="Vietnam">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-
-    <div class="memory-card" data-framework="Fuji">
-      <img class="front-face" src="../images/MountFuji.png" alt="Fuji">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-    <div class="memory-card" data-framework="Fuji">
-      <img class="front-face" src="../images/MountFuji.png" alt="Fuji">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-
-    <div class="memory-card" data-framework="Petronas">
-      <img class="front-face" src="../images/PetronasTowers.png" alt="Petronas">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-    <div class="memory-card" data-framework="Petronas">
-      <img class="front-face" src="../images/PetronasTowers.png" alt="Petronas">
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe">
-    </div>
-
-    <div class="memory-card" data-framework="India">
-      <img class="front-face" src="../images/TajMahal.png" alt="India" />
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe" />
-    </div>
-    <div class="memory-card" data-framework="India">
-      <img class="front-face" src="../images/TajMahal.png" alt="India" />
-      <img class="back-face" src="../images/Asiaglobe.png" alt="globe" />
-    </div>
-  </section>
-
-  <div class="match-list">Löydetyt parit: <span id="match-counter">0</span> / 6</div>
-
-  <div class="match-list">
-    Klikkaukset: <span id="click-counter">0</span>
-  </div>
-
+  <!-- Loppunäyttö, näkyy kun peli on ohi -->
   <div id="game-over">
     <div class="end-box">
-      <h2>Peli loppui !</h2>
+      <!-- Ilmoitus pelin päättymisestä -->
+      <h2>Peli loppui!</h2>
+      <!-- Lopputulos ja pistemäärä -->
       <p>Saamasi pisteet: <span id="score">1</span> / 5 pistettä</p>
+      <!-- Uudelleenaloitus- ja palaamisnapit -->
       <button onclick="restartGame()">Aloita alusta</button>
-      <a href="../pages/overview.html">
       <button onclick="goToHomePage()">Palaa etusivulle</button>
-      </a>
     </div>
   </div>
 </body>
