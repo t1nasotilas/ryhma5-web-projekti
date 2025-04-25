@@ -1,7 +1,23 @@
+/* For the South America quiz game, I used the following resources:
+
+Code and content development:
+1. "How To Make Quiz App Using JavaScript | Build Quiz App With HTML CSS & JavaScript", YouTube, https://www.youtube.com/watch?v=PBcqGxrr9g8 (accessed April 2, 2025)
+2. W3Schools, "JavaScript Tutorial", https://www.w3schools.com/js/default.asp (accessed April 2, 2025)
+3. ChatGPT (OpenAI), https://chat.openai.com/chat (accessed April 2, 2025)
+
+Images:
+1. GISGeography, "South America Blank Map and Country Outlines", https://gisgeography.com/south-america-blank-map-country-outlines/ (accessed April 16, 2025)
+2. Depositphotos, "Amazon river", https://depositphotos.com/fi/similar-images/573640086.html (accessed April 24, 2025)
+3. MTV Uutiset, "Brazil's Symbol Christ the Redeemer Turns 80", https://www.mtvuutiset.fi/artikkeli/brasilian-symboli-kristus-patsas-tayttaa-80-vuotta/2223866 (accessed April 2, 2025)
+4. Wikipedia, "Aconcagua", https://en.wikipedia.org/wiki/Aconcagua (accessed April 16, 2025)
+5. Wikipedia, "Moai", https://en.wikipedia.org/wiki/Moai (accessed April 16, 2025)
+6. Istock, "Pehoe Lake ja Cuernos Peaks in the Morning, Torres del Painen kansallispuisto, Chile", https://www.istockphoto.com/fi/valokuva/pehoe-lake-ja-cuernos-peaks-in-the-morning-torres-del-painen-kansallispuisto-chile-gm1882573770-553549092?utm_source=pixabay&utm_medium=affiliate&utm_campaign=sponsored_image&utm_content=srp_topbanner_media&utm_term=patagonia (accessed April 24, 2025)
+7. Freepik, "South America countries or continent highlighted in red on the world map vector", https://www.freepik.com/premium-vector/south-america-countries-continent-highlighted-red-world-map-vector_33125774.htm (accessed April 17, 2025)
+*/
 const questions = [
     {
         question: "Montako eri valtiota Etelä-Amerikassa on?",
-        image: "../images/map.jpg",
+        image: "../images/ea-map.jpg",
         answers: [
             {text: "10", correct: false},
             {text: "12", correct: true},
@@ -12,7 +28,7 @@ const questions = [
     },
     {
         question: "Mikä on Etelä-Amerikan pisin joki?",
-        image: "../images/amazonia.jpg",
+        image: "../images/amazonia-river.jpg",
         answers: [
             {text: "Amazonjoki", correct: true},
             {text: "Orinoco", correct: false},
@@ -56,7 +72,7 @@ const questions = [
     },
     {
         question: "Mitkä kaksi maata Patagonia yhdistää?",
-        image: "../images/patagonia1.jpg",
+        image: "../images/patagonia.jpg",
         answers: [
             {text: "Chile ja Argentiina", correct: true},
             {text: "Brasilia ja Peru", correct: false},
@@ -93,11 +109,11 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 };
-
+// Adding event listener to the start button, that starts the game and hides the start screen
 startButton.addEventListener('click', () => {
-    startScreen.style.display = 'none'; // Hides startscreen
-    quizScreen.style.display = 'block'; // Shows game
-    startQuiz(); // Starts game
+    startScreen.style.display = 'none'; 
+    quizScreen.style.display = 'block'; 
+    startQuiz();
 });
 
 // Game starts, questions are shuffled and score is set to 0
@@ -116,16 +132,18 @@ function showQuestion(){
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + '. ' + currentQuestion.question;
 
+// adds correct image to the question
     if(currentQuestion.image){
         const imgElement = document.createElement('img');
-        imgElement.src = currentQuestion.image; // Adds image to the question
+        imgElement.src = currentQuestion.image; 
         imgElement.alt = "Kysymykseen liittyvä kuva";
         imgElement.classList.add('question-image'); 
         questionElement.appendChild(imgElement);
     };
 
-    shuffleArray(currentQuestion.answers); // Shuffle answers
+    shuffleArray(currentQuestion.answers); 
 
+// Creates buttons for each answer
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement('button');
         button.innerHTML = answer.text;
@@ -146,29 +164,32 @@ function resetState(){
     }
 };
 
+// Shows the selected answer and gives feedback
 function selectAnswer(e){
     const selectButton = e.target;
     const correct = selectButton.dataset.correct;
     const messageElement = document.createElement('p'); // Element for the message
     messageElement.classList.add('answer-message'); // CSS-styling
     let currentQuestion = questions[currentQuestionIndex];
+
+// Shows correct answer
     if(correct){
         selectButton.classList.add('correct');
-        score++; // Shows correct answer and adds points
-        messageElement.innerHTML = currentQuestion.fact; // Shows the fact about the question
-    }else{
-        // Shows wrong answer with red text
-        selectButton.classList.add('incorrect');
-        messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>'; 
-    };
+        score++; 
+        messageElement.innerHTML = currentQuestion.fact;
 
+// Shows incorrect answer with red text
+    }else{
+        selectButton.classList.add('incorrect');
+        messageElement.innerHTML = '<span style="color: red;">Väärin! Yritä uudelleen seuraavalla kerralla.</span>';
+    };
     answerButtons.appendChild(messageElement);
 
     Array.from(answerButtons.children).forEach(button => {
-        if(button.dataset.correct === 'true'){
+        if(button.dataset.correct){
             button.classList.add('correct');
         }
-        button.disabled = true; // Prevents clicking other buttons
+        button.disabled = true;
     });
     nextButton.style.display = 'block';
 };
@@ -205,7 +226,7 @@ answerButtons.appendChild(homeButton);
 const restartButton = document.createElement('button');
 restartButton.innerHTML = 'Pelaa uudelleen';
 restartButton.style.display = 'block';
-restartButton.id = 'home-btn'; // Same CSS ID as home button for styling
+restartButton.id = 'home-btn';
 restartButton.addEventListener('click',() => {
     window.location.href = '../pages/ea.html';
 });
@@ -214,11 +235,10 @@ answerButtons.appendChild(restartButton);
 const scorePageImage = document.createElement('img');
 scorePageImage.src = "../images/worldmap.avif";
 
-questionElement.appendChild(scorePageImage); // Adds the image to the score page
-
+questionElement.appendChild(scorePageImage);
 };
 
-// Shows the next question or the score page
+// Shows the next question or the score page with a delay
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -232,6 +252,7 @@ function handleNextButton(){
     }
 };
 
+// Adding listener that shows the next question or the score page
 nextButton.addEventListener('click', () => {
     if(currentQuestionIndex < questions.length){  
         handleNextButton();  
