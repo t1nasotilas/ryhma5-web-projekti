@@ -1,0 +1,707 @@
+{
+  "sections": [
+    {
+      "title": "Ihmisten muutto Amerikkaan",
+      "questions": [
+        {
+          "id": 1,
+          "question": "🌉 Mikä maantieteellinen silta mahdollisti ensimmäisten ihmisten siirtymisen Aasiasta Amerikkaan?",
+          "options": [
+            "Beringin maasilta",
+            "Panaman kannas",
+            "Atlantin jääsilta",
+            "Havaijin saariketju"
+          ],
+          "correctAnswer": "Beringin maasilta",
+          "year": "n. 15 000 - 20 000 eKr",
+          "category": "Esihistoria",
+          "explanation": "Beringin maasilta mahdollisti ihmisten siirtymisen Aasiasta Amerikkaan jääkaudella, mikä loi pohjan koko mantereiden asuttamiselle."
+        }
+      ]
+    },
+    {
+      "title": "Esihistoria",
+      "questions": [
+        {
+          "id": 2,
+          "question": "🏹 Mikä kulttuuri kehitti piikiviset Clovis-keihäänkärjet?",
+          "options": [
+            "Mississippin kulttuuri",
+            "Clovis-kulttuuri",
+            "Anasazi",
+            "Hopewell-kulttuuri"
+          ],
+          "correctAnswer": "Clovis-kulttuuri",
+          "year": "n. 13 500 eKr",
+          "category": "Esihistoria",
+          "explanation": "Clovis-kulttuurin keihäänkärjet olivat tehokkaita metsästysvälineitä, ja niiden leviäminen viittaa varhaiseen kulttuuriseen yhteyteen Pohjois-Amerikassa."
+        },
+        {
+          "id": 4,
+          "question": "🌽 Mikä viljelymenetelmä perustui maissiin, papuihin ja kurpitsaan?",
+          "options": [
+            "Kolmen sisaruuden viljely",
+            "Kierrätysviljely",
+            "Terassiviljely",
+            "Kasteluviljely"
+          ],
+          "correctAnswer": "Kolmen sisaruuden viljely",
+          "year": "n. 3500 eKr",
+          "category": "Esihistoria",
+          "explanation": "Kolmen sisaruuden viljely mahdollisti kestävän maatalouden, joka tuki suuria väestöjä ja muokkasi intiaanikulttuureiden yhteiskuntarakenteita."
+        }
+      ]
+    },
+    {
+      "title": "Esikolumbiaaninen aika",
+      "questions": [
+        {
+          "id": 3,
+          "question": "🏛️ Mikä oli Pohjois-Amerikan suurin esikolumbiaaninen kaupunki?",
+          "options": [
+            "Mesa Verde",
+            "Cahokia",
+            "Chaco Canyon",
+            "Tenochtitlán"
+          ],
+          "correctAnswer": "Cahokia",
+          "year": "1050–1350 jKr",
+          "category": "Esikolumbiaaninen aika",
+          "explanation": "Cahokiasta tuli merkittävä kauppa- ja uskonnollinen keskus, ja sen kumpurakenteet heijastavat monimutkaista yhteiskuntajärjestystä."
+        }
+      ]
+    },
+    {
+      "title": "Kolumbuksen jälkeinen aika",
+      "questions": [
+        {
+          "id": 5,
+          "question": "🚢 Mikä tapahtuma merkitsi Euroopan siirtomaavallan alkua Pohjois-Amerikassa?",
+          "options": [
+            "Leif Erikssonin retki",
+            "Kristoffer Kolumbuksen tutkimusmatka",
+            "Hernán Cortésin valloitus",
+            "Jacques Cartierin retki"
+          ],
+          "correctAnswer": "Kristoffer Kolumbuksen matka 1492",
+          "year": "1492",
+          "category": "Kolonisaatio",
+          "explanation": "Kolumbuksen matka avasi Atlantin ylittävän kontaktin, mikä johti eurooppalaisten siirtokuntien perustamiseen ja alkuperäiskansojen kohtalokkaaseen romahdukseen."
+        }
+      ]
+    },
+    {
+      "title": "Kolonisaatio",
+      "questions": [
+        {
+          "id": 6,
+          "question": "⛪ Mikä Euroopan maa perusti St. Augustinen Floridassa vuonna 1565?",
+          "options": [
+            "Espanja",
+            "Ranska",
+            "Englanti",
+            "Portugali"
+          ],
+          "correctAnswer": "Espanja",
+          "year": "1565",
+          "category": "Kolonisaatio",
+          "explanation": "St. Augustinesta tuli Yhdysvaltain vanhin jatkuvasti asuttu eurooppalainen siirtokunta, vahvistaen Espanjan asemaa Amerikassa."
+        },
+        {
+          "id": 7,
+          "question": "🏰 Mikä siirtokunta perustettiin Virginiassa vuonna 1607 ensimmäisenä pysyvänä englantilaisena siirtokuntana?",
+          "options": [
+            "Plymouth",
+            "Jamestown",
+            "Charleston",
+            "Roanoke"
+          ],
+          "correctAnswer": "Jamestown",
+          "year": "1607",
+          "category": "Kolonisaatio",
+          "explanation": "Jamestownin perustaminen aloitti englantilaisten pysyvän läsnäolon Pohjois-Amerikassa ja loi pohjan tupakkataloudelle."
+        },
+        {
+          "id": 8,
+          "question": "🚢 Minkä vuoden Mayflower-laiva toi ensimmäiset englantilaiset pyhiinvaeltajat Plymouthiin?",
+          "options": [
+            "1620",
+            "1619",
+            "1609",
+            "1630"
+          ],
+          "correctAnswer": "1620",
+          "year": "?",
+          "category": "Kolonisaatio",
+          "explanation": "Mayflowerin matka symboloi uskonnollisen vapauden hakua ja loi perustan myöhemmille siirtokunnille."
+        },
+        {
+          "id": 9,
+          "question": "🏰 Mikä kaupunki perustettiin Québecin siirtokunnaksi vuonna 1608?",
+          "options": [
+            "Montreal",
+            "Québec",
+            "Toronto",
+            "Halifax"
+          ],
+          "correctAnswer": "Québec",
+          "year": "1608",
+          "category": "Kolonisaatio",
+          "explanation": "Québecin perustaminen vahvisti Ranskan aseman Kanadassa ja loi turkiskaupan keskuksen."
+        },
+        {
+          "id": 10,
+          "question": "🔥 Mikä konflikti käytiin vuosina 1675–1678 Pohjois-Amerikassa alkuperäiskansojen ja siirtokuntien välillä?",
+          "options": [
+            "King Philip's War",
+            "Bacon’s Rebellion",
+            "Pequot-sota",
+            "Pontiacin kapina"
+          ],
+          "correctAnswer": "King Philip's War",
+          "year": "1675–1678",
+          "category": "Kolonisaatio",
+          "explanation": "King Philip's War oli tuhoisa konflikti, joka heikensi alkuperäiskansojen valtaa ja nopeutti eurooppalaisten laajenemista."
+        }
+      ]
+    },
+    {
+      "title": "Amerikan itsenäistyminen",
+      "questions": [
+        {
+          "id": 11,
+          "question": "🗽 Mikä julistus hyväksyttiin 4. heinäkuuta 1776 ja julisti itsenäisyyden Yhdysvalloille?",
+          "options": [
+            "Perustuslaki",
+            "Ihmisoikeuksien julistus",
+            "Itsenäisyyden julistus",
+            "Liittovaltiolaki"
+          ],
+          "correctAnswer": "Itsenäisyyden julistus",
+          "year": "1776",
+          "category": "Itsenäistyminen",
+          "explanation": "Itsenäisyyden julistus erotti Yhdysvallat Britanniasta ja loi perustan demokraattiselle valtiolle."
+        },
+        {
+          "id": 12,
+          "question": "✍️ Minkä sopimuksen allekirjoitus 1783 lopetti Amerikan vallankumouksen?",
+          "options": [
+            "Versailles’n rauha",
+            "Paris Peace Treaty",
+            "Treaty of Paris",
+            "Treaty of Ghent"
+          ],
+          "correctAnswer": "Treaty of Paris",
+          "year": "1783",
+          "category": "Itsenäistyminen",
+          "explanation": "Pariisin rauha vahvisti Yhdysvaltain itsenäisyyden ja laajensi sen rajat länteen."
+        },
+        {
+          "id": 13,
+          "question": "📜 Milloin Yhdysvaltain perustuslaki astui voimaan?",
+          "options": [
+            "1787",
+            "1788",
+            "1789",
+            "1791"
+          ],
+          "correctAnswer": "1788",
+          "year": "?",
+          "category": "Politiikka",
+          "explanation": "Perustuslain voimaantulo loi vahvan liittovaltion ja määritteli Yhdysvaltain hallintojärjestelmän."
+        }
+      ]
+    },
+    {
+      "title": "Laajentuminen ja villi länsi",
+      "questions": [
+        {
+          "id": 14,
+          "question": "⛽ Minkä vuoden kultaryntäys houkutteli satojatuhansia länteen?",
+          "options": [
+            "1839–1842",
+            "1848–1855",
+            "1869–1875",
+            "1896–1899"
+          ],
+          "correctAnswer": "1848–1855",
+          "year": "?",
+          "category": "Laajentuminen",
+          "explanation": "Kalifornian kultaryntäys kiihdytti lännen asutusta ja synnytti talouskasvua, mutta myös pahensi alkuperäiskansojen kärsimyksiä."
+        },
+        {
+          "id": 15,
+          "question": "🧭 Kuka johti Lewis ja Clarkin löytöretken Tyynenmeren rannikolle vuosina 1804–1806?",
+          "options": [
+            "Daniel Boone",
+            "Meriwether Lewis ja William Clark",
+            "John C. Frémont",
+            "Zebulon Pike"
+          ],
+          "correctAnswer": "Meriwether Lewis ja William Clark",
+          "year": "1804–1806",
+          "category": "Laajentuminen",
+          "explanation": "Lewis ja Clarkin retki kartoitettiin Lousianan hankinnan alueita ja edisti Yhdysvaltain vaatimuksia lännessä."
+        },
+        {
+          "id": 18,
+          "question": "⚔️ Missä taistelussa Texas julisti itsenäisyytensä Meksikosta vuonna 1836?",
+          "options": [
+            "San Jacinto",
+            "Alamo",
+            "Goliad",
+            "San Antonio"
+          ],
+          "correctAnswer": "San Jacinto",
+          "year": "1836",
+          "category": "Sodat",
+          "explanation": "San Jacinton taistelu varmisti Texasin itsenäisyyden, mikä johti myöhemmin liittoutumiseen Yhdysvaltojen kanssa."
+        },
+        {
+          "id": 19,
+          "question": "🛤️ Mikä muuttoreitti kulki Keskilännestä länsirannikolle 1840-luvulla?",
+          "options": [
+            "Santa Fe Trail",
+            "Oregon Trail",
+            "Appalakkien reitti",
+            "Lewis Trail"
+          ],
+          "correctAnswer": "Oregon Trail",
+          "year": "1840–1860",
+          "category": "Laajentuminen",
+          "explanation": "Oregon Trail mahdollisti tuhansien siirtolaisten muuton länteen, edistäen Yhdysvaltain laajenemista Tyynellemerelle."
+        },
+        {
+          "id": 20,
+          "question": "🇲🇽 Minkä sopimuksen myötä Meksikon ja USA:n välinen sota päättyi vuonna 1848?",
+          "options": [
+            "Guadalupe Hidalgo",
+            "Treaty of Paris",
+            "Adams–Onís Treaty",
+            "Gadsden Purchase"
+          ],
+          "correctAnswer": "Guadalupe Hidalgo",
+          "year": "1848",
+          "category": "Sodat",
+          "explanation": "Guadalupe Hidalgon sopimus siirsi laajat alueet Meksikolta Yhdysvalloille, mukaan lukien Kalifornian ja Uuden-Meksikon."
+        },
+        {
+          "id": 22,
+          "question": "⬆️ Minkä sopimuksen myötä USA osti nykyiset Arizona ja New Mexico vuonna 1854?",
+          "options": [
+            "Alaska Purchase",
+            "Gadsden Purchase",
+            "Oregon Treaty",
+            "Louisiana Purchase"
+          ],
+          "correctAnswer": "Gadsden Purchase",
+          "year": "1854",
+          "category": "Laajentuminen",
+          "explanation": "Gadsdenin hankinta täydensi rautatiehankkeita ja vahvisti Yhdysvaltain eteläistä rajaa."
+        }
+      ]
+    },
+    {
+      "title": "Sisällissota",
+      "questions": [
+        {
+          "id": 23,
+          "question": "🔥 Mikä konflikti käytiin Yhdysvalloissa vuosina 1861–1865?",
+          "options": [
+            "Toinen maailmansota",
+            "Sisällissota",
+            "Vallanvaihtosota",
+            "Meksikon sisällissota"
+          ],
+          "correctAnswer": "Sisällissota",
+          "year": "1861–1865",
+          "category": "Sisällissota",
+          "explanation": "Sisällissota ratkaisi orjuuden laillisuuden ja säilytti liittovaltion, mutta syvensi myös etelän ja pohjisen jakoa."
+        },
+        {
+          "id": 24,
+          "question": "📜 Mikä julistus teki orjuuden laittomaksi Konfederaation alueilla vuonna 1863?",
+          "options": [
+            "Proclamation of Amnesty",
+            "Emancipation Proclamation",
+            "Civil Rights Act",
+            "Thirteenth Amendment"
+          ],
+          "correctAnswer": "Emancipation Proclamation",
+          "year": "1863",
+          "category": "Sisällissota",
+          "explanation": "Vapautusjulistus muutti sodan tavoitteeksi orjuuden lopettamisen ja antoi moraalisen legitimiteetin liittovaltion taistelulle."
+        }
+      ]
+    },
+    {
+      "title": "Ihmisoikeudet ja siitä eteenpäin",
+      "questions": [
+        {
+          "id": 25,
+          "question": "🚂 Milloin yhdysvaltalainen mannertenvälinen rautatie valmistui?",
+          "options": [
+            "1862",
+            "1865",
+            "1869",
+            "1876"
+          ],
+          "correctAnswer": "1869",
+          "year": "?",
+          "category": "Infrastruktuuri",
+          "explanation": "Mannertenvälinen rautatie nopeutti lännen asutusta ja teki tavaroiden kuljetuksesta nopeampaa, edistäen talouskasvua."
+        },
+        {
+          "id": 26,
+          "question": "🌾 Minkä lain mukaan siirtolaiset saattoivat saada maata maksutta vuonna 1862?",
+          "options": [
+            "Homestead Act",
+            "Pacific Railroad Act",
+            "Land Ordinance",
+            "Kansas–Nebraska Act"
+          ],
+          "correctAnswer": "Homestead Act",
+          "year": "1862",
+          "category": "Lainsäädäntö",
+          "explanation": "Homestead Act kannusti länteen muuttoa antamalla maata viljelijöille, mikä muokkasi Yhdysvaltain maisemaa pysyvästi."
+        },
+        {
+          "id": 27,
+          "question": "🇨🇦 Mikä sopimus yhdisti Kanadan provinssit liittovaltioksi vuonna 1867?",
+          "options": [
+            "Statute of Westminster",
+            "British North America Act",
+            "Confederation Treaty",
+            "NAFTA"
+          ],
+          "correctAnswer": "British North America Act",
+          "year": "1867",
+          "category": "Kanadan historia",
+          "explanation": "Tämä laki loi Kanadan dominionin ja aloitti sen itsenäistymisprosessin Brittiläisestä imperiumista."
+        },
+        {
+          "id": 28,
+          "question": "🌲 Minkä kansallispuiston Yhdysvallat perusti vuonna 1872?",
+          "options": [
+            "Yosemite",
+            "Yellowstone",
+            "Sequoia",
+            "Grand Canyon"
+          ],
+          "correctAnswer": "Yellowstone",
+          "year": "1872",
+          "category": "Luonnonsuojelu",
+          "explanation": "Yellowstonen perustaminen maailman ensimmäisenä kansallispuistona loi perustan luonnonsuojeluliikkeelle globaalisti."
+        },
+        {
+          "id": 29,
+          "question": "🗽 Minkä kaupungin lahjoittama Vapaudenpatsas paljastettiin New Yorkissa vuonna 1886?",
+          "options": [
+            "Lontoo",
+            "Pariisi",
+            "Rooma",
+            "Berliini"
+          ],
+          "correctAnswer": "Pariisi",
+          "year": "1886",
+          "category": "Monumentit",
+          "explanation": "Ranskan lahjoittama patsas symboloi vapautta ja demokratiaa, vahvistaen maiden välisiä siteitä."
+        },
+        {
+          "id": 30,
+          "question": "⛏️ Missä Yukonin kultaryntäys alkoi Kanadassa vuonna 1896?",
+          "options": [
+            "Fort McMurray",
+            "Klondike",
+            "Cariboo",
+            "Saskatchewan"
+          ],
+          "correctAnswer": "Klondike",
+          "year": "1896–1899",
+          "category": "Laajentuminen",
+          "explanation": "Klondiken kultaryntäys muutti Kanadan luoteista väestöllisesti ja taloudellisesti, mutta aiheutti myös alkuperäiskansojen kärsimyksiä."
+        },
+        {
+          "id": 31,
+          "question": "⚔️ Missä sodassa Yhdysvallat voitti Espanjan vuonna 1898?",
+          "options": [
+            "Espanjan sisällissota",
+            "Espanjan–Yhdysvallat-sota",
+            "Toinen maailmansota",
+            "Filippiinien sota"
+          ],
+          "correctAnswer": "Espanjan–Yhdysvallat-sota",
+          "year": "1898",
+          "category": "Imperialismi",
+          "explanation": "Sota teki Yhdysvalloista maailmanvallan ja johti siirtomaiden hankintaan, kuten Puerto Ricolle ja Filippiineille."
+        },
+        {
+          "id": 32,
+          "question": "🛠️ Minkä kanavahankkeen rakentaminen alkoi Panamassa amerikkalaisvoimin vuonna 1904?",
+          "options": [
+            "Suez-kanava",
+            "Panaman kanava",
+            "Erie-kanava",
+            "Caledonian-kanava"
+          ],
+          "correctAnswer": "Panaman kanava",
+          "year": "1904–1914",
+          "category": "Infrastruktuuri",
+          "explanation": "Panaman kanava muutti maailmankaupan reittejä ja vahvisti Yhdysvaltain strategista asemaa."
+        },
+        {
+          "id": 33,
+          "question": "💥 Mikä on historian suurin ihmisen aiheuttama räjähdys, joka tapahtui Halifaxissa vuonna 1917?",
+          "options": [
+            "Titanicin uppoaminen",
+            "Halifaxin räjähdys",
+            "Lusitanian upotus",
+            "Armistice Day"
+          ],
+          "correctAnswer": "Halifaxin räjähdys",
+          "year": "1917",
+          "category": "Ensimmäinen maailmansota",
+          "explanation": "Räjähdys tuhosi osan Halifaxista ja näyttää sodan aikaisen logistiikan vaarat."
+        },
+        {
+          "id": 34,
+          "question": "🇺🇸 Milloin Yhdysvallat liittyi ensimmäiseen maailmansotaan?",
+          "options": [
+            "1914",
+            "1916",
+            "1917",
+            "1918"
+          ],
+          "correctAnswer": "1917",
+          "year": "?",
+          "category": "Ensimmäinen maailmansota",
+          "explanation": "Yhdysvaltain liittyminen ratkaisi sodan lopputuloksen liittoutuneiden hyväksi ja teki maasta maailmanvallan."
+        },
+        {
+          "id": 35,
+          "question": "👩‍⚖️ Minkä vuoden muutoslaki myönsi naisille äänioikeuden Yhdysvalloissa?",
+          "options": [
+            "1918",
+            "1919",
+            "1920",
+            "1921"
+          ],
+          "correctAnswer": "1920",
+          "year": "?",
+          "category": "Sosiaalihistoria",
+          "explanation": "19. lisäys takasi naisille äänioikeuden, mikä oli merkittävä askel tasa-arvon tiellä."
+        },
+        {
+          "id": 36,
+          "question": "📉 Mikä päivä tunnetaan Mustana tiistaina, jolloin pörssi romahti vuonna 1929?",
+          "options": [
+            "Black Monday",
+            "Black Tuesday",
+            "Black Thursday",
+            "Black Friday"
+          ],
+          "correctAnswer": "Black Tuesday",
+          "year": "1929",
+          "category": "Taloushistoria",
+          "explanation": "Pörssiromahdus laukaisi suuren laman, joka vaikutti globaaliin talouteen ja synnytti poliittisia mullistuksia."
+        },
+        {
+          "id": 37,
+          "question": "🌾 Mikä New Deal -ohjelman osa auttoi maanviljelijöitä 1930-luvulla?",
+          "options": [
+            "CCC",
+            "AAA",
+            "WPA",
+            "TVA"
+          ],
+          "correctAnswer": "AAA",
+          "year": "1933",
+          "category": "Suuri lama",
+          "explanation": "Agricultural Adjustment Act (AAA) stabiloi maataloustuotantoa ja nosti hintoja, auttaen taloutta elpymään."
+        },
+        {
+          "id": 38,
+          "question": "⚓ Missä hyökkäyksessä Japani iski Yhdysvaltoihin joulukuussa 1941?",
+          "options": [
+            "Midway",
+            "Pearl Harbor",
+            "Iwo Jima",
+            "Okinawa"
+          ],
+          "correctAnswer": "Pearl Harbor",
+          "year": "1941-12-07",
+          "category": "Toinen maailmansota",
+          "explanation": "Hyökkäys johti Yhdysvaltain liittymiseen toiseen maailmansotaan ja muutti sodan kulkua."
+        },
+        {
+          "id": 39,
+          "question": "🔒 Minkä toimenpiteen Yhdysvallat määräsi japanilaisamerikkalaisille kotirajoitukseen vuonna 1942?",
+          "options": [
+            "Evakuointikomitea",
+            "Internointileirit",
+            "Kapitulointi",
+            "Martial law"
+          ],
+          "correctAnswer": "Internointileirit",
+          "year": "1942",
+          "category": "Toinen maailmansota",
+          "explanation": "Internointileirit rikkoivat perustuslaillisia oikeuksia ja heijastivat sodan aikaisia pelkoja ja rasismia."
+        },
+        {
+          "id": 40,
+          "question": "🔬 Mikä salainen hanke kehitti atomipommit Yhdysvalloissa 1942–1946?",
+          "options": [
+            "Manhattan Project",
+            "Project Blue Book",
+            "Operation Overlord",
+            "Trinity Test"
+          ],
+          "correctAnswer": "Manhattan Project",
+          "year": "1942–1946",
+          "category": "Toinen maailmansota",
+          "explanation": "Projekti loi ensimmäiset ydinaseet, mullistaen sodankäynnin ja aloittaen kylmän sodan aikakauden."
+        },
+        {
+          "id": 41,
+          "question": "🤝 Missä kaupungissa perustettiin Yhdistyneet kansakunnat vuonna 1945?",
+          "options": [
+            "New York",
+            "San Francisco",
+            "Washington D.C.",
+            "Toronto"
+          ],
+          "correctAnswer": "San Francisco",
+          "year": "1945",
+          "category": "Kansainvälinen politiikka",
+          "explanation": "YK:n perustaminen loi uuden kansainvälisen järjestelmän rauhan ja yhteistyön edistämiseksi."
+        },
+        {
+          "id": 42,
+          "question": "🚀 Milloin NASA perustettiin yhdistämään avaruustutkimus Yhdysvalloissa?",
+          "options": [
+            "1955",
+            "1958",
+            "1961",
+            "1969"
+          ],
+          "correctAnswer": "1958",
+          "year": "1958",
+          "category": "Avaruustutkimus",
+          "explanation": "NASA:n perustaminen vahvisti Yhdysvaltain aseman avaruuskilvassa Neuvostoliittoa vastaan."
+        },
+        {
+          "id": 43,
+          "question": "⚖️ Mikä tuomio lopetti erilliset koulut Yhdysvalloissa vuonna 1954?",
+          "options": [
+            "Brown v. Board of Education",
+            "Plessy v. Ferguson",
+            "Civil Rights Act",
+            "Voting Rights Act"
+          ],
+          "correctAnswer": "Brown v. Board of Education",
+          "year": "1954",
+          "category": "Kansalaisoikeusliike",
+          "explanation": "Brownin päätös kumosi eriyttämisen 'erilliset mutta tasavertaiset' -periaatteen ja aloitti kansalaisoikeusliikkeen."
+        },
+        {
+          "id": 44,
+          "question": "✊ Mikä laki hyväksyttiin Yhdysvalloissa vapauden ja syrjinnän kieltoon vuonna 1964?",
+          "options": [
+            "Voting Rights Act",
+            "Civil Rights Act",
+            "Emancipation Proclamation",
+            "Thirteenth Amendment"
+          ],
+          "correctAnswer": "Civil Rights Act",
+          "year": "1964",
+          "category": "Kansalaisoikeusliike",
+          "explanation": "Civil Rights Act kielsi rotuun perustuvan syrjinnän ja oli merkittävä askel tasa-arvoa kohti."
+        },
+        {
+          "id": 45,
+          "question": "🚀 Mikä NASA:n lento laskeutui Kuuhun vuonna 1969?",
+          "options": [
+            "Apollo 8",
+            "Apollo 11",
+            "Gemini 4",
+            "Mercury 7"
+          ],
+          "correctAnswer": "Apollo 11",
+          "year": "1969",
+          "category": "Avaruustutkimus",
+          "explanation": "Apollo 11:n laskeutuminen Kuuhun oli teknologinen ja symbolinen voitto kylmän sodan aikana."
+        },
+        {
+          "id": 46,
+          "question": "🌐 Mikä vapaakauppasopimus astui voimaan Yhdysvaltojen, Kanadan ja Meksikon välillä vuonna 1994?",
+          "options": [
+            "USMCA",
+            "CAFTA",
+            "NAFTA",
+            "TTIP"
+          ],
+          "correctAnswer": "NAFTA",
+          "year": "1994",
+          "category": "Taloussopimukset",
+          "explanation": "NAFTA lisäsi taloudellista integraatiota, mutta herätti myös kritiikkiä työpaikkojen siirtymisestä."
+        },
+        {
+          "id": 47,
+          "question": "🇨🇦 Missä Quebecin kansanäänestyksessä äänestettiin provinssin eroamisesta Kanadasta vuonna 1980?",
+          "options": [
+            "First Referendum",
+            "Meech Lake Accord",
+            "Charlottetown Accord",
+            "Second Referendum"
+          ],
+          "correctAnswer": "First Referendum",
+          "year": "1980",
+          "category": "Kanadan historia",
+          "explanation": "Ensimmäinen kansanäänestys Quebecin itsenäisyydestä heijasti maan sisäisiä jännitteitä, mutta unionisti voitti."
+        },
+        {
+          "id": 48,
+          "question": "🏙️ Minkä päivän terrori-isku kohdistui World Trade Centeriin vuonna 2001?",
+          "options": [
+            "11/11",
+            "9/11",
+            "7/7",
+            "12/12"
+          ],
+          "correctAnswer": "9/11",
+          "year": "2001",
+          "category": "Moderni historia",
+          "explanation": "9/11-isku muutti globaalia turvallisuuspolitiikkaa ja laukaisi sodan terrorismia vastaan."
+        },
+        {
+          "id": 49,
+          "question": "🌪️ Mikä hirmumyrsky aiheutti laajaa tuhoa New Orleansissa vuonna 2005?",
+          "options": [
+            "Hurricane Rita",
+            "Hurricane Katrina",
+            "Hurricane Sandy",
+            "Hurricane Andrew"
+          ],
+          "correctAnswer": "Hurricane Katrina",
+          "year": "2005",
+          "category": "Luonnonkatastrofit",
+          "explanation": "Katrina paljasti Yhdysvaltain haavoittuvuuden luonnonkatastrofeille ja hallinnon epäonnistumisen kriisinhallinnassa."
+        },
+        {
+          "id": 50,
+          "question": "🦠 Minkä pandemian vaikutukset ulottuivat laajasti Pohjois-Amerikkaan vuonna 2020?",
+          "options": [
+            "H1N1",
+            "Ebola",
+            "COVID-19",
+            "Zika"
+          ],
+          "correctAnswer": "COVID-19",
+          "year": "2020–",
+          "category": "Nykyhistoria",
+          "explanation": "COVID-19-pandemia muutti globaalia terveysjärjestelmää, taloutta ja arkipäivää ennennäkemättömin tavoin."
+        }
+      ]
+    }
+  ]
+}
