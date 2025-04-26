@@ -137,43 +137,43 @@ function renderGameBoard() {
 
 // Flip logic
 function flipCard(card, data) {
-  if (lockBoard || data.matched || flippedCards.some((c) => c.card === card)) return;
-
-  card.classList.add("flipped");
-  flippedCards.push({ card, data });
-
-  if (flippedCards.length === 2) {
-    lockBoard = true;
-    const [first, second] = flippedCards;
-
-    if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
-      first.data.matched = true;
-      second.data.matched = true;
-
-      // Keep cards flipped
-      first.card.classList.add("match");
-      second.card.classList.add("match");
-
-      currentScore += 1;
-      updateScoreDisplay();
-
-      if (currentScore > highestScore) {
-        highestScore = currentScore;
-        localStorage.setItem("highestScore", highestScore);
-        updateHighestScoreDisplay();
+    if (lockBoard || data.matched || flippedCards.some((c) => c.card === card)) return;
+  
+    card.classList.add("flipped");
+    flippedCards.push({ card, data });
+  
+    if (flippedCards.length === 2) {
+      lockBoard = true; // Lock the board while checking the pair
+      const [first, second] = flippedCards;
+  
+      if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
+        first.data.matched = true; // Mark both cards as matched
+        second.data.matched = true;
+  
+        first.card.classList.add("match");
+        second.card.classList.add("match");
+  
+        currentScore += 1; // Increment the score
+        updateScoreDisplay();
+  
+        if (currentScore > highestScore) {
+          highestScore = currentScore;
+          localStorage.setItem("highestScore", highestScore);
+          updateHighestScoreDisplay();
+        }
+  
+        resetFlippedCards(); // Reset and unlock the board
+        checkGameCompletion(); // Check if the game is completed
+      } else {
+        // Cards don't match, flip them back after a short delay
+        setTimeout(() => {
+          first.card.classList.remove("flipped");
+          second.card.classList.remove("flipped");
+          resetFlippedCards(); // Reset and unlock the board
+        }, 1000);
       }
-
-      resetFlippedCards();
-    } else {
-      // Wrong guess, flip back
-      setTimeout(() => {
-        first.card.classList.remove("flipped");
-        second.card.classList.remove("flipped");
-        resetFlippedCards();
-      }, 1000);
     }
-  }
-}
+  }  
 
 function resetFlippedCards() {
   flippedCards = [];
@@ -182,12 +182,12 @@ function resetFlippedCards() {
 
 // Update score display
 function updateScoreDisplay() {
-  document.getElementById("currentScore").textContent = `Current Score: ${currentScore}`;
+  document.getElementById("currentScore").textContent = `Nykypisteet: ${currentScore}`;
 }
 
 // Update highest score display
 function updateHighestScoreDisplay() {
-  document.getElementById("highestScore").textContent = `Highest Score: ${highestScore}`;
+  document.getElementById("highestScore").textContent = `Ennätyspisteet: ${highestScore}`;
 }
 
 // Reset Game Logic
@@ -202,3 +202,51 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHighestScoreDisplay();
   initializeGame();
 });
+
+// Check if all pairs are matched
+function checkGameCompletion() {
+    console.log("Checking game completion...");
+    if (gameData.every((card) => card.matched)) {
+      console.log("All cards matched! Displaying popup...");
+      displayCompletionPopup();
+    }
+  }
+  
+  // Create and display the completion popup
+  function displayCompletionPopup() {
+    const popup = document.createElement("div");
+    popup.id = "completionPopup";
+    popup.innerHTML = `
+     <div class="popup-content">
+    <h2>Congratulations! You completed the game!</h2>
+    <button class=popup-button onclick="closePopup()">Sulje</button>
+    <button class=popup-link-button onclick="location.href='../pages/overview.html'">Takaisin peleihin</button>
+    </div>
+    `;
+  
+    console.log("Popup is being displayed");
+    document.body.appendChild(popup);
+  }
+  
+  // Close and remove the popup
+  function closePopup() {
+    const popup = document.getElementById("completionPopup");
+    if (popup) {
+      popup.remove(); // Remove the popup from the DOM
+    }
+  }
+  
+  // Reset Game Logic
+  document.getElementById("resetGameButton").addEventListener("click", () => {
+    console.log("Resetting game...");
+    initializeGame(); // Reinitialize the game
+    flippedCards = []; // Clear flipped cards
+    lockBoard = false; // Unlock the board
+    closePopup(); // Remove popup if it exists
+  });
+  
+  // Display highest score at startup
+  document.addEventListener("DOMContentLoaded", () => {
+    updateHighestScoreDisplay();
+    initializeGame();
+  });
