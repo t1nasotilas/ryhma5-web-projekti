@@ -1,6 +1,7 @@
 
 /* base styles */
 * {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +9,10 @@
     text-decoration: none;
 }
 body {
-    margin-top: 6vh; /* to avoid nav overlap */
+    margin-top: 2vh; /* to avoid nav overlap */
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh + 90px);
 }
 
 a {
@@ -21,30 +25,41 @@ a:hover {
     color: #6F86FF;
 }
 
-/* off-screen-menu */
+/* Off-screen-menu */
+/* Link colors */
+a {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+.off-screen-menu a:hover {
+    color: #6F86FF;
+}
 .off-screen-menu {
-    background-color:  rgb(49, 49, 49);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     height: 100vh;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     position: fixed;
     top: 0;
-    left: -450px;
+    left: -400px;
     display: flex;
     flex-direction: column;
     align-items: center;    
     justify-content: center;
     text-align: center;
-    font-size: 3vh;
+    font-size: 4vh;
     transition: .3s ease;
     z-index: 1000;
-    
 }
 .off-screen-menu.active {
     left: 0;
 }
 
-/* nav */
+/* Navigation */
 nav {
     padding: 1rem;
     display: flex;
@@ -52,28 +67,23 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 6vh; 
-    background-color: #222; 
-    color: white;
+    height: 8vh;
+    color: #333;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000; 
+    z-index: 1000;
 }
 
-/* ham menu parent*/
+/* Ham-menu*/
 .ham-menu {
     height: 60px;
     width: 50px;
     position: fixed;
     left: 1%;
-    padding: 1%;
+    top: 0.5%;
     z-index: 1000;
 }
-
-/* ham menu child */
 .ham-menu span {
     height: 10%;
     width: 100%;
@@ -92,7 +102,7 @@ nav {
     top: 75%;
 }
 .ham-menu.active span {
-    background-color: white;
+    background-color: black;
 }
 .ham-menu.active span:nth-child(1) {
     top: 50%;
@@ -105,25 +115,8 @@ nav {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 /* ------------------------------- */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: grey;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 main{
     flex: 1;
 }
@@ -131,9 +124,12 @@ main{
     background: white;
     width: 90%;
     max-width: 800px;
-    margin: 100px auto 50px;
-    border-radius: 10px;
+    margin: 4rem auto;
+    border-radius: 12px;
     padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow:  
+    1px 3px 6px rgba(0, 0, 0, 0.6);
 }
 #start-screen h1{
     font-size: 2.5em;
@@ -156,12 +152,15 @@ p:nth-child(4){
 }
 .app{
     background: white;
-    width: 90%;
+    width: 85%;
     max-width: 800px;
-    min-height: 70vh;
-    margin: 100px auto 50px;
-    border-radius: 10px;
+    min-height: 80vh;
+    margin: 3.5rem auto;
+    border-radius: 12px;
     padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow:  
+    1px 2px 6px rgba(0, 0, 0, 0.6);
 }
 #start-btn{
     background: #fff;
@@ -173,7 +172,7 @@ p:nth-child(4){
     padding: 10px;
     display: block;
     margin: 10px auto;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all .3s;
 }
@@ -182,35 +181,55 @@ p:nth-child(4){
     color: #fff;
 }
 .app h1{
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: 600;
     border-bottom: 1px solid #333;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
 }
 .quiz{
-    padding: 20px 0; /* padding top and sideways */
+    padding: 5px 0; /* padding top and sideways */
+    display: flex;
+    flex-direction: column;
 }
 .quiz h2{
     font-size: 1.5em;
     font-weight: 600;
 }
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px; 
+}
 .btn{
     background: #fff;
     color: #222;
     font-weight: 500;
-    width: 100%;
+    width:100%;
     border: 1px solid #222;
     padding: 10px;
-    margin: 5px 0;
-    text-align: left;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all .3s;
+    text-align: center;
+    font-size: 1rem;
 }
-.btn:hover:not([disabled]){ /* hover-efekti vain kun painike on valittavissa */
-    background: #222;
+#home-btn:hover:not([disabled]), 
+#next-btn:hover:not([disabled]), 
+.btn:hover:not([disabled]),
+#start-btn:hover:not([disabled]) {
+    background: #1a1a2e;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow:
+        -4px -4px 8px rgba(255, 255, 255, 0.05),
+        4px 4px 8px rgba(0, 0, 0, 0.3),
+        inset 2px 2px 4px rgba(255, 255, 255, 0.05),
+        inset -2px -2px 4px rgba(0, 0, 0, 0.3);
     color: #fff;
 }
 .btn:disabled{
@@ -220,42 +239,35 @@ p:nth-child(4){
     background: #fff;
     color: #222;
     font-weight: 600;
-    font-size: 1.4em;
+    font-size: 1.2em;
     width: 30%;
     border: 1px solid #222;
-    padding: 10px;
+    padding: 8px;
     display: block;
-    margin: 10px auto;
-    border-radius: 4px;
+    margin: 0 auto;
+    border-radius: 12px;
     cursor: pointer;
     transition: all .3s;
     display: none; /* Seuraava -painike piilossa niin kauan kun käyttäjä antaa vastauksen */
-}
-#next-btn:hover:not([disabled]){
-    background: #222;
-    color: #fff;
 }
 #home-btn{ 
     background: #fff;
     color: #222;
     font-weight: 600;
     font-size: 1.4em;
-    width: 30%;
+    width: 50%;
     border: 1px solid #222;
     padding: 10px;
     display: block;
     margin: 10px auto;
-    border-radius: 4px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all .3s;
 }
-#home-btn:hover:not([disabled]){
-    background: #222;
-    color: #fff;
-}
+
 
 #score-text{
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: center;
     font-weight: bold;
     color: #222;
@@ -271,41 +283,42 @@ p:nth-child(4){
 .image, .question-image, img{
     display: block;
     width: 100%;
-    max-width: 550px;
+    max-width: 525px;
     max-height: 350px;
-    margin: 15px auto;
-    border-radius: 4px;
+    margin: 8px auto;
+    border-radius: 12px;
 }
 .answer-message{
 /* Text for correct/incorrect answer*/
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: 600;
+    margin: 2px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     text-align: center;
-    margin: 20px 0;
+    min-height: 60px;
+    grid-column: 1 / -1;
 }
 
 /* FOOTER */
-footer{
-    margin: 0;
-    padding: 0;
-}
 .info-footer {
     font-size: 1.5vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #3f3c3c;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
     color: white;
-    padding: 10px 5%;
+    padding: 0.7% 2%;
+    position:absolute;
     width: 100%;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    position: static;
-    margin-bottom: 0;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
 }
 .developers {
     flex: 1;
-    width: 33%;
 }
 .developer-list {
     display: flex;
@@ -315,37 +328,22 @@ footer{
 .column {
     display: flex;
     flex-direction: column;
+    gap: -2vh;
 }
 .project {
     font-weight: bold;
     flex: 1;
-    text-align: center;
-    width: 33%;
-}
-.logo{
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 33%;
-    text-align: right;
-}
+  }
+  
 .logo img {
     max-height: 7vh;
-    height: auto;
-    width: auto;
-    object-fit: contain;;
+    flex: 1;
 }
-.cr-footer {
-    background-color: #000000;
-    color: white;
-    width: 100%;
-    text-align: center;
-    position: static;
-}
+
 @media (max-width: 768px) {
     .app {
-      margin-bottom: 50px;
+        width: 80%;
+      margin-bottom: 3.5rem;
     }
     #start-screen p {
       font-size: 1.2em;
@@ -355,6 +353,10 @@ footer{
     }
     #start-screen h3 {
       font-size: 1.2em;
+    }
+    #answer-buttons {
+        grid-template-columns: 1fr; /* Yksi sarake mobiilissa */
+        gap: 10px;
     }
   }
   
