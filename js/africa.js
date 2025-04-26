@@ -60,6 +60,8 @@ const countries = [
 let gameData = [];
 let flippedCards = [];
 let lockBoard = false;
+let currentScore = 0;
+let highestScore = localStorage.getItem("highestScore") || 0;
 
 // Fisher-Yates shuffle
 function shuffle(array) {
@@ -72,29 +74,31 @@ function shuffle(array) {
 
 // Initialize game
 function initializeGame() {
-  const selectedCountries = shuffle([...countries]).slice(0, 10);
-  const cards = [];
+    const selectedCountries = shuffle([...countries]).slice(0, 10); // 10 countries per round
+    const cards = [];
+    currentScore = 0; // Reset current score at the beginning of the game
+    updateScoreDisplay();
 
-  selectedCountries.forEach((country, index) => {
-    cards.push({
-      id: `${index}-name`,
-      type: "name",
-      value: country.name,
-      matchId: index,
-      matched: false
-    });
-    cards.push({
-      id: `${index}-flag`,
-      type: "flag",
-      value: country.flag,
-      matchId: index,
-      matched: false
-    });
-  });
+    selectedCountries.forEach((country, index) => {
+        cards.push({
+          id: `${index}-name`,
+          type: "name",
+          value: country.name,
+          matchId: index,
+          matched: false
+        });
+        cards.push({
+          id: `${index}-flag`,
+          type: "flag",
+          value: country.flag,
+          matchId: index,
+          matched: false
+        });
+      });    
 
-  gameData = shuffle(cards);
-  renderGameBoard();
-}
+      gameData = shuffle(cards);
+      renderGameBoard();
+    }
 
 // Render the board
 function renderGameBoard() {
@@ -133,33 +137,42 @@ function renderGameBoard() {
 
 // Flip logic
 function flipCard(card, data) {
-    if (lockBoard || data.matched || flippedCards.includes(card)) return;
-  
-    card.classList.add("flipped");
-    flippedCards.push({ card, data });
-  
-    if (flippedCards.length === 2) {
-      lockBoard = true;
-      const [first, second] = flippedCards;
-  
-      if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
-        first.data.matched = true;
-        second.data.matched = true;
-  
-        // Keep cards flipped (showing back view)
-        first.card.classList.add("match");
-        second.card.classList.add("match");
-  
-        resetFlippedCards();
-      } else {
-        // Wrong guess, flip back without flashing red
-        setTimeout(() => {
-          first.card.classList.remove("flipped");
-          second.card.classList.remove("flipped");
-          resetFlippedCards();
-        }, 1000);
+  if (lockBoard || data.matched || flippedCards.some((c) => c.card === card)) return;
+
+  card.classList.add("flipped");
+  flippedCards.push({ card, data });
+
+  if (flippedCards.length === 2) {
+    lockBoard = true;
+    const [first, second] = flippedCards;
+
+    if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
+      first.data.matched = true;
+      second.data.matched = true;
+
+      // Keep cards flipped
+      first.card.classList.add("match");
+      second.card.classList.add("match");
+
+      currentScore += 1;
+      updateScoreDisplay();
+
+      if (currentScore > highestScore) {
+        highestScore = currentScore;
+        localStorage.setItem("highestScore", highestScore);
+        updateHighestScoreDisplay();
       }
+
+      resetFlippedCards();
+    } else {
+      // Wrong guess, flip back
+      setTimeout(() => {
+        first.card.classList.remove("flipped");
+        second.card.classList.remove("flipped");
+        resetFlippedCards();
+      }, 1000);
     }
+  }
 }
 
 function resetFlippedCards() {
@@ -167,4 +180,25 @@ function resetFlippedCards() {
   lockBoard = false;
 }
 
-initializeGame();
+// Update score display
+function updateScoreDisplay() {
+  document.getElementById("currentScore").textContent = `Current Score: ${currentScore}`;
+}
+
+// Update highest score display
+function updateHighestScoreDisplay() {
+  document.getElementById("highestScore").textContent = `Highest Score: ${highestScore}`;
+}
+
+// Reset Game Logic
+document.getElementById("resetGameButton").addEventListener("click", () => {
+  initializeGame(); // Reinitialize the game
+  flippedCards = []; // Clear flipped cards
+  lockBoard = false; // Unlock the board
+});
+
+// Display highest score at startup
+document.addEventListener("DOMContentLoaded", () => {
+  updateHighestScoreDisplay();
+  initializeGame();
+});
