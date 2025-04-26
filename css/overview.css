@@ -115,7 +115,7 @@ nav {
 .summary-layout {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.1rem;
   padding: 20px 1%;
   justify-content: center;
   align-items: center;
@@ -133,30 +133,37 @@ nav {
   align-items: center;
   z-index: 0;
   width: 100%;
+
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 /* Small boxes */
 .games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding: 0 2%;
+
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out 1s forwards;
 }
 .games-grid h2 {
   font-size: 1.4rem;
-  margin-bottom: 1px;
+  margin-bottom: 3px;
 }
 .games-grid p {
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
+/* individual box */
 .box {
   background: #1a1a2e;
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 25px;
   font-weight: bold;
   color: #fff;
@@ -169,7 +176,7 @@ nav {
 
   min-height: 100px;
   width: 100%;
-  max-width: 350px;
+  max-width: 325px;
   margin: 0 auto;
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -190,22 +197,20 @@ nav {
 /* Text styles */
 .summary-box h1 {
   font-weight:700;
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2.3rem, 5.5vw, 3rem);
   text-align: center;
   color: #ffffff;
 
-  border-bottom: 3px solid #695dc5;
-  padding-bottom: 10px;
+  border-bottom: 3px solid #1a1a2e;
   text-shadow: 
     2px 4px 8px rgba(0, 0, 0, 0.8),
     0 0 10px rgba(0, 0, 0, 0.6);
-  padding: 0 15px 10px 15px;
+  padding: 0 10px 5px 10px;
 }
 .summary-description, .total-score {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   text-align: center;
   max-width: 800px;
-  padding: 0 10px;
   color: #ffffff;
 
   text-shadow: 
@@ -213,22 +218,22 @@ nav {
     0 0 10px rgba(0, 0, 0, 0.6);
 }
 
+  /*footer---------------------------------------------------------------------------------------------------------*/
 
-/* Footer */
-.info-footer {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  color: white;
-  padding: 0.7% 2%;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-}
+  .info-footer {
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    color: white;
+    padding: 0.7% 2%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+  }
 .developers {
   flex: 1;
 }
@@ -240,16 +245,15 @@ nav {
 .column {
   display: flex;
   flex-direction: column;
+  gap: -2vh;
 }
 .project {
   font-weight: bold;
   flex: 1;
 }
-.project p {
-  margin-top: 2vh;
-}
+
 .logo img {
-  max-height: 8vh;
+  max-height: 7vh;
   flex: 1;
 }
 
@@ -264,7 +268,7 @@ nav {
     max-width: 800px;
   }
   .box {
-    max-width: 300px;
+    max-width: 90%;
   }
 }
 
@@ -273,15 +277,29 @@ nav {
     grid-template-columns: 1fr;
     max-width: 400px;
   }
+  .games-grid h2 {
+    font-size: 1.2rem;
+  }
   .box {
-    max-width: 100%;
-    min-height: 100px;
-    padding: 15px;
+    max-width: 85%;
+    min-height: 80px;
+    padding: 10px;
   }
   .info-footer {
     position: relative;
   }
   .summary-box h1 {
     padding: 0 10px 8px 10px;
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+      opacity: 0.0;
+      transform: translateY(25px);
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);
   }
 }
