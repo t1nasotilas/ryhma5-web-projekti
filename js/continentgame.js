@@ -37,13 +37,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (wrapper) wrapper.style.display = "block";
     btn.style.display = "none";
         });
-    }
+    };
 
     // Desktop: Drag and Drop
     continents.forEach(continent => {
         continent.addEventListener("dragstart", (event) => {
             event.dataTransfer.setData("text", event.target.id);
         });
+
+        function checkAllPlaced() {
+            const allDrags = document.querySelectorAll(".continent");
+            const allPlaced = Array.from(allDrags).every(elem => elem.style.display === "none");
+        
+            if (allPlaced) {
+                const sidebar = document.querySelector(".draggable-container");
+                if (sidebar) sidebar.style.display = "none"; // hide the sidebar
+            };
+        };
     });
 
     dropzones.forEach(zone => {
@@ -57,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const previousId = zone.dataset.continent;
                 if (previousId) {
                     const previousElement = document.getElementById(`drag-${previousId}`);
-                    if (previousElement) previousElement.style.display = "block";
+                    if (previousElement) previousElement.style.display = "flex";
                 }
         
                 //  Place new one
@@ -68,8 +78,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 zone.dataset.continent = draggedId.replace("drag-", "");
                 placements[zone.id] = draggedId.replace("drag-", "");
             }
+            checkAllPlaced();
         });
     });
+
+    
 
         // Store current placements
         const placements = {};
@@ -173,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const previousId = dropTarget.dataset.continent;
                 if (previousId) {
                     const prevElem = document.getElementById("drag-" + previousId);
-                    if (prevElem) prevElem.style.display = "block";
+                    if (prevElem) prevElem.style.display = "flex";
                 }
 
                 dropTarget.innerText = continent.innerText;
@@ -182,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 dropTarget.dataset.continent = dragId;
                 placements[dropId] = dragId;
             }
+            checkAllPlaced();
 
             continent.classList.remove("dragging");
         });
@@ -189,4 +203,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.classList.add("mobile");
 }
+function checkAllPlaced() {
+    const allDrags = document.querySelectorAll(".continent");
+    const allPlaced = Array.from(allDrags).every(elem => elem.style.display === "none");
+
+    if (allPlaced) {
+        const sidebar = document.querySelector(".draggable-container");
+        if (sidebar) sidebar.style.display = "none"; // hide the sidebar
+    }
+};
 });
