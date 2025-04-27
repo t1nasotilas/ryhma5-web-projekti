@@ -12,13 +12,13 @@ body {
     align-items: center;
     min-height: 100vh;
     padding-top: 60px;
-    background-image: url('../images/paper.jpg');
+    background-image: url('../images/paper.jpg');/*Image by <a href="https://pixabay.com/users/alsterkoralle-1528738/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2076335">alsterkoralle</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2076335">Pixabay</a>*/
 }
 
 .game-wrapper {
     display: flex;
-    flex-direction: column; /* Stack container and button vertically */
-    align-items: center; /* Center content horizontally */
+    flex-direction: column;
+    align-items: center; 
 }
 
 /*Game Board*/
@@ -37,7 +37,7 @@ body {
 /*Card Styles*/
 .card {
     aspect-ratio: 15 / 10;
-    width: clamp(70px, 15vw, 180px); /* Dynamically scales with screen size */
+    width: clamp(70px, 15vw, 180px);
     margin: 0;
     perspective: 1000px;
     overflow: hidden;
@@ -46,7 +46,7 @@ body {
     border-radius: 10px;
     grid-auto-rows: calc(10 / 15 * 120px);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out; /* Smooth transition for size changes */
+    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out;
 }
 
 .card:hover {
@@ -83,7 +83,7 @@ body {
     display: none;
     transform: rotateY(180deg);
     border-radius: 10px;
-    background-image: url('../images/playing-card.jpg');
+    background-image: url('../images/playing-card.jpg');/*Image by <a href="https://pixabay.com/users/blickpixel-52945/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=568201">Michael Schwarzenberger</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=568201">Pixabay</a>*/
     background-size: cover;
     background-position: center;
 }
@@ -100,7 +100,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('../images/paper2.jpg');
+    background-image: url('../images/paper2.jpg');/*Image by <a href="https://pixabay.com/users/susannp4-1777190/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1099962">Susann Mielke</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1099962">Pixabay</a>*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -318,9 +318,10 @@ a:hover {
   }
   
   .popup-button {
-    margin-top: 15px;
+    margin: 15px auto; 
+    display: block; 
     padding: 10px 15px;
-    background: #000000; /* Green button */
+    background: #000000;
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
@@ -329,13 +330,14 @@ a:hover {
   }
   
   .popup-button:hover {
-    background: #218838; /* Darker green on hover */
+    background: #218838;
   }  
   
   .popup-link-button {
-    margin-top: 15px;
+    margin: 15px auto; 
+    display: block; 
     padding: 10px 15px;
-    background: #000000; /* Green button */
+    background: #000000; 
     color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
@@ -344,6 +346,49 @@ a:hover {
   }
   
   .popup-link-button:hover {
-    background: #218838; /* Darker green on hover */
+    background: #218838; 
+  }
+
+  #rulesPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
   }
   
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 2.5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-content h2 {
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .start-popup-button {
+    margin: 15px auto; 
+    display: block; 
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-button:hover {
+    background: #218838;
+  }  

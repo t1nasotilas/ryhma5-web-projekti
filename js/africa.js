@@ -1,5 +1,6 @@
 //Country names and pictures of the flags stated here//
 //I have listed all 54 African countries, but the game will only ask the player 20 per round//
+//All flag images by https://www.countryflags.com/africa/ © copyright 2025 Country flags - part of ProFlags BV//
 const countries = [
     { name: "Algeria", flag: "../images/flags/algeria-flag-medium.png" },
     { name: "Angola", flag: "../images/flags/angola-flag-medium.png" },
@@ -74,9 +75,9 @@ function shuffle(array) {
 
 // Initialize game
 function initializeGame() {
-    const selectedCountries = shuffle([...countries]).slice(0, 10); // 10 countries per round
+    const selectedCountries = shuffle([...countries]).slice(0, 10); 
     const cards = [];
-    currentScore = 0; // Reset current score at the beginning of the game
+    currentScore = 0;
     updateScoreDisplay();
 
     selectedCountries.forEach((country, index) => {
@@ -143,7 +144,7 @@ function flipCard(card, data) {
     flippedCards.push({ card, data });
   
     if (flippedCards.length === 2) {
-      lockBoard = true; // Lock the board while checking the pair
+      lockBoard = true;
       const [first, second] = flippedCards;
   
       if (first.data.matchId === second.data.matchId && first.data.type !== second.data.type) {
@@ -162,14 +163,14 @@ function flipCard(card, data) {
           updateHighestScoreDisplay();
         }
   
-        resetFlippedCards(); // Reset and unlock the board
-        checkGameCompletion(); // Check if the game is completed
+        resetFlippedCards(); 
+        checkGameCompletion();
       } else {
         // Cards don't match, flip them back after a short delay
         setTimeout(() => {
           first.card.classList.remove("flipped");
           second.card.classList.remove("flipped");
-          resetFlippedCards(); // Reset and unlock the board
+          resetFlippedCards(); 
         }, 1000);
       }
     }
@@ -192,9 +193,9 @@ function updateHighestScoreDisplay() {
 
 // Reset Game Logic
 document.getElementById("resetGameButton").addEventListener("click", () => {
-  initializeGame(); // Reinitialize the game
-  flippedCards = []; // Clear flipped cards
-  lockBoard = false; // Unlock the board
+  initializeGame(); 
+  flippedCards = []; 
+  lockBoard = false; 
 });
 
 // Display highest score at startup
@@ -218,9 +219,9 @@ function checkGameCompletion() {
     popup.id = "completionPopup";
     popup.innerHTML = `
      <div class="popup-content">
-    <h2>Congratulations! You completed the game!</h2>
-    <button class=popup-button onclick="closePopup()">Sulje</button>
+    <h2>Onneksi olkoon! Voitit pelin!</h2>
     <button class=popup-link-button onclick="location.href='../pages/overview.html'">Takaisin peleihin</button>
+    <button class=popup-button onclick="closePopup()">Sulje</button>
     </div>
     `;
   
@@ -232,17 +233,18 @@ function checkGameCompletion() {
   function closePopup() {
     const popup = document.getElementById("completionPopup");
     if (popup) {
-      popup.remove(); // Remove the popup from the DOM
+      popup.remove(); 
     }
   }
   
   // Reset Game Logic
   document.getElementById("resetGameButton").addEventListener("click", () => {
     console.log("Resetting game...");
-    initializeGame(); // Reinitialize the game
-    flippedCards = []; // Clear flipped cards
-    lockBoard = false; // Unlock the board
-    closePopup(); // Remove popup if it exists
+    displayRulesPopup();
+    initializeGame(); 
+    flippedCards = []; 
+    lockBoard = false; 
+    closePopup(); 
   });
   
   // Display highest score at startup
@@ -250,3 +252,34 @@ function checkGameCompletion() {
     updateHighestScoreDisplay();
     initializeGame();
   });
+
+  // Display rules popup
+function displayRulesPopup() {
+  const rulesPopup = document.createElement("div");
+  rulesPopup.id = "rulesPopup";
+  rulesPopup.innerHTML = `
+    <div class="popup-content">
+      <h2>Pelin säännöt</h2>
+      <p><b>1.</b> Yhdistä liput oikeisiin maihin klikkaamalla ensin lippua ja sitten maan nimeä.</p> 
+      <p><b>2.</b> Peli päättyy automaattisesti, kun kaikki parit on yhdistetty oikein.</p> 
+      <p><b>3.</b> Jos haluat keskeyttää pelin ennen kuin kaikki parit on yhdistetty, klikkaa <b>"Aloita alusta"</b> -painiketta.</p>
+      <button class="start-popup-button" onclick="startGame()">Aloita peli</button>
+    </div>
+  `;
+
+  document.body.appendChild(rulesPopup);
+}
+
+// Start game function
+function startGame() {
+  const rulesPopup = document.getElementById("rulesPopup");
+  if (rulesPopup) {
+    rulesPopup.remove(); 
+    initializeGame();
+  }
+}
+
+// Display rules popup on load
+document.addEventListener("DOMContentLoaded", () => {
+  displayRulesPopup();
+});
