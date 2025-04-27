@@ -1,26 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Etusivu | MaanosaMaster</title>
-  <link rel="stylesheet" href="./css/index.css" />
-  <script src="./js/index.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eurooppavisa</title>
+  <link rel="stylesheet" href="../css/europegame.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+  <script src="../js/index.js" defer></script>
+  <script src="../js/europegame.js" defer></script>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <section class="hero parallax">
-    <div class="hero-content">
-      <div class="hero-logo">
-        <img src="images/logo-no-background.png" alt="Logo" />
-      </div>      
-      <p class="hero-subtitle">Tervetuloa MaanosaMasteriin! </p>
-      <a href="../pages/overview.html" class="hero-cta">Aloita tästä</a>
-    </div>
-  </section>
-
-  <!-- Off-screen Menu -->
   <div class="off-screen-menu">
     <ul>
       <li><a href="../index.html">Koti</a></li>
@@ -32,7 +21,6 @@
     </ul>
   </div>
 
-  <!-- Navigation -->
   <nav>
     <p></p>
     <div class="ham-menu">
@@ -42,7 +30,25 @@
     </div>
   </nav>
 
-  <!-- Footer -->
+
+    <h1>Euroopan pääkaupunkivisa</h1>
+  <div class="quiz-box">
+    <!-- startscreen -->
+    <div id="start-screen">
+      <p>Testaa, kuinka hyvin tunnet Euroopan maiden pääkaupungit! Visa arpoo kymmenen satunnaista maata – vastaa oikein kaikkiin ja nappaa täydet pisteet. </p>
+      <button id="start-btn" class="btn">Aloita</button>
+    </div>
+  
+    <!-- quiz content -->
+    <div id="quiz-section" style="display: none;">
+      <p id="question"></p>
+      <input type="text" id="answer" placeholder="Kirjoita vastaus" />
+      <button id="check-btn">Tarkista</button>
+      <p id="feedback"></p>
+    </div>
+    <img src="../images/europemap.png" alt="Euroopan kartta" class="quiz-image"/>
+  </div>
+  <!-- footer -->
   <footer>
     <div class="info-footer">
       <div class="developers">
@@ -65,9 +71,9 @@
         <p>COPYRIGHT &copy; RYHMÄ 5</p>
       </div>
       <div class="logo">
-        <img src="images/oamk-logo.png" alt="OAMK Logo" />
+        <img src="../images/oamk-logo.png" alt="OAMK Logo" />
       </div>
     </div>
   </footer>
-</body>
-</html>
+  </body>
+  </html>

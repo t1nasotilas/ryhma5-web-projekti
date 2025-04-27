@@ -1,0 +1,131 @@
+.quiz-box {
+  background-color: white;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.quiz-image {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+  display: block;
+  padding-top: 5vh;
+}
+
+body {
+  background-color: #f0f4f8;
+  color: #333;
+  padding: 8vh;
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #003366;
+}
+
+#start-screen {
+  margin-top: 2rem;
+}
+
+#start-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #004c99;
+}
+
+#quiz-section {
+  margin-top: 2rem;
+}
+
+#question {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#answer {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 60%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#check-btn {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#check-btn:hover {
+  background-color: #1e7e34;
+}
+
+#feedback {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+
+  .info-footer {
+    font-size: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    color: white;
+    padding: 0.7% 2%;
+    position: fixed;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+  }
+.developers {
+  flex: 1;
+}
+.developer-list {
+  display: flex;
+  gap: 2vh;
+  margin-top: 5px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: -2vh;
+}
+.project {
+  font-weight: bold;
+  flex: 1;
+}
+
+.logo img {
+  max-height: 7vh;
+  flex: 1;
+}

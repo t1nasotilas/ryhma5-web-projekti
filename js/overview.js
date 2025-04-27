@@ -2,11 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const games = [
         { key: "asiaGameScore", name: "Aasia", max: 6 },
         { key: "africaGameScore", name: "Afrikkavisa", max: 6 },
-        { key: "europeGameScore", name: "Eurooppavisa", max: 6 },
+        { key: "europeGameScore", name: "Eurooppavisa", max: 10 },
         { key: "continentGameScore", name: "Maanosapeli", max: 7 },
         { key: "southAmericaGameScore", name: "Etelä-Amerikka", max: 6 },
         { key: "northAmericaGameScore", name: "Pohjois-Amerikka", max: 10 }
-        // add other games here
     ];
 
     const boxElements = document.querySelectorAll(".box");
