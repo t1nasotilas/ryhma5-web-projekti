@@ -1,24 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
-}
-.game-container {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    gap: 10px;
+/*Base Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/*Card styles*/
+body {
+    font-family: "Sansation", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 60px;
+    background-image: url('../images/paper.jpg');/*Image by <a href="https://pixabay.com/users/alsterkoralle-1528738/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2076335">alsterkoralle</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2076335">Pixabay</a>*/
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/*Game Board*/
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: clamp(10px, 2vw, 30px);
+    width: 100%;
+    max-width: 80vw;
+    margin: auto;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Card Styles*/
 .card {
-    width: 100px;
-    height: 100px;
+    aspect-ratio: 15 / 10;
+    width: clamp(70px, 15vw, 180px);
+    margin: 0;
     perspective: 1000px;
+    overflow: hidden;
     cursor: pointer;
     position: relative;
+    border-radius: 10px;
+    grid-auto-rows: calc(10 / 15 * 120px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
 
 .card-inner {
@@ -41,69 +74,105 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
-    background-color: white;
+    background-color: rgb(251, 251, 251);
+    text-align: center;
+    font-weight: bold;
 }
 
 .card .front {
+    display: none;
     transform: rotateY(180deg);
-    background-color: white;
-    font-weight: bold;
-    padding: 5px;
-    text-align: center;
+    border-radius: 10px;
+    background-image: url('../images/playing-card.jpg');/*Image by <a href="https://pixabay.com/users/blickpixel-52945/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=568201">Michael Schwarzenberger</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=568201">Pixabay</a>*/
+    background-size: cover;
+    background-position: center;
 }
 
 .card .back {
-    background-image: url('card-back.png');
+    display: flex;
+    border-radius: 10px;
+    background-color: #fffaeb;
     background-size: cover;
+    background-position: center;
 }
 
-.match .back {
+.card .back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/paper2.jpg');/*Image by <a href="https://pixabay.com/users/susannp4-1777190/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1099962">Susann Mielke</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1099962">Pixabay</a>*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.card.flipped .front {
     display: flex;
 }
-.match .front {
+
+.card.flipped .back {
     display: none;
 }
-.wrong {
-    background-color: lightcoral;
+
+/*Responsive Text & Images*/
+.card img {
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-/* Link colors */
-a {
-    color: white;
-}
-a:visited {
-    color: white;
-}
-a:hover {
-    color: #6F86FF;
+@media (min-width: 1000px) {
+    .game-container {
+        grid-template-columns: repeat(5, 1fr); 
+        max-width: 1000px;
+    }
+    .card {
+        width: 180px;
+    }
 }
 
-/* Off-screen-menu */
-.off-screen-menu {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    height: 100vh;
-    width: 100%;
-    max-width: 400px;
-    position: fixed;
-    top: 0;
-    left: -400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    justify-content: center;
+@media (max-width: 600px) {
+    .game-container {
+        gap: 12px;
+        padding: 0;
+        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        flex: 0 0 calc(33.33% - 12px);
+        max-width: 100px;
+    }
+
+    .card .front, .card .back {
+        font-size: clamp(12px, 1.5vw, 20px);
+    }
+
+    .card img {
+        width: 60%;
+    }
+}
+
+/*Scoreboard Styles*/
+#scoreboard {
+    margin: 20px 0;
     text-align: center;
-    font-size: 4vh;
-    transition: .3s ease;
-    z-index: 1000;
-}
-.off-screen-menu.active {
-    left: 0;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Navigation */
+/*Navigation*/
 nav {
     padding: 1rem;
     display: flex;
@@ -116,17 +185,37 @@ nav {
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
-/* Ham-menu*/
+/*Reset Button Styling*/
+#resetGameButton {
+    margin: 20px auto;
+    display: block; 
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#resetGameButton:hover {
+    background-color: #45a049;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/*Hamburger Menu*/
 .ham-menu {
-    height: 60px;
-    width: 50px;
+    height: 50px;
+    width: 40px;
     position: fixed;
     left: 1%;
-    top: 0.5%;
-    z-index: 1000;
+    top: 1%;
+    z-index: 1001;
 }
 .ham-menu span {
     height: 10%;
@@ -159,3 +248,147 @@ nav {
     top: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+
+/*Off-Screen Menu*/
+.off-screen-menu {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 4vh;
+    transition: .3s ease;
+    z-index: 1000;
+}
+.off-screen-menu.active {
+    left: 0;
+}
+
+.off-screen-menu ul {
+    list-style: none;
+}
+
+.off-screen-menu a {
+    color: white;
+    text-decoration: none;
+}
+.off-screen-menu a:hover {
+    color: #6F86FF;
+}
+
+/*Links*/
+a {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: #6F86FF;
+}
+
+#completionPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-button {
+    margin: 15px auto; 
+    display: block; 
+    padding: 10px 15px;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-button:hover {
+    background: #218838;
+  }  
+  
+  .popup-link-button {
+    margin: 15px auto; 
+    display: block; 
+    padding: 10px 15px;
+    background: #000000; 
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-link-button:hover {
+    background: #218838; 
+  }
+
+  #rulesPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    line-height: 2.5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .popup-content h2 {
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .start-popup-button {
+    margin: 15px auto; 
+    display: block; 
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .popup-button:hover {
+    background: #218838;
+  }  

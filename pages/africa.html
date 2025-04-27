@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Afrikkapeli</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sansation">
   <link rel="stylesheet" href="../css/africa.css" />
-  <script src="../js/africa.js" defer></script>
+  <script defer src="../js/africa.js"></script>
 </head>
 <body>
 
@@ -22,7 +23,7 @@
   <!-- Navigation -->
   <nav>
     <p></p>
-    <div class="ham-menu">
+    <div class="ham-menu" id="hamMenu">
       <span></span>
       <span></span>
       <span></span>
@@ -31,7 +32,14 @@
 
   <!-- Game Section -->
   <main>
+    <div id="scoreboard">
+        <p id="currentScore">Current Score: 0</p>
+        <p id="highestScore">Highest Score: 0</p>
+    </div>
+    <div class="game-wrapper">
     <div class="game-container" id="gameBoard"></div>
+      <button id="resetGameButton">Aloita alusta</button>
+    </div>
   </main>
 
   <!-- Game Script -->
