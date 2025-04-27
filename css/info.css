@@ -162,7 +162,7 @@ a:hover {
 
 .developer-entry img{
   height: auto;
-  width: 150px;
+  width: 9.5vh;
   display: flex;
   object-fit: cover;
   border-radius: 6px;
