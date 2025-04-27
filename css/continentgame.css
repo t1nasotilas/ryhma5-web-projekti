@@ -178,27 +178,15 @@ nav {
     align-items: center;
     font-size: 2.5rem;
     z-index: 999;
+    transition: all 0.4s ease-out;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+    
 }
 .game-launcher p {
     margin: 15%;
 }
 
-body.mobile .game-launcher {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
-    padding: 2vh;
-    border-radius: 30px;
-    background-color: rgb(206, 206, 206);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    align-items: center;
-    z-index: 999;
-}
 /* styling for results window */
 .result-overlay {
     display: none;
@@ -217,6 +205,9 @@ body.mobile .game-launcher {
     align-items: center;
     font-size: 2.5rem;
     z-index: 999;
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 0.5s forwards;
 }
 
 #save-btn {
@@ -290,23 +281,11 @@ body.mobile .game-launcher {
   color: #fff;
   font-weight: 500;
   font-size: clamp(1rem, 1.4vw, 2.5rem);
-  transition: all 0.4s ease-out;
-  animation: fadeIn 0.5s ease-out 0.5s forwards;
+  transition: all 0.3s ease-out;
   cursor: pointer;
 }
 
-body.mobile #fullscreen-btn {
-    bottom: 6%;
-    
-    border-radius: 50px;
-    height: 9vh;
-    width: 25vh;
-    padding: 2vh;
-    opacity: 0.6;
-    transition: 0.2s;
-    justify-self: center;
-    z-index: 999;
-}
+
 
 #fullscreen-btn:hover {
     bottom: 5%;
@@ -331,6 +310,9 @@ body.mobile #fullscreen-btn {
     font-size: 1.5rem;
     font-weight: bold;
     z-index: 1001;
+    transition: all 0.4s ease-out;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 1s forwards;
   }
   /* score display font */
   #score {
@@ -354,7 +336,6 @@ body.mobile #fullscreen-btn {
     font-weight: 500;
     font-size: clamp(1rem, 1.4vw, 2.5rem);
     transition: all 0.4s ease-out;
-    animation: fadeIn 0.5s ease-out 0.5s forwards;
     cursor: pointer;
   }
 
@@ -368,7 +349,6 @@ body.mobile #fullscreen-btn {
     cursor: pointer;
   }
 
-
 /* base styling for draggable elements */
 .continent {
     display: flex;
@@ -377,7 +357,7 @@ body.mobile #fullscreen-btn {
     text-align: center;
     font-size: 1.2vw;
     padding: 15px 30px;
-  background: #1a1a2e;
+    background: #1a1a2e;
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -389,15 +369,13 @@ body.mobile #fullscreen-btn {
     inset -2px -2px 4px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-weight: 500;
-    
-    transition: all 0.4s ease-out;
-    animation: fadeIn 1s ease-out 2s forwards;
     width: 9vw;
     height: 3.5vw;
     cursor: grab;
     overflow: hidden;
     transform: translate(0, 0);
     opacity: 0.999;
+    
 }
 
 .continent:focus, .continent:active {
@@ -407,7 +385,7 @@ body.mobile #fullscreen-btn {
 
   .continent:hover {
     transform: translateY(-1.2px)  scale(1.015)  !important;
-
+    transition: all 0.4s ease-out;
     border: 2px solid white;
     box-shadow:
     -4px -4px 8px rgba(255, 255, 255, 0.1),
@@ -420,6 +398,9 @@ body.mobile #fullscreen-btn {
     position: relative;
     width: 85%;
     margin: auto;
+    transition: all 0.4s ease-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
   }
   
   .map {
@@ -446,6 +427,8 @@ body.mobile #fullscreen-btn {
     font-weight: 500;
     font-size: clamp(1rem, 1.4vw, 2.5rem);  
     transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 1s forwards;
   }
   
   
@@ -458,7 +441,7 @@ body.mobile #fullscreen-btn {
   #australia      { top: 70%; left: 80%; }
   #antarctica     { top: 90%; left: 50%; }
 
-/* draggable objects with names of continents */
+/* container for draggable objects with names of continents */
 .draggable-container {
     position: absolute;
     top: 13%;
@@ -473,6 +456,8 @@ body.mobile #fullscreen-btn {
     gap: 10px;
     align-items: center;
     z-index: 998;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out 1s forwards;
 }
 
 /* while dragged */
@@ -487,6 +472,10 @@ body.mobile #fullscreen-btn {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+  }
+
+  body.mobile nav p {
+    font-size: 1rem;
   }
 
 /* mobile styling for game */  
@@ -518,10 +507,19 @@ body.mobile .continent {
     cursor: grab;
 }
 
+body.mobile #fullscreen-btn {
+    bottom: 6%;
+    border-radius: 12px;
+    height: 7vh;
+    width: 15vh;
+    padding: 2vh;
+    transition: 0.2s;
+    z-index: 999;
+}
+
 .mobile-drag {
     pointer-events: none;
     opacity: 0.9;
-    
   }
   
 body.mobile .draggable-container {
@@ -537,7 +535,6 @@ body.mobile .draggable-container {
 
 body.mobile #scoreboard {
     position: absolute;
-   
     padding: 3vh 3.5vh;
     display: inline-block;
     font-size: 1.1rem;
@@ -549,7 +546,7 @@ body.mobile #score {
 body.mobile #submit-btn {
     padding: 10px 20px;
     font-size: 1rem;
-    background-color: #444;
+   
     color: white;
     border: none;
     cursor: pointer;
@@ -569,7 +566,33 @@ body.mobile .result-overlay {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     z-index: 1002;
 }
 
+body.mobile .game-launcher {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 2vh;
+    font-size: 1rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    z-index: 999;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0.0;
+        transform: translateY(25px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }

@@ -138,7 +138,7 @@ a:hover {
   margin-top: 5%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   text-align: center;
   text-shadow: 
   2px 4px 8px rgba(0, 0, 0, 0.8),
@@ -149,22 +149,57 @@ a:hover {
 .developer-entry {
   display: flex;
   align-items: center;
-  gap: 20px; /* space between image and text */
+  gap: 1rem; /* space between image and text */
+  transition: all 0.4s ease-out;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
 }
+
+.developer-entry span{
+  font-size: 2rem;        /* base paragraph size (desktop) */
+  margin: 0;              /* no extra margin by default */
+}
+
 .developer-entry img{
-  width: 200px;
- 
+  height: auto;
+  width: 150px;
   display: flex;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 6px;
   background-color: #bebebe;
   box-shadow:
   -6px -6px 16px rgba(255, 255, 255, 0.05),
   6px 6px 16px rgba(0, 0, 0, 0.3),
   inset 2px 2px 4px rgba(255, 255, 255, 0.05),
   inset -2px -2px 4px rgba(0, 0, 0, 0.3);
-  
 }
+/*
+.developer-entry img:nth-child(1){
+  height: auto;
+  width: 150px;
+}
+.developer-entry img:nth-child(2){
+  height: 150px;
+  width: auto;
+}
+.developer-entry img:nth-child(3){
+  height: ;
+  width: ;
+}
+.developer-entry img:nth-child(4){
+  height: ;
+  width: ;
+}
+.developer-entry img:nth-child(5){
+  height: ;
+  width: ;
+}
+.developer-entry img:nth-child(6){
+  height: ;
+  width: ;
+}*/
+
+
 
 /* Footer */
 .info-footer {
@@ -205,18 +240,27 @@ a:hover {
   max-height: 8vh;
   flex: 1;
 }
-/* Responsive */
+
+/* Mobile */
 @media (max-width: 768px) {
   .developer-list {
-      font-size: 1.2rem;
+    gap: .6rem;        
   }
-  .glass-textbox {
-    margin: 5rem auto;
-    flex-direction: column;
-    align-items: center;
+  .developer-entry span{
+    font-size: 1rem;     
   }
-  .developer-list {
-      flex-direction: column;   /* jos haluat dev-listan myös sarakkeeksi */
-      align-items: center;
+  img {
+    max-width: 25%;
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+      opacity: 0.0;
+      transform: translateY(25px);
+  }
+  to { 
+      opacity: 1;
+      transform: translateY(0);
   }
 }
