@@ -1,6 +1,8 @@
 body {
   background: url('../images/map.jpg') center/cover no-repeat fixed;
   overflow-x: hidden;
+  position: relative;
+  height: calc(100vh + 33px);
 }
 body::before{
   content: '';
@@ -199,43 +201,70 @@ a:hover {
 
 /* Footer */
 .info-footer {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  color: white;
-  padding: 0.7% 2%;
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
+  justify-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
 }
-  
+
 .developers {
-  flex: 1;
+  justify-self: start;
 }
+
+#dev {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .developer-list-footer{
-  display: flex;
-  gap: 2vh;
-  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0 1.5rem;
+  margin-top: 0.5rem;
 }
-.column {
-  display: flex;
-  flex-direction: column;
+
+.column p {
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
+
 .project {
+  text-align: center;
+  font-size: 0.9rem;
   font-weight: bold;
-  flex: 1;
 }
+
 .project p {
-  margin-top: 2vh;
+  margin: 0.4rem 0 0;
+  font-weight: normal;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.logo {
+  justify-self: end;
 }
 .logo img {
-  max-height: 8vh;
-  flex: 1;
+  max-height: 70px;
+  width: auto;
+  display: block;
 }
+
 
 /* Mobile */
 @media (max-width: 768px) {
