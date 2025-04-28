@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (linkPage === currentPage) {
             link.classList.add("active");
+            placeholder_p.textContent = link.textContent;
         }  
 });
     
