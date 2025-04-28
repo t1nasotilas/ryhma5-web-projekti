@@ -9,7 +9,15 @@
   text-align: center;
 }
 
-
+.quiz-box {
+  opacity: 0;
+  }
+  
+  .quiz-box.show {
+  opacity: 1;
+  animation: fadeIn 1s ease forwards;
+  }
+    
 .quiz-image {
   width: 80%;
   max-width: 300px;
@@ -28,8 +36,8 @@ html, body {
 body {
   background: url('../images/papertexture.png') center/cover no-repeat fixed;
   text-align: center;
-  min-height: 130vh; /* <-- Tärkeä muutos, enemmän kuin 100% näytöstä */
-  padding: 8vh 4vw 25vh; /* ylä, sivu, ja iso ala-padding footerin tilaksi */
+  min-height: 130vh; 
+  padding: 8vh 4vw 25vh;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -112,7 +120,6 @@ p {
 }
 
 /* Footer */
-
 .info-footer {
   font-size: 1.5vh;
   display: flex;
@@ -166,7 +173,7 @@ p {
 
   body {
     padding: 5vh 4vw;
-    padding-bottom: 20vh; /* Lisää hieman enemmän tilaa footerin takia */
+    padding-bottom: 20vh; 
   }
 
   #answer {

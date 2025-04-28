@@ -44,7 +44,6 @@ const countries = {
     "Viron": "Tallinna"
 };
 
-
 function getRandomCountries(list, count) {
     const shuffled = [...list].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
@@ -60,6 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const quizSection = document.getElementById("quiz-section");
     const startScreen = document.getElementById("start-screen");
     const checkBtn = document.getElementById("check-btn");
+
+    const quizBox = document.querySelector('.quiz-box');
+    if (quizBox) {
+        setTimeout(() => {
+            quizBox.classList.add('show');
+        }, 100);
+    }
 
     startBtn.addEventListener("click", () => {
         startScreen.style.display = "none";
