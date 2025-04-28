@@ -9,6 +9,7 @@
     text-decoration: none;
 }
 body {
+    background-image: url('../images/paper.jpg');
     margin-top: 2vh; /* to avoid nav overlap */
     display: flex;
     flex-direction: column;
@@ -229,7 +230,7 @@ p:nth-child(4){
     color: #fff;
 }
 .btn:disabled{
-    cursor: not-allowed; /* ei voi klikata */
+    cursor: not-allowed;
 }
 #next-btn{
     background: #fff;

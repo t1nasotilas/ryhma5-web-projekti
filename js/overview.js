@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const games = [
-        { key: "asiaGameScore", name: "Aasia", max: 6 },
-        { key: "africaGameScore", name: "Afrikkavisa", max: 6 },
-        { key: "europeGameScore", name: "Eurooppavisa", max: 10 },
-        { key: "continentGameScore", name: "Maanosapeli", max: 7 },
+        { key: "asiaGameScore", name: "Aasia", max: 5 },
+        { key: "africaGameScore", name: "Afrikka", max: 10 },
         { key: "southAmericaGameScore", name: "Etelä-Amerikka", max: 6 },
+        { key: "europeGameScore", name: "Eurooppa", max: 10 },
+        { key: "continentGameScore", name: "Maanosat", max: 7 },
         { key: "northAmericaGameScore", name: "Pohjois-Amerikka", max: 10 }
     ];
 
@@ -31,7 +31,31 @@ document.addEventListener("DOMContentLoaded", () => {
     summaryBox.innerHTML = `
         <h1>YHTEENVETO</h1>
         <p class="summary-description"> Kaikkien suorittamisien pelien pisteet </p>
+        <p class="summary-description"> Laatikkoa painamalla pääset peliin </p>
         <p class="total-score">Yhteispisteet: ${totalScore} / ${totalMax}</p>
     `;
+});
+
+// This function redirects the user to the game when they click on the box
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".box");
+
+    const links = [
+        /*ODOTTAA SANTERIN PELIÄ!!!*/
+        "../pages/africa.html",
+        "../pages/continentgame.html",
+        "../pages/europegame.html",
+        "../pages/ea.html",
+        "../n-americagame.html",        
+    ];
+
+    boxes.forEach((box, index) => {
+        box.addEventListener("click", () => {
+            const link = links[index];
+            if (link) {
+                window.location.href = link;
+            }
+        });
+    });
 });
 
