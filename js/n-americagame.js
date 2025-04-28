@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach(entry => {
         entry.target.classList.toggle('visible', entry.isIntersecting);
       });
-    }, {threshold: 0.5, rootMargin: "-1% 0px -50px 0px" });
+    }, {threshold: 0.25, rootMargin: "-1% 0px -50px 0px" });
 
   // luo piste-tekstin
   function updateDisplay() {
@@ -122,6 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // restart-nappi
   document.getElementById('restart-btn').addEventListener('click', () => {
     initSession();
+  });
+  //nappi etusivulle
+  document.getElementById('homepage-btn').addEventListener('click', function() {
+    window.location.href = '../index.html';
   });
 
   // Hamburger-menu /yhteinen 
