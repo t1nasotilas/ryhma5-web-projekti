@@ -33,7 +33,7 @@
           "explanation": "Clovis-kulttuurin keihäänkärjet olivat tehokkaita metsästysvälineitä. Ne ovat ensimmäisten kulttuurien jättämiä jälkiä Pohjois-Amerikassa!"
         },
         {
-          "id": 4,
+          "id": 3,
           "question": "Mikä viljelymenetelmä perustui maissiin, papuihin ja kurpitsaan alkuperäiskansoilla?",
           "options": [
             "Kolme sisarusta",
@@ -50,7 +50,7 @@
     {
       "questions": [
         {
-          "id": 3,
+          "id": 4,
           "question": "Mikä oli Pohjois-Amerikan suurin kaupunki (ennen eurooppalaisia)",
           "options": [
             "Mesa Verde",
@@ -209,7 +209,7 @@
           "explanation": "Kalifornian kultaryntäys kiihdytti lännen asutusta ja synnytti talouskasvua, mutta myös pahensi alkuperäiskansojen kärsimyksiä."
         },
         {
-          "id": 18,
+          "id": 15,
           "question": "Missä taistelussa Texas julisti itsenäisyytensä Meksikosta vuonna 1836?",
           "options": [
             "San Jacinto",
@@ -222,7 +222,7 @@
           "explanation": "San Jacinton taistelu varmisti Texasin itsenäisyyden, mikä johti myöhemmin liittoutumiseen Yhdysvaltojen kanssa."
         },
         {
-          "id": 19,
+          "id": 16,
           "question": "Mikä muuttoreitti kulki Keskilännestä länsirannikolle 1840-luvulla?",
           "options": [
             "Santa Fe Trail",
@@ -235,7 +235,7 @@
           "explanation": "Oregon Trail mahdollisti tuhansien siirtolaisten muuton länteen, edistäen Yhdysvaltain laajenemista Tyynellemerelle."
         },
         {
-          "id": 20,
+          "id": 17,
           "question": "Minkä sopimuksen myötä Meksikon ja USA:n välinen sota päättyi vuonna 1848?",
           "options": [
             "Guadalupe Hidalgo",
@@ -248,7 +248,7 @@
           "explanation": "Guadalupe Hidalgon sopimus siirsi laajat alueet Meksikolta Yhdysvalloille, mukaan lukien Kalifornian ja Uuden-Meksikon."
         },
         {
-          "id": 22,
+          "id": 18,
           "question": "Minkä sopimuksen myötä USA osti nykyiset Arizonan ja New Mexicon vuonna 1854?",
           "options": [
             "Alaska Purchase",
@@ -265,7 +265,7 @@
     {
       "questions": [
         {
-          "id": 23,
+          "id": 19,
           "question": "Mikä konflikti käytiin Yhdysvalloissa vuosina 1861–1865?",
           "options": [
             "Toinen maailmansota",
@@ -278,7 +278,7 @@
           "explanation": "Sisällissota ratkaisi orjuuden laillisuuden ja säilytti liittovaltion, mutta syvensi myös etelän ja pohjoisen jakoa."
         },
         {
-          "id": 24,
+          "id": 20,
           "question": "Mikä julistus teki orjuuden laittomaksi Konfederaation alueilla vuonna 1863?",
           "options": [
             "Proclamation of Amnesty",
@@ -295,7 +295,7 @@
     {
       "questions": [
         {
-          "id": 25,
+          "id": 21,
           "question": "Milloin yhdysvaltalainen 'mannertenvälinen' rautatie valmistui?",
           "options": [
             "1862",
@@ -308,7 +308,7 @@
           "explanation": "Rautatie nopeutti lännen asutusta ja teki tavaroiden kuljetuksesta nopeampaa, edistäen talouskasvua."
         },
         {
-          "id": 26,
+          "id": 22,
           "question": "Minkä lain mukaan siirtolaiset saattoivat saada maata maksutta vuonna 1862?",
           "options": [
             "Homestead Act",
@@ -321,7 +321,7 @@
           "explanation": "Homestead Act kannusti länteen muuttoa antamalla maata viljelijöille, mikä muokkasi Yhdysvaltain maisemaa pysyvästi."
         },
         {
-          "id": 27,
+          "id": 23,
           "question": "Mikä sopimus yhdisti Kanadan provinssit liittovaltioksi vuonna 1867?",
           "options": [
             "Statute of Westminster",
@@ -334,7 +334,7 @@
           "explanation": "Tämä laki loi Kanadan dominionin ja aloitti sen itsenäistymisprosessin Brittiläisestä imperiumista."
         },
         {
-          "id": 28,
+          "id": 24,
           "question": "Minkä kansallispuiston Yhdysvallat perusti vuonna 1872?",
           "options": [
             "Yosemite",
@@ -347,7 +347,7 @@
           "explanation": "Yellowstonen perustaminen maailman ensimmäisenä kansallispuistona loi perustan luonnonsuojeluliikkeelle globaalisti."
         },
         {
-          "id": 29,
+          "id": 25,
           "question": "Minkä kaupungin lahjoittama Vapaudenpatsas paljastettiin New Yorkissa vuonna 1886?",
           "options": [
             "Lontoo",
@@ -360,7 +360,7 @@
           "explanation": "Ranskan lahjoittama patsas symboloi vapautta ja demokratiaa, vahvistaen maiden välisiä siteitä."
         },
         {
-          "id": 30,
+          "id": 26,
           "question": "Missä Yukonin kultaryntäys alkoi Kanadassa vuonna 1896?",
           "options": [
             "Fort McMurray",
@@ -373,7 +373,7 @@
           "explanation": "Klondiken kultaryntäys muutti Kanadan luoteista väestöllisesti ja taloudellisesti, mutta aiheutti myös alkuperäiskansojen kärsimyksiä."
         },
         {
-          "id": 31,
+          "id": 27,
           "question": "Missä sodassa Yhdysvallat voitti Espanjan vuonna 1898?",
           "options": [
             "Espanjan sisällissota",
@@ -386,7 +386,7 @@
           "explanation": "Sota teki Yhdysvalloista maailmanvallan ja johti siirtomaiden hankintaan, kuten Puerto Ricolle ja Filippiineille."
         },
         {
-          "id": 32,
+          "id": 28,
           "question": "Minkä kanavahankkeen rakentaminen alkoi Panamassa amerikkalaisvoimin vuonna 1904?",
           "options": [
             "Suez-kanava",
@@ -399,20 +399,7 @@
           "explanation": "Panaman kanava muutti maailmankaupan reittejä ja vahvisti Yhdysvaltain strategista asemaa."
         },
         {
-          "id": 33,
-          "question": "Mikä on historian suurin ihmisen aiheuttama räjähdys, joka tapahtui Halifaxissa vuonna 1917?",
-          "options": [
-            "Titanicin uppoaminen",
-            "Halifaxin räjähdys",
-            "Lusitanian upotus",
-            "Armistice Day"
-          ],
-          "correctAnswer": "Halifaxin räjähdys",
-          "year": "1917",
-          "explanation": "Räjähdys tuhosi osan Halifaxista ja näyttää sodan aikaisen logistiikan vaarat."
-        },
-        {
-          "id": 34,
+          "id": 30,
           "question": "Milloin Yhdysvallat liittyi ensimmäiseen maailmansotaan?",
           "options": [
             "1914",
@@ -425,7 +412,7 @@
           "explanation": "Yhdysvaltain liittyminen ratkaisi sodan lopputuloksen liittoutuneiden hyväksi ja teki maasta maailmanvallan."
         },
         {
-          "id": 35,
+          "id": 31,
           "question": "Minkä vuoden muutoslaki myönsi naisille äänioikeuden Yhdysvalloissa?",
           "options": [
             "1918",
@@ -438,7 +425,7 @@
           "explanation": "19. lisäys takasi naisille äänioikeuden, mikä oli merkittävä askel tasa-arvon tiellä."
         },
         {
-          "id": 36,
+          "id": 32,
           "question": "Mikä päivä tunnetaan Mustana tiistaina, jolloin pörssi romahti vuonna 1929?",
           "options": [
             "Black Monday",
@@ -451,7 +438,7 @@
           "explanation": "Pörssiromahdus laukaisi suuren laman, joka vaikutti globaaliin talouteen ja synnytti poliittisia mullistuksia."
         },
         {
-          "id": 37,
+          "id": 33,
           "question": "Mikä New Deal -ohjelman osa auttoi maanviljelijöitä 1930-luvulla?",
           "options": [
             "CCC",
@@ -464,7 +451,7 @@
           "explanation": "Agricultural Adjustment Act (AAA) stabiloi maataloustuotantoa ja nosti hintoja, auttaen taloutta elpymään."
         },
         {
-          "id": 38,
+          "id": 34,
           "question": "Missä hyökkäyksessä Japani iski Yhdysvaltoihin joulukuussa 1941?",
           "options": [
             "Midway",
@@ -477,7 +464,7 @@
           "explanation": "Hyökkäys johti Yhdysvaltain liittymiseen toiseen maailmansotaan ja muutti sodan kulkua."
         },
         {
-          "id": 39,
+          "id": 35,
           "question": "Minkä toimenpiteen Yhdysvallat määräsi japanilaisamerikkalaisille kotirajoitukseen vuonna 1942?",
           "options": [
             "Evakuointikomitea",
@@ -490,7 +477,7 @@
           "explanation": "Internointileirit rikkoivat perustuslaillisia oikeuksia ja heijastivat sodan aikaisia pelkoja ja rasismia."
         },
         {
-          "id": 40,
+          "id": 36,
           "question": "Mikä salainen hanke kehitti atomipommit Yhdysvalloissa 1942–1946?",
           "options": [
             "Manhattan Project",
@@ -503,7 +490,7 @@
           "explanation": "Projekti loi ensimmäiset ydinaseet, mullistaen sodankäynnin ja samalla laukaisi kilpavarustuksen neuvostoliittoa vastaan."
         },
         {
-          "id": 41,
+          "id": 37,
           "question": "Missä kaupungissa perustettiin Yhdistyneet kansakunnat vuonna 1945?",
           "options": [
             "New York",
@@ -516,7 +503,7 @@
           "explanation": "YK:n perustaminen loi uuden kansainvälisen järjestelmän rauhan ja yhteistyön edistämiseksi."
         },
         {
-          "id": 42,
+          "id": 38,
           "question": "Milloin NASA perustettiin yhdistämään avaruustutkimus Yhdysvalloissa?",
           "options": [
             "1955",
@@ -525,11 +512,11 @@
             "1969"
           ],
           "correctAnswer": "1958",
-          "year": "1958",
+          "year": "?",
           "explanation": "NASA:n perustaminen vahvisti Yhdysvaltain aseman avaruuskilvassa Neuvostoliittoa vastaan."
         },
         {
-          "id": 43,
+          "id": 39,
           "question": "Mikä tuomio lopetti erilliset koulut Yhdysvalloissa vuonna 1954?",
           "options": [
             "Brown v. Board of Education",
@@ -542,7 +529,7 @@
           "explanation": "Brownin päätös kumosi eriyttämisen 'erilliset mutta tasavertaiset' -periaatteen ja aloitti kansalaisoikeusliikkeen."
         },
         {
-          "id": 44,
+          "id": 40,
           "question": "Mikä laki hyväksyttiin Yhdysvalloissa vapauden ja syrjinnän kieltoon vuonna 1964?",
           "options": [
             "Voting Rights Act",
@@ -555,7 +542,7 @@
           "explanation": "Civil Rights Act kielsi rotuun perustuvan syrjinnän ja oli merkittävä askel tasa-arvoa kohti."
         },
         {
-          "id": 45,
+          "id": 41,
           "question": "Mikä NASA:n lento laskeutui Kuuhun vuonna 1969?",
           "options": [
             "Apollo 8",
@@ -568,7 +555,7 @@
           "explanation": "Apollo 11:n laskeutuminen Kuuhun oli teknologinen ja symbolinen voitto Yhdysvalloille kylmän sodan aikana."
         },
         {
-          "id": 46,
+          "id": 42,
           "question": "Mikä vapaakauppasopimus astui voimaan Yhdysvaltojen, Kanadan ja Meksikon välillä vuonna 1994?",
           "options": [
             "USMCA",
@@ -581,7 +568,7 @@
           "explanation": "NAFTA lisäsi taloudellista integraatiota, mutta herätti myös kritiikkiä työpaikkojen siirtymisestä."
         },
         {
-          "id": 47,
+          "id": 43,
           "question": "Missä Quebecin kansanäänestyksessä äänestettiin provinssin eroamisesta Kanadasta vuonna 1980?",
           "options": [
             "First Referendum",
@@ -594,7 +581,7 @@
           "explanation": "Ensimmäinen kansanäänestys Quebecin itsenäisyydestä heijasti maan sisäisiä jännitteitä, mutta unionisti voitti."
         },
         {
-          "id": 48,
+          "id": 44,
           "question": "Minkä päivän terrori-isku kohdistui World Trade Centeriin vuonna 2001?",
           "options": [
             "11/11",
@@ -607,7 +594,7 @@
           "explanation": "9/11-isku muutti globaalia turvallisuuspolitiikkaa ja laukaisi sodan terrorismia vastaan."
         },
         {
-          "id": 49,
+          "id": 45,
           "question": "Mikä hirmumyrsky aiheutti laajaa tuhoa New Orleansissa vuonna 2005?",
           "options": [
             "Hurricane Rita",
