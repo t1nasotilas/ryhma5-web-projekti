@@ -15,7 +15,7 @@ Images:
 7. Freepik, "South America countries or continent highlighted in red on the world map vector", https://www.freepik.com/premium-vector/south-america-countries-continent-highlighted-red-world-map-vector_33125774.htm (accessed April 17, 2025)
 */
 const questions = [
-    {
+    /*{
         question: "Montako eri valtiota Etelä-Amerikassa on?",
         image: "../images/ea-map.jpg",
         answers: [
@@ -69,7 +69,7 @@ const questions = [
             {text: "Tierra del Fuegossa", correct: false}
         ],
         fact: "Oikein! Moai-patsaat sijaitsevat Easter Islandilla (Rapa Nui), joka on kuuluisa suurista kivipatsaistaan. Ne ovat osa Rapa Nuin kulttuuriperintöä.",
-    },
+    },*/
     {
         question: "Mitkä kaksi maata Patagonia yhdistää?",
         image: "../images/patagonia.jpg",
@@ -214,11 +214,11 @@ questionElement.id = 'score-text'; // CSS-styling for the score text
 
 // Create a button to go back to the home page
 const homeButton = document.createElement('button');
-homeButton.innerHTML = 'Palaa etusivulle';
+homeButton.innerHTML = 'Palaa yhteenvetosivulle';
 homeButton.style.display = 'block';
 homeButton.id = 'home-btn';
 homeButton.addEventListener('click', () => {
-    window.location.href = '../index.html';
+    window.location.href = '../pages/overview.html';
 });
 answerButtons.appendChild(homeButton);
 

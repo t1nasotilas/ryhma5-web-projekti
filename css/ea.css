@@ -148,19 +148,6 @@ p:nth-child(4) {
     color: red;
 }
 
-.app {
-    background: white;
-    width: 90%;
-    max-width: 800px;
-    min-height: 80vh;
-    margin: 4rem auto;
-    border-radius: 12px;
-    padding: 20px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    box-shadow:  
-        1px 2px 6px rgba(0, 0, 0, 0.6);
-}
-
 #start-btn {
     background: #fff;
     color: #222;
@@ -190,14 +177,14 @@ p:nth-child(4) {
     flex-direction: column;
 }
 
-.quiz h2 {
-    font-size: 1.5em;
+.app h2 {
+    font-size: 1.4em;
     font-weight: 600;
 }
 
 #answer-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 15px;
     padding: 10px; 
 }
@@ -205,11 +192,10 @@ p:nth-child(4) {
 .btn {
     background: #fff;
     color: #222;
-    font-weight: 500;
+    font-weight: 600;
     width: 100%;
     border: 1px solid #222;
     padding: 10px;
-    font-weight: 600;
     border-radius: 12px;
     cursor: pointer;
     transition: all .3s;
@@ -260,18 +246,20 @@ p:nth-child(4) {
     color: #222;
     font-weight: 600;
     font-size: 1.4em;
-    width: 50%;
+    width: 100%;
     border: 1px solid #222;
     padding: 10px;
     display: block;
-    margin: 10px auto;
+    margin: 0px auto;
     border-radius: 12px;
     cursor: pointer;
     transition: all .3s;
+    text-align: center;
+    grid-template-columns: 1fr;
 }
 
 #score-text {
-    font-size: 1.8em;
+    font-size: 1.6em;
     text-align: center;
     font-weight: bold;
     color: #222;
@@ -297,31 +285,30 @@ p:nth-child(4) {
 }
 
 .answer-message {
-    font-size: 1.25em;
+    font-size: 1rem;
     font-weight: 600;
-    margin: 2px auto;
-    display: flex;
+    margin: 10px 0;
     align-items: center;
-    justify-content: center;
-    width: 100%;
+    max-width: 100%;
     text-align: center;
-    min-height: 60px;
+    word-break: break-word;
     grid-column: 1 / -1;
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
-    .app {
-        width: 80%;
-        margin-bottom: 3.5rem;
+    .app, #start-screen {
+        width: 90%;
+        max-width: 90%;
+        margin: 2rem auto;
     }
 
-    #start-screen p {
-        font-size: 1.2em;
+    #start-screen p, .app h2 {
+        font-size: 1em;
     }
 
-    #start-screen h1 {
-        font-size: 2em;
+    #start-screen h1, .app h1 {
+        font-size: 1.8em;
     }
 
     #start-screen h3 {
@@ -330,6 +317,42 @@ p:nth-child(4) {
 
     #answer-buttons {
         grid-template-columns: 1fr; /* Yksi sarake mobiilissa */
-        gap: 10px;
+        gap: 15px;
+    }
+
+    #home-btn, #next-btn, #start-btn, .btn {
+        font-size: 0.8em;
+    }
+    #score-text {
+        font-size: 1.4em;
+    }
+
+}
+@media (max-width: 398px) {
+    .app, #start-screen {
+        width: 90%;
+        max-width: 90%;
+        margin: 2rem auto;
+    }
+
+    #start-screen p, .app h2 {
+        font-size: 0.8em;
+    }
+
+    #start-screen h1, .app h1 {
+        font-size: 1.6em;
+    }
+
+    #start-screen h3 {
+        font-size: 1em;
+    }
+
+    #answer-buttons {
+        grid-template-columns: 1fr; /* Yksi sarake mobiilissa */
+        gap: 15px;
+    }
+
+    #home-btn, #next-btn, #start-btn, .btn {
+        font-size: 0.8em;
     }
 }
