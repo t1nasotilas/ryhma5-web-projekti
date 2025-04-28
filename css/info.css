@@ -271,6 +271,9 @@ a:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
+  html, body {
+    overscroll-behavior-y: none;
+}
   body {
     background-attachment: scroll; /* Estää "ruutukaappauksen" efektin häiriöt */
 }
