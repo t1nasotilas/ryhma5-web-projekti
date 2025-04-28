@@ -1,3 +1,38 @@
+document.addEventListener("DOMContentLoaded", () => {
+
+  // displaytext for nav-bar
+  const placeholder_p = document.querySelector("nav p");
+  const menuLinks = document.querySelectorAll(".off-screen-menu a");
+  let currentPage = window.location.pathname.split("/").pop();
+  
+  if (currentPage === "" || currentPage === "index") {
+      currentPage = "index.html"; // recognizes index.html correctly
+  }
+  
+  menuLinks.forEach(link => {
+  
+      let linkPage = link.getAttribute("href").split("/").pop();
+  
+      if (linkPage === currentPage) {
+          link.classList.add("active");
+          placeholder_p.textContent = link.textContent;
+      }  
+  });
+  
+  // hamburger-menu
+  const hamMenu = document.querySelector(".ham-menu");
+  const offScreenMenu = document.querySelector(".off-screen-menu");
+  
+  if (hamMenu && offScreenMenu) {
+    hamMenu.addEventListener("click", () => {
+        hamMenu.classList.toggle("active");
+        offScreenMenu.classList.toggle("active");
+    });
+  }
+  
+  
+  });
+ 
 // Valitaan kaikki muistipelikortit DOMista
 const cards = document.querySelectorAll('.memory-card');
 
@@ -13,7 +48,7 @@ let score = 5;                // Pelaajan pistemäärä oletuksena maksimipistee
 const matchCounterElement = document.getElementById("match-counter");
 const clickCounterElement = document.getElementById("click-counter");
 // HUOM: HTML:ssa id="score", mutta tätä haetaan id="final-score" – varmista, että ne kohtaavat!
-const scoreElement = document.getElementById("final-score");
+const scoreElement = document.getElementById("score");
 
 /**
  * Kortin kääntö- ja klikkauskäsittelijä
@@ -117,18 +152,21 @@ function restartGame() {
  * Ohjaa pelaajan takaisin etusivulle (index.html)
  */
 function goToHomePage() {
-  window.location.href = "index.html";
+  window.location.href = "../pages/overview.html";
 }
 
 /**
  * Laskee lopullisen pistemäärän klikkausten perusteella
  */
+
+localStorage.setItem("asiaGameScore",score);
+
 function calculateScore() {
-  if (clickCounter <= 22) {
+  if (clickCounter <= 24) {
     score = 5;
-  } else if (clickCounter <= 24) {
-    score = 4;
   } else if (clickCounter <= 26) {
+    score = 4;
+  } else if (clickCounter <= 28) {
     score = 3;
   } else if (clickCounter <= 32) {
     score = 2;

@@ -11,6 +11,31 @@
   <script src="../js/MemorygameAsia.js" defer></script>
 </head>
 
+  <!-- Off-screen Menu -->
+  <div class="off-screen-menu">
+    <ul>
+      <li><a href="./index.html">Koti</a></li>
+      <li><a href="./pages/info.html">Info</a></li>
+      <li><a href="./pages/overview.html">Yhteenveto</a></li>
+      <li><a href="./pages/continentgame.html">Maanosapeli</a></li>
+      <li><a href="./pages/europegame.html">Eurooppavisa</a></li>
+      <li><a href="./pages/ea.html">Etelä-Amerikka</a></li>
+      <li><a href="./pages/n-americagame.html">Pohjois-Amerikka</a></li>
+      <li><a href="./pages/MemorygameAsia.html">Aasia</a></li>
+      <li><a href="./pages/africa.html">Afrikka</a></li>
+    </ul>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <p></p>
+    <div class="ham-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
 <body>
   <!-- Aloitusnäyttö (overlay), joka peittää koko sivun ennen pelin aloitusta -->
   <div id="welcome-screen">
@@ -112,7 +137,7 @@
       <!-- Ilmoitus pelin päättymisestä -->
       <h2>Peli loppui!</h2>
       <!-- Lopputulos ja pistemäärä -->
-      <p>Saamasi pisteet: <span id="score"> 0 </span> / 5 pistettä</p>
+      <p>Saamasi pisteet: <span id="score">0</span></p>
       <!-- Uudelleenaloitus- ja palaamisnapit -->
       <button onclick="restartGame()">Aloita alusta</button>
       <button onclick="goToHomePage()">Palaa etusivulle</button>

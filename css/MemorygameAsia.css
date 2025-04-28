@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   background-color: white;
-  background-image: url('../images/map.jpg');
+  background-image: url('../images/paper.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +38,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 20;
-  background-image: url('../images/map.jpg');
+  background-image: url('../images/paper.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -122,7 +122,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 125px;
-  background-color: #69baf79e;
+  background-color: white;
   border-radius: 20px;
   padding: 30px 40px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.178);
@@ -182,7 +182,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 10;
-  background-image: url('../images/map.jpg');
+  background-image: url('../images/paper.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -208,4 +208,169 @@ body {
   font-size: 18px;
   margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-cta {
+      padding: 0.80rem 1.5rem;
+      font-size: 1.1rem;
+      white-space: normal;
+  }
+}
+@media (max-width: 767px) {
+  .hero-cta:hover {
+    /* Nollaa kaikki hover-efektit */
+    transform: none !important;
+    background: #1a1a2e !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 
+      -6px -6px 16px rgba(255, 255, 255, 0.05),
+      6px 6px 16px rgba(0, 0, 0, 0.3),
+      inset 2px 2px 4px rgba(255, 255, 255, 0.05),
+      inset -2px -2px 4px rgba(0, 0, 0, 0.3) !important;
+  }
+  .hero-cta:active {
+      transform: scale(0.95);
+    }
+}
+
+@media (max-width: 480px) {
+  .hero-cta {
+      font-size: 1rem;
+      padding: 0.75rem 1.25rem;
+  }
+  .hero-subtitle { 
+      font-size: 1.5rem;
+  }
+}
+/* Off-screen-menu */
+/* Link colors */
+a {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+.off-screen-menu a:hover {
+  color: #6F86FF;
+}
+.off-screen-menu {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  height: 100vh;
+  width: 100%;
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  left: -400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    
+  justify-content: center;
+  text-align: center;
+  font-size: 4vh;
+  transition: .3s ease;
+  z-index: 1000;
+}
+.off-screen-menu.active {
+  left: 0;
+}
+
+/* Navigation */
+nav {
+  padding: 1rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh;
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  z-index: 1000;
+}
+
+/* Ham-menu*/
+.ham-menu {
+  height: 60px;
+  width: 50px;
+  position: fixed;
+  left: 1%;
+  top: 0.5%;
+  z-index: 1000;
+}
+.ham-menu span {
+  height: 10%;
+  width: 100%;
+  background-color: #000000;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+.ham-menu.active span {
+  background-color: black;
+}
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Footer */
+.info-footer {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 0.7% 2%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+.developers {
+  flex: 1;
+}
+.developer-list{
+  display: flex;
+  gap: 2vh;
+  margin-top: 5px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.project {
+  font-weight: bold;
+  flex: 1;
+}
+.project p {
+  margin-top: 2vh;
+}
+.logo img {
+  max-height: 8vh;
+  flex: 1;
 }
