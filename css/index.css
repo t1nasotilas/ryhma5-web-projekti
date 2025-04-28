@@ -42,8 +42,8 @@ body {
 }
 /* Logo */
 .hero-logo {
-    width: clamp(220px, 30.5vw, 310px); 
-    height: clamp(220px, 30.5vw, 310px);
+    width: clamp(220px, 30.5vw, 300px); 
+    height: clamp(220px, 30.5vw, 300px);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -396,7 +396,7 @@ nav {
 }
 
 .frontpage-text {
-    font-size: clamp(0.7rem, 0.8vw + 0.6rem, 1.2rem);
+    font-size: clamp(0.75em, 0.85vw + 0.6rem, 1.2rem);
     line-height: 1.5;
     letter-spacing: 0.01em;
     max-width: min(800px, 85vw);
