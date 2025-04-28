@@ -159,7 +159,6 @@ function flipCard(card, data) {
   
         if (currentScore > highestScore) {
           highestScore = currentScore;
-          localStorage.setItem("africaGameScore", score);
           localStorage.setItem("highestScore", highestScore);
           updateHighestScoreDisplay();
         }
@@ -216,6 +215,7 @@ function checkGameCompletion() {
   
   // Create and display the completion popup
   function displayCompletionPopup() {
+    localStorage.setItem("africaGameScore", currentScore);
     const popup = document.createElement("div");
     popup.id = "completionPopup";
     popup.innerHTML = `
