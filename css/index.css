@@ -41,8 +41,8 @@ body {
 }
 /* Logo */
 .hero-logo {
-    width: clamp(220px, 32.5vw, 370px); 
-    height: clamp(220px, 32.5vw, 370px);
+    width: clamp(220px, 32vw, 310px); 
+    height: clamp(220px, 32vw, 310px);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
