@@ -166,12 +166,8 @@ a:hover {
   display: flex;
   object-fit: cover;
   border-radius: 6px;
-  background-color: #bebebe;
-  box-shadow:
-  -6px -6px 16px rgba(255, 255, 255, 0.05),
-  6px 6px 16px rgba(0, 0, 0, 0.3),
-  inset 2px 2px 4px rgba(255, 255, 255, 0.05),
-  inset -2px -2px 4px rgba(0, 0, 0, 0.3);
+  
+
 }
 /*
 .developer-entry img:nth-child(1){
