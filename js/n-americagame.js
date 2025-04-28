@@ -147,3 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+//tarkkailee skrollausta ja poistaa navin tekstin näkyvistä, kun threshold osuu
+let lastScroll = 0;
+const nav = document.querySelector('nav');
+const scrollThreshold = 30; 
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > scrollThreshold) {
+    nav.classList.add('nav-scrolled');
+  } else {
+    nav.classList.remove('nav-scrolled');
+  }
+  
+  lastScroll = currentScroll;
+});

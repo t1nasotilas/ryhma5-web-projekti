@@ -12,6 +12,17 @@ body {
     background-image: url('../images/paper.jpg');
     background-attachment:fixed;
 }
+nav p {
+    transition: all 0.3s;
+    opacity: 1;
+    visibility: visible;
+  }
+.nav-scrolled p {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
 /* side-bar -------------------------------------------------------------------------------*/
 .timeline-side {
     position: fixed;
@@ -200,7 +211,7 @@ body {
     width: 100%;
   }
   
-  .option:hover{
+.option:hover{
     background: #1a1a2e;
     border-radius: 12px;
     box-shadow:
@@ -276,7 +287,6 @@ body {
 }
 
 @media (max-width: 600px) {
-    /* Sivupalkin keskittäminen */
     #restart-btn:hover, 
     #homepage-btn:hover,
     .option:hover {
@@ -304,7 +314,7 @@ body {
     }
     #side-screen {
         width: 90%;
-        margin: 3rem auto 0 auto;
+        margin: 4rem auto 0 auto;
         padding: 15px;
     }
     #score-display {
