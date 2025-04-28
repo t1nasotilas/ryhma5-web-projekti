@@ -41,12 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const boxes = document.querySelectorAll(".box");
 
     const links = [
-        /*ODOTTAA SANTERIN PELIÄ!!!*/
+        "../pages/MemorygameAsia.html",
         "../pages/africa.html",
-        "../pages/continentgame.html",
-        "../pages/europegame.html",
         "../pages/ea.html",
-        "../n-americagame.html",        
+        "../pages/europegame.html",
+        "../pages/continentgame.html",
+        "../pages/n-americagame.html",        
     ];
 
     boxes.forEach((box, index) => {
@@ -59,3 +59,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Reset point totals for all games
+document.addEventListener("DOMContentLoaded", () => {
+    const resetButton = document.getElementById("reset-scores");
+    if (resetButton){
+        resetButton.addEventListener("click", () => {
+            const games = [
+                "asiaGameScore",
+                "africaGameScore",
+                "southAmericaGameScore",
+                "europeGameScore",
+                "continentGameScore",
+                "northAmericaGameScore"
+            ];
+
+            games.forEach(game => {
+                localStorage.removeItem(game);
+            });
+
+            window.location.reload(); 
+        });
+    }
+});
