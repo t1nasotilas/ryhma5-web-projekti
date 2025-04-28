@@ -1,4 +1,5 @@
 body {
+    background: url('../images/map.jpg') center/cover no-repeat fixed;
     position: relative;
     overflow-x: hidden;
 }
@@ -21,9 +22,7 @@ body {
     overflow: hidden;
 }
 /*Image credit: Image by <a href="https://pixabay.com/users/anniespratt-4900708/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1869680">Annie Spratt</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1869680">Pixabay</a>*/
-.hero.parallax {
-    background: url('../images/map.jpg') center/cover no-repeat fixed;
-}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -396,7 +395,7 @@ nav {
 }
 
 .frontpage-text {
-    font-size: clamp(0.75em, 0.85vw + 0.6rem, 1.2rem);
+    font-size: clamp(0.77em, 0.85vw + 0.6rem, 1.2rem);
     line-height: 1.5;
     letter-spacing: 0.01em;
     max-width: min(800px, 85vw);
