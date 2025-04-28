@@ -325,6 +325,9 @@ nav {
 
 /* Mobile */
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Estää "ruutukaappauksen" efektin häiriöt */
+}
   .reset-container {
     margin: 0 1rem;
   }

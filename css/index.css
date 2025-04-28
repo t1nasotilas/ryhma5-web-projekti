@@ -290,6 +290,9 @@ nav {
 
 /* Responsive */
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
     
     .hero-cta {
         padding: 0.80rem 1.5rem;
@@ -335,7 +338,7 @@ nav {
     }
     .hero-cta:active {
         transform: scale(0.95);
-      }
+    }
 }
 
 @media (max-width: 610px) {

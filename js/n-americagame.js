@@ -103,16 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.container').forEach(container => {
     observer.observe(container);
   });
-    // vie käyttäjän sivun alkuun jos aloita alusta-nappia painetaan
+    // vie käyttäjän sivun alkuun jos aloita alusta-nappia on painetu
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-  // container tulee näkyviin/poistuu tietyissä kohdissa scrollatessa
+  // intersectionObserver seuraa, milloin elementit tulevat näkyviin tai pois näkyvistä
+  // kun 28% elementistä on näkyvistä tulee elementti esiin tai poistuu
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         entry.target.classList.toggle('visible', entry.isIntersecting);
-      });
-    }, {threshold: 0.25, rootMargin: "-1% 0px -50px 0px" });
+      });              // rootMargin auttaa säätämään näkyvyysaluetta
+    }, {threshold: 0.28, rootMargin: "-50px 0px 5px 0px" });
 
   // luo piste-tekstin
   function updateDisplay() {
@@ -128,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = '../index.html';
   });
 
-  // Hamburger-menu /yhteinen 
+  // Hamburger-menu /yhteinen koodi
   const hamMenu = document.querySelector(".ham-menu");
   const offScreenMenu = document.querySelector(".off-screen-menu");
   if (hamMenu && offScreenMenu) {
@@ -138,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Aktiivinen sivu /yhteinen
+  // Aktiivinen sivu /yhteinen koodi
   const currentPage = window.location.pathname.split("/").pop() || 'index.html';
   document.querySelectorAll(".off-screen-menu a").forEach(link => {
     if (link.getAttribute("href").includes(currentPage)) {
@@ -147,10 +148,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-//tarkkailee skrollausta ja poistaa navin tekstin näkyvistä, kun threshold osuu
+
+//tarkkailee skrollausta ja poistaa navin tekstin näkyvistä, kun skrollataan alaspäin
 let lastScroll = 0;
 const nav = document.querySelector('nav');
-const scrollThreshold = 30; 
+const scrollThreshold = 0; 
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
@@ -160,6 +162,5 @@ window.addEventListener('scroll', () => {
   } else {
     nav.classList.remove('nav-scrolled');
   }
-  
   lastScroll = currentScroll;
 });

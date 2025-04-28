@@ -151,8 +151,8 @@ nav p {
 .container {
     width: clamp(525px, 60%, 1000px);
     padding: 2rem;
-    margin-top: clamp(4rem, 5vw, 7rem);
-    margin-bottom: clamp(3rem, 5vw, 4rem);
+    margin-top: clamp(4.5rem, 6vw, 7rem);
+    margin-bottom: clamp(2.5rem, 3vw, 4rem);
     margin-left: clamp(3rem, 8vw, 10rem);
     margin-right: 0;
 
@@ -200,8 +200,9 @@ nav p {
     max-height: 215px;
     opacity: 1;
 }
-/* Lisätyylit visaa varten */
+/* pelin tyylit ----------------------------------------- */
 .option {
+    font-size: 1.06rem;
     cursor: pointer;
     padding: 0.9rem;
     margin: 0.6rem auto;
@@ -220,6 +221,7 @@ nav p {
         inset 2px 2px 4px rgba(255, 255, 255, 0.05),
         inset -2px -2px 4px rgba(0, 0, 0, 0.3);
     color: #fff;
+    transform: scale(1.02);
   }
   
 .option.correct {
@@ -230,12 +232,10 @@ nav p {
     background: #f8d7da;
     border: 2px solid #dc3545;
 }
-  
 .option.selected {
     transform: scale(0.98);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-  
 .explanation {
     transition: all 0.6s ease-out;
 }
@@ -248,6 +248,9 @@ nav p {
 }
 /* Responsiivisuus tabletille */
 @media (max-width: 850px) {
+    body {
+        background-attachment: scroll; /* Estää "ruutukaappauksen" efektin häiriöt */
+    }
     #side-screen {
         text-align: center;
         width: 32vw;
@@ -282,11 +285,12 @@ nav p {
     }
     .container {
         width: clamp(300px, 80%, 500px);
-        margin: 4rem 0 4rem 4rem;
+        margin: 5rem 0 4rem 4rem;
     }
 }
-
+/* puhelimelle responsiivisuus, poistaa hoverit puhelinta varten */
 @media (max-width: 600px) {
+
     #restart-btn:hover, 
     #homepage-btn:hover,
     .option:hover {
@@ -335,9 +339,10 @@ nav p {
     }
     .container {
         width: 88%;
-        margin: 2rem auto 2rem auto;
+        margin: 1rem auto 2.2rem auto;
         padding: 1rem;
     }
+    
     #restart-btn, #homepage-btn {
         width: 70%;
         padding: 0.8rem;

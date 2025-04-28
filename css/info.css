@@ -271,6 +271,9 @@ a:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* Estää "ruutukaappauksen" efektin häiriöt */
+}
   .developer-list {
     gap: 0.6rem;        
   }
