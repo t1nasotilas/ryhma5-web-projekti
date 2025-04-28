@@ -12,7 +12,7 @@ body {
     padding-bottom: 72px;
     overflow-x: hidden;
     background-image: url('../images/paper.jpg');
-    background-attachment:fixed ;
+    background-attachment:fixed;
 }
 /* side-bar -------------------------------------------------------------------------------*/
 .timeline-side {
