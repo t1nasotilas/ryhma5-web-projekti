@@ -2,7 +2,14 @@
 /* Inspiraatiota varsinkin tyyleihin ja efekteihin sain paljon sosiaalisesta mediasta esim. @mzcode01 Tiktokissa */
 /* Aikajana idean, ja alkuperäisen rakenteen sain W3schools: https://www.w3schools.com/howto/howto_css_timeline.asp */
 /* Ongelmien  ratkaisuun DeepSeek AI, https://chat.deepseek.com/ */
-
+* {
+    font-family: "Sansation", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
 html,body {
     scroll-behavior:smooth;
 }
@@ -11,6 +18,9 @@ body {
     overflow-x: hidden;
     background-image: url('../images/paper.jpg');
     background-attachment:fixed;
+}
+body::before {
+    display: none;
 }
 nav p {
     transition: all 0.3s;
@@ -21,6 +31,96 @@ nav p {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+}
+/* Off-screen-menu */
+/* Link colors */
+a {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+.off-screen-menu a:hover {
+    color: #6F86FF;
+}
+.off-screen-menu {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 4vh;
+    transition: .3s ease;
+    z-index: 1000;
+}
+.off-screen-menu.active {
+    left: 0;
+}
+
+/* Navigation */
+nav {
+    padding: 1rem;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 1000;
+}
+
+/* Ham-menu*/
+.ham-menu {
+    height: 60px;
+    width: 50px;
+    position: fixed;
+    left: 1%;
+    top: 0.5%;
+    z-index: 1000;
+}
+.ham-menu span {
+    height: 10%;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: black;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* side-bar -------------------------------------------------------------------------------*/

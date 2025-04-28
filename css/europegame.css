@@ -1,3 +1,6 @@
+body::before {
+  display: none;
+}
 .quiz-box {
   background-color: white;
   padding: 3rem 2rem;
@@ -119,45 +122,6 @@ p {
   font-size: 1.1rem;
 }
 
-/* Footer */
-.info-footer {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  color: white;
-  padding: 1.5rem 2rem;
-  width: 100%;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  bottom: auto;
-  left: auto;
-}
-
-.developers {
-  flex: 1;
-}
-.developer-list {
-  display: flex;
-  gap: 2vh;
-  margin-top: 5px;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  gap: -2vh;
-}
-.project {
-  font-weight: bold;
-  flex: 1;
-}
-
-.logo img {
-  max-height: 7vh;
-  flex: 1;
-}
 @media (max-width: 768px) {
   .quiz-box {
     padding: 1rem;
@@ -178,20 +142,5 @@ p {
 
   #answer {
     width: 80%;
-  }
-
-  footer .info-footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .developer-list {
-    flex-direction: column;
-    gap: 1vh;
-  }
-
-  .logo img {
-    max-height: 5vh;
-    margin-top: 10px;
   }
 }
