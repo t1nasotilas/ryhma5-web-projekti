@@ -159,6 +159,7 @@ function flipCard(card, data) {
   
         if (currentScore > highestScore) {
           highestScore = currentScore;
+          localStorage.setItem("africaGameScore", score);
           localStorage.setItem("highestScore", highestScore);
           updateHighestScoreDisplay();
         }

@@ -137,7 +137,7 @@ body {
 
 @media (max-width: 700px) {
     .game-container {
-        gap: 18px;
+        gap: 20px;
         padding: 16px;
         grid-template-columns: repeat(3, 1fr);
         display: flex;
