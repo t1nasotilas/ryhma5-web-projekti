@@ -284,3 +284,17 @@ function startGame() {
 document.addEventListener("DOMContentLoaded", () => {
   displayRulesPopup();
 });
+let lastScroll = 0;
+const nav = document.querySelector('nav');
+const scrollThreshold = 0; 
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > scrollThreshold) {
+    nav.classList.add('nav-scrolled');
+  } else {
+    nav.classList.remove('nav-scrolled');
+  }
+  lastScroll = currentScroll;
+});

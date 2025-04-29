@@ -1,5 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let lastScroll = 0;
+  const nav = document.querySelector('nav');
+  const scrollThreshold = 0; 
 
+  window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > scrollThreshold) {
+    nav.classList.add('nav-scrolled');
+  } else {
+    nav.classList.remove('nav-scrolled');
+  }
+  lastScroll = currentScroll;
+  });
+  
   // displaytext for nav-bar
   const placeholder_p = document.querySelector("nav p");
   const menuLinks = document.querySelectorAll(".off-screen-menu a");

@@ -69,7 +69,12 @@ nav {
     font-size: 18px;
     z-index: 1000;
 }
-
+nav p {
+    font-size: clamp(0.9rem, 1.2rem, 1.5rem);
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
 /* Ham-menu*/
 .ham-menu {
     height: 60px;

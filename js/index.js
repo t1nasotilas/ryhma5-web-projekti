@@ -29,7 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
           offScreenMenu.classList.toggle("active");
       });
     }
-    
+    //tarkkailee skrollausta ja poistaa navin tekstin näkyvistä, kun skrollataan alaspäin
+    let lastScroll = 0;
+    const nav = document.querySelector('nav');
+    const scrollThreshold = 15; 
+
+    window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > scrollThreshold) {
+        nav.classList.add('nav-scrolled');
+    } else {
+        nav.classList.remove('nav-scrolled');
+    }
+  lastScroll = currentScroll;
+});
     
     });
     

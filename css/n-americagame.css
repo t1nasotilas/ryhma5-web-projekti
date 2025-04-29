@@ -23,10 +23,11 @@ body::before {
     display: none;
 }
 nav p {
-    transition: all 0.3s;
+    font-size: clamp(0.9rem, 1.2rem, 1.5rem);
+    transition: all 0.3s ease;
     opacity: 1;
     visibility: visible;
-  }
+}
 .nav-scrolled p {
     opacity: 0;
     visibility: hidden;
@@ -442,7 +443,7 @@ nav {
     }
     .container {
         width: 88%;
-        margin: 1rem auto 2.2rem auto;
+        margin: 1.5rem auto 3.5rem auto;
         padding: 1rem;
     }
     
