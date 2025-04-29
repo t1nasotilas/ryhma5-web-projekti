@@ -26,7 +26,7 @@
 
 ### How to install:
 1. Clone the repository:
-https://github.com/your-username/africa-flag-memory-game.git
+https://github.com/t1nasotilas/ryhma5-web-projekti.git 
 2. Open index.html in your web browser.
 3. Play and enjoy!
 
@@ -41,5 +41,40 @@ https://github.com/your-username/africa-flag-memory-game.git
 * Country flags - part of ProFlags BV, Africa/ https://www.countryflags.com/africa/
 #### Vertti Winter = verttiwinter
 #### Patrik Mikkonen = cryzmal
+### Game: Continent game
+### Game rules:
+1. Drag a continent name to the right spot.
+2. Match all pairs to win the game.
+4. The final score is saved automatically and can be seen on the overview page.
+
+### Features:
+* Continent names assigned to all game windows.
+* Score tracking.
+* Local storage saves:
+    Your game score.
+* Popup window when everything is matched.
+* Rules popup explaining how to play.
+
+### Technologies used:
+* HTML5
+* CSS3
+* Vanilla JavaScript
+* LocalStorage API
+
+### How to install:
+1. Clone the repository:
+https://github.com/t1nasotilas/ryhma5-web-projekti.git 
+2. Open index.html in your web browser.
+3. Play and enjoy!
+
+### Sources:
+#### Information:
+* Wikipedia
+* ChatGPT
+* Microsoft Copilot
+
+#### Images (More specific credits as comment in the code):
+* Pixabay/ https://pixabay.com/
+* Wikipedia
 #### Santeri Korhonen = SanteriKorhonen
 #### Viivi Dahlström = viividahlstrom
